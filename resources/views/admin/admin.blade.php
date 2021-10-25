@@ -11,7 +11,7 @@
     <title>Easy Admin - Dashboard</title>
 
     <!-- Vendors Style-->
-    <link rel="stylesheet" href="{{ asset('backend/css/vendor_css.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/vendors_css.css') }}">
 
     <!-- Style-->
     <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}">
@@ -135,17 +135,17 @@
                             <li class="user-body">
                                 <a class="dropdown-item" href="#"><i class="ti-user text-muted mr-2"></i> Profile</a>
                                 <a class="dropdown-item" href="#"><i class="ti-wallet text-muted mr-2"></i> My Wallet</a>
-                                <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>
+{{--                                <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>--}}
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Logout</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light">
-                            <i class="ti-settings"></i>
-                        </a>
-                    </li>
+{{--                    <li>--}}
+{{--                        <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light">--}}
+{{--                            <i class="ti-settings"></i>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
 
                 </ul>
             </div>
@@ -727,8 +727,7 @@
                 </ul>
             </div>
             <!-- /.tab-pane -->
-        </div>
-    </aside>
+
     <!-- /.control-sidebar -->
 
     <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
@@ -747,6 +746,16 @@
 <!-- Sunny Admin App -->
 <script src="{{asset('backend/js/template.js')}}"></script>
 <script src="{{asset('backend/js/pages/dashboard.js')}}"></script>
+
+{{--<script src="backend/js/vendors.min.js"></script>--}}
+{{--<script src="../assets/icons/feather-icons/feather.min.js"></script>--}}
+{{--<script src="../assets/vendor_components/easypiechart/dist/jquery.easypiechart.js"></script>--}}
+{{--<script src="../assets/vendor_components/apexcharts-bundle/irregular-data-series.js"></script>--}}
+{{--<script src="../assets/vendor_components/apexcharts-bundle/dist/apexcharts.js"></script>--}}
+
+{{--<!-- Sunny Admin App -->--}}
+{{--<script src="backend/js/template.js"></script>--}}
+{{--<script src="backend/js/pages/dashboard.js"></script>--}}
 
 
 </body>

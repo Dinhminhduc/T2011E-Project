@@ -35,13 +35,8 @@
                             <div class="logo"><a href="index.html"><img src="{{asset('frontend/img/logo/logo.png')}}" alt=""></a></div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
-                                    <li class="active menu-item-has-children"><a href="index.html">Home</a>
-                                        <ul class="submenu">
-                                            <li class="active"><a href="index.html">Home One</a></li>
-                                            <li><a href="index-2.html">Home Two</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="dog-list.html">Dog List</a></li>
+                                    <li class="active menu-item-has-children"><a href="{{asset('/')}}">Home</a></li>
+                                    <li><a href="{{asset('doglist')}}">Dog List</a></li>
                                     <li class="menu-item-has-children"><a href="shop.html">Shop</a>
                                         <ul class="submenu">
                                             <li><a href="shop.html">Our Shop</a></li>

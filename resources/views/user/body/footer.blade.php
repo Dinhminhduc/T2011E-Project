@@ -65,12 +65,12 @@
                         <h4 class="fw-title">Instagram</h4>
                         <div class="fw-insta">
                             <ul>
-                                <li><a href="#"><img src="img/images/insta_img01.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/images/insta_img02.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/images/insta_img03.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/images/insta_img04.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/images/insta_img05.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/images/insta_img06.png" alt=""></a></li>
+                                <li><a href="#"><img src="img/insta_img01.png" alt=""></a></li>
+                                <li><a href="#"><img src="img/insta_img02.png" alt=""></a></li>
+                                <li><a href="#"><img src="img/insta_img03.png" alt=""></a></li>
+                                <li><a href="#"><img src="img/insta_img04.png" alt=""></a></li>
+                                <li><a href="#"><img src="img/insta_img05.png" alt=""></a></li>
+                                <li><a href="#"><img src="img/insta_img06.png" alt=""></a></li>
                             </ul>
                         </div>
                     </div>

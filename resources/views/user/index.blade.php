@@ -4,7 +4,7 @@
         <!-- slider-area -->
         <section class="slider-area">
             <div class="slider-active">
-                <div class="single-slider slider-bg d-flex align-items-center" data-background="img/slider/slider_bg01.jpg">
+                <div class="single-slider slider-bg d-flex align-items-center" data-background="{{asset('img/slider_home.jpg')}}">
                     <div class="container custom-container">
                         <div class="row">
                             <div class="col-xl-5 col-lg-7 col-md-10">
@@ -15,13 +15,13 @@
                                     <div class="slider-desc">
                                         <p class="desc" data-animation="fadeInUpBig" data-delay=".4s" data-duration="1.2s">Human Shampoo on Dogs After six days of delirat, the jury found Hernandez guilty of first-degree murder</p>
                                     </div>
-                                    <a href="dog-list.html" class="btn" data-animation="fadeInUpBig" data-delay=".6s" data-duration="1.2s">View More <img src="img/icon/w_pawprint.png" alt=""></a>
+                                    <a href="{{asset('doglist')}}" class="btn" data-animation="fadeInUpBig" data-delay=".6s" data-duration="1.2s">View More <img src="img/icon/w_pawprint.png" alt=""></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="single-slider slider-bg d-flex align-items-center" data-background="img/slider/slider_bg02.jpg">
+                <div class="single-slider slider-bg d-flex align-items-center" data-background="{{asset('img/slider_home.jpg')}}">
                     <div class="container custom-container">
                         <div class="row">
                             <div class="col-xl-5 col-lg-7 col-md-10">
@@ -129,7 +129,7 @@
                 <div class="row align-items-center align-items-xl-end justify-content-center">
                     <div class="col-xl-7 col-lg-6 col-md-10 order-0 order-lg-2">
                         <div class="adoption-img">
-                            <img src="img/images/adoption_img.jpg" alt="">
+                            <img src="{{asset('img/adoption_img.jpg')}}" alt="">
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-6">
@@ -163,7 +163,7 @@
                         <div class="breed-services-active owl-carousel">
                             <div class="breed-services-item">
                                 <div class="thumb">
-                                    <img src="img/images/breed_services_img01.jpg" alt="">
+                                    <img src="{{asset('img/breed_services_img01.jpg')}}" alt="">
                                 </div>
                                 <div class="content">
                                     <h3 class="title"><a href="breeder-details.html">Golden Retriever</a></h3>
@@ -171,7 +171,7 @@
                             </div>
                             <div class="breed-services-item">
                                 <div class="thumb">
-                                    <img src="img/images/breed_services_img02.jpg" alt="">
+                                    <img src="{{asset('img/breed_services_img02.jpg')}}" alt="">
                                 </div>
                                 <div class="content">
                                     <h3 class="title"><a href="breeder-details.html">German Sharped</a></h3>
@@ -179,7 +179,7 @@
                             </div>
                             <div class="breed-services-item">
                                 <div class="thumb">
-                                    <img src="img/images/breed_services_img03.jpg" alt="">
+                                    <img src="{{asset('img/breed_services_img03.jpg')}}" alt="">
                                 </div>
                                 <div class="content">
                                     <h3 class="title"><a href="breeder-details.html">Siberian Husky</a></h3>
@@ -187,7 +187,7 @@
                             </div>
                             <div class="breed-services-item">
                                 <div class="thumb">
-                                    <img src="img/images/breed_services_img04.jpg" alt="">
+                                    <img src="{{asset('img/breed_services_img04.jpg')}}" alt="">
                                 </div>
                                 <div class="content">
                                     <h3 class="title"><a href="breeder-details.html">Bernes Mountain</a></h3>
@@ -196,7 +196,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="breed-services-info" data-background="img/bg/breed_services_bg.jpg">
+                        <div class="breed-services-info" data-background="{{asset('img/breed_services_bg.jpg')}}">
                             <h5 class="sub-title">Dog Breeder</h5>
                             <h3 class="title">Available for Breed</h3>
                             <p>The best overall dog DNA test is Embark Breed & Health Kit (view at Chewy), which provid dogs</p>
@@ -216,8 +216,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="faq-img-wrap">
-                            <img src="img/images/faq_tv.png" class="img-frame" alt="">
-                            <img src="img/images/faq_img.png" class="main-img" alt="">
+                            <img src="{{asset('img/faq_tv.png')}}" class="img-frame" alt="">
+                            <img src="{{asset('img/faq_img.png')}}" class="main-img" alt="">
                             <a href="https://www.youtube.com/watch?v=XdFfCPK5ycw" class="popup-video"></a>
                         </div>
                     </div>
@@ -288,37 +288,37 @@
                 <div class="row brand-active">
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand/brand_item01.png" alt="img">
+                            <img src="img/brand_item01.png" alt="img">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand/brand_item02.png" alt="img">
+                            <img src="img/brand_item02.png" alt="img">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand/brand_item03.png" alt="img">
+                            <img src="img/brand_item03.png" alt="img">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand/brand_item04.png" alt="img">
+                            <img src="img/brand_item04.png" alt="img">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand/brand_item05.png" alt="img">
+                            <img src="img/brand_item05.png" alt="img">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand/brand_item06.png" alt="img">
+                            <img src="img/brand_item06.png" alt="img">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand/brand_item03.png" alt="img">
+                            <img src="img/brand_item03.png" alt="img">
                         </div>
                     </div>
                 </div>
@@ -341,18 +341,19 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
+                    @foreach($lsDetail as $detail)
                     <div class="col-lg-4 col-md-6">
                         <div class="adoption-shop-item">
                             <div class="adoption-shop-thumb">
-                                <img src="img/product/adoption_shop_thumb01.jpg" alt="">
-                                <a href="shop-details.html" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
+                                <img src="{{asset($detail->img)}}" alt="">
+                                <a href="shop-details.html" class="btn">Adoption <img src="img/w_pawprint.png" alt=""></a>
                             </div>
                             <div class="adoption-shop-content">
-                                <h4 class="title"><a href="shop-details.html">Mister Tartosh</a></h4>
+                                <h4 class="title"><a href="shop-details.html">{{$detail->name}}</a></h4>
                                 <div class="adoption-meta">
                                     <ul>
-                                        <li><i class="fas fa-cog"></i><a href="#">Siberian Husky</a></li>
-                                        <li><i class="far fa-calendar-alt"></i> Birth : 2021</li>
+                                        <li><i class="fas fa-cog"></i><a href="#">{{$detail->Animal_type->name}}</a></li>
+                                        <li><i class="far fa-calendar-alt"></i> Birth : {{$detail->dateOfBirth}}</li>
                                     </ul>
                                 </div>
                                 <div class="adoption-rating">
@@ -364,155 +365,13 @@
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                         </li>
-                                        <li class="price">Total Price : <span>Free</span></li>
+                                        <li class="price">Total Price : <span>${{$detail->price}}</span></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="adoption-shop-item">
-                            <div class="adoption-shop-thumb">
-                                <img src="img/product/adoption_shop_thumb02.jpg" alt="">
-                                <a href="shop-details.html" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
-                            </div>
-                            <div class="adoption-shop-content">
-                                <h4 class="title"><a href="shop-details.html">Charlie</a></h4>
-                                <div class="adoption-meta">
-                                    <ul>
-                                        <li><i class="fas fa-cog"></i><a href="#">Golden Retriever</a></li>
-                                        <li><i class="far fa-calendar-alt"></i> Birth : 2020</li>
-                                    </ul>
-                                </div>
-                                <div class="adoption-rating">
-                                    <ul>
-                                        <li class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li class="price">Total Price : <span>$30</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="adoption-shop-item">
-                            <div class="adoption-shop-thumb">
-                                <img src="img/product/adoption_shop_thumb03.jpg" alt="">
-                                <a href="shop-details.html" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
-                            </div>
-                            <div class="adoption-shop-content">
-                                <h4 class="title"><a href="shop-details.html">Alessia Max</a></h4>
-                                <div class="adoption-meta">
-                                    <ul>
-                                        <li><i class="fas fa-cog"></i><a href="#">German Sherped</a></li>
-                                        <li><i class="far fa-calendar-alt"></i> Birth : 2020</li>
-                                    </ul>
-                                </div>
-                                <div class="adoption-rating">
-                                    <ul>
-                                        <li class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li class="price">Total Price : <span>$29</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="adoption-shop-item">
-                            <div class="adoption-shop-thumb">
-                                <img src="img/product/adoption_shop_thumb04.jpg" alt="">
-                                <a href="shop-details.html" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
-                            </div>
-                            <div class="adoption-shop-content">
-                                <h4 class="title"><a href="shop-details.html">Canadian</a></h4>
-                                <div class="adoption-meta">
-                                    <ul>
-                                        <li><i class="fas fa-cog"></i><a href="#">German Sherped</a></li>
-                                        <li><i class="far fa-calendar-alt"></i> Birth : 2021</li>
-                                    </ul>
-                                </div>
-                                <div class="adoption-rating">
-                                    <ul>
-                                        <li class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li class="price">Total Price : <span>$39</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="adoption-shop-item">
-                            <div class="adoption-shop-thumb">
-                                <img src="img/product/adoption_shop_thumb05.jpg" alt="">
-                                <a href="shop-details.html" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
-                            </div>
-                            <div class="adoption-shop-content">
-                                <h4 class="title"><a href="shop-details.html">Entertainment</a></h4>
-                                <div class="adoption-meta">
-                                    <ul>
-                                        <li><i class="fas fa-cog"></i><a href="#">Siberian Husky</a></li>
-                                        <li><i class="far fa-calendar-alt"></i> Birth : 2021</li>
-                                    </ul>
-                                </div>
-                                <div class="adoption-rating">
-                                    <ul>
-                                        <li class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li class="price">Total Price : <span>Free</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="adoption-shop-item">
-                            <div class="adoption-shop-thumb">
-                                <img src="img/product/adoption_shop_thumb06.jpg" alt="">
-                                <a href="shop-details.html" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
-                            </div>
-                            <div class="adoption-shop-content">
-                                <h4 class="title"><a href="shop-details.html">Dangerous</a></h4>
-                                <div class="adoption-meta">
-                                    <ul>
-                                        <li><i class="fas fa-cog"></i><a href="#">Golden Retriever</a></li>
-                                        <li><i class="far fa-calendar-alt"></i> Birth : 2021</li>
-                                    </ul>
-                                </div>
-                                <div class="adoption-rating">
-                                    <ul>
-                                        <li class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li class="price">Total Price : <span>Free</span></li>
-                                    </ul>
-                                </div>
-                            </div>
+                    @endforeach
                         </div>
                     </div>
                 </div>
@@ -538,7 +397,7 @@
                     <div class="col-lg-6">
                         <div class="testimonial-item">
                             <div class="testi-avatar-thumb">
-                                <img src="img/images/testi_avatar01.png" alt="">
+                                <img src="img/testi_avatar01.png" alt="">
                             </div>
                             <div class="testi-content">
                                 <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
@@ -552,7 +411,7 @@
                     <div class="col-lg-6">
                         <div class="testimonial-item">
                             <div class="testi-avatar-thumb">
-                                <img src="img/images/testi_avatar02.png" alt="">
+                                <img src="img/testi_avatar02.png" alt="">
                             </div>
                             <div class="testi-content">
                                 <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
@@ -566,7 +425,7 @@
                     <div class="col-lg-6">
                         <div class="testimonial-item">
                             <div class="testi-avatar-thumb">
-                                <img src="img/images/testi_avatar01.png" alt="">
+                                <img src="img/testi_avatar01.png" alt="">
                             </div>
                             <div class="testi-content">
                                 <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
@@ -580,7 +439,7 @@
                     <div class="col-lg-6">
                         <div class="testimonial-item">
                             <div class="testi-avatar-thumb">
-                                <img src="img/images/testi_avatar02.png" alt="">
+                                <img src="img/testi_avatar02.png" alt="">
                             </div>
                             <div class="testi-content">
                                 <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
@@ -614,7 +473,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-post-item mb-50">
                             <div class="blog-post-thumb">
-                                <a href="blog-details.html"><img src="img/blog/blog_post_thumb01.jpg" alt=""></a>
+                                <a href="blog-details.html"><img src="img/blog_post_thumb01.jpg" alt=""></a>
                                 <div class="blog-post-tag">
                                     <a href="#"><i class="flaticon-bookmark-1"></i>Sharped</a>
                                 </div>
@@ -635,7 +494,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-post-item mb-50">
                             <div class="blog-post-thumb">
-                                <a href="blog-details.html"><img src="img/blog/blog_post_thumb02.jpg" alt=""></a>
+                                <a href="blog-details.html"><img src="img/blog_post_thumb02.jpg" alt=""></a>
                                 <div class="blog-post-tag">
                                     <a href="#"><i class="flaticon-bookmark-1"></i>Creative</a>
                                 </div>
@@ -656,7 +515,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-post-item mb-50">
                             <div class="blog-post-thumb">
-                                <a href="blog-details.html"><img src="img/blog/blog_post_thumb03.jpg" alt=""></a>
+                                <a href="blog-details.html"><img src="img/blog_post_thumb03.jpg" alt=""></a>
                                 <div class="blog-post-tag">
                                     <a href="#"><i class="flaticon-bookmark-1"></i>Business</a>
                                 </div>
@@ -707,4 +566,4 @@
     </main>
 
 
-@endsection
+    @endsection
