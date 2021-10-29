@@ -17,4 +17,5 @@ class IndexController extends Controller
         $lsDetail = Animal_detail::orderBy('created_at','desc')->take(6)->get();
         return view('user/dog-list')->with(['lsDetail'=>$lsDetail]);
 }
+
 }

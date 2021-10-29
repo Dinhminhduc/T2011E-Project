@@ -49,12 +49,22 @@ class Animal_DetailController extends Controller
         ]);
         $ani = new Animal_detail();
         $ani->name = $request->input('name');
-        $imgPath = "";
-        if ($request->hasFile("img")) {
-            $imgPath = $request->img->store('img');
-            $imgPath = 'img/'.$imgPath;
-        }
-        $ani->img = $imgPath;
+//        $imgPath = "";
+//        if ($request->hasFile("img")) {
+//            $imgPath = $request->img->store('image');
+//            $imgPath = 'image/'.$imgPath;
+//        }
+//        $ani->img = $imgPath;
+        $image = $request->file('img');
+
+        $name_gen = hexdec(uniqid());
+        $img_ext = strtolower($image->getClientOriginalExtension());
+        $img_name = $name_gen.'.'.$img_ext;
+        $up_location = 'image/product/';
+        $last_img = $up_location.$img_name;
+        $image->move($up_location,$img_name);
+
+        $ani->img = $last_img;
         $ani->desc = $request->input('desc');
         $ani->price = $request->input('price');
         $ani->dateOfBirth  =$request->input('dob');

@@ -37,10 +37,10 @@
                                 <ul class="navigation">
                                     <li class="active menu-item-has-children"><a href="{{asset('/')}}">Home</a></li>
                                     <li><a href="{{asset('doglist')}}">Dog List</a></li>
-                                    <li class="menu-item-has-children"><a href="shop.html">Shop</a>
+                                    <li class="menu-item-has-children"><a href="{{route('all.shop')}}">Shop</a>
                                         <ul class="submenu">
-                                            <li><a href="shop.html">Our Shop</a></li>
-                                            <li><a href="shop-details.html">Shop Details</a></li>
+                                            <li><a href="{{route('all.shop')}}">Our Shop</a></li>
+{{--                                            <li><a href="{{route('detail.shop')}}">Shop Details</a></li>--}}
                                         </ul>
                                     </li>
                                     <li><a href="adoption.html">Adoption</a></li>
@@ -62,47 +62,34 @@
                             <div class="header-action d-none d-md-block">
                                 <ul>
                                     <li class="header-search"><a href="#"><i class="flaticon-search"></i></a></li>
-                                    <li class="header-shop-cart"><a href="#"><i class="flaticon-shopping-bag"></i><span>2</span></a>
+                                    <li class="header-shop-cart"><a href="#"><i class="flaticon-shopping-bag"></i><span>{{Cart::count()}}</span></a>
                                         <ul class="minicart">
+                                            @foreach(Cart::content() as $row)
                                             <li class="d-flex align-items-start">
                                                 <div class="cart-img">
-                                                    <a href="#"><img src="{{asset('frontend/img/product/cart_p01.jpg')}}" alt=""></a>
+                                                    <a href="#"><img src="{{asset($row->image)}}" alt=""></a>
                                                 </div>
                                                 <div class="cart-content">
-                                                    <h4><a href="#">The King Charles Spaniel</a></h4>
+                                                    <h4><a>{{$row->name}}</a></h4>
                                                     <div class="cart-price">
-                                                        <span class="new">$229.9</span>
-                                                        <span><del>$229.9</del></span>
+                                                        <span class="new">${{$row->price}} x {{$row->qty}}</span>
+{{--                                                        <span>Quantity: {{$row->qty}}</span>--}}
                                                     </div>
                                                 </div>
                                                 <div class="del-icon">
                                                     <a href="#"><i class="far fa-trash-alt"></i></a>
                                                 </div>
                                             </li>
-                                            <li class="d-flex align-items-start">
-                                                <div class="cart-img">
-                                                    <a href="#"><img src="{{asset('frontend/img/product/cart_p02.jpg')}}" alt=""></a>
-                                                </div>
-                                                <div class="cart-content">
-                                                    <h4><a href="#">The Labrador Retriever</a></h4>
-                                                    <div class="cart-price">
-                                                        <span class="new">$229.9</span>
-                                                        <span><del>$229.9</del></span>
-                                                    </div>
-                                                </div>
-                                                <div class="del-icon">
-                                                    <a href="#"><i class="far fa-trash-alt"></i></a>
-                                                </div>
-                                            </li>
+                                            @endforeach
                                             <li>
                                                 <div class="total-price">
                                                     <span class="f-left">Total:</span>
-                                                    <span class="f-right">$239.9</span>
+                                                    <span class="f-right">${{Cart::total()}}</span>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="checkout-link">
-                                                    <a href="#">Shopping Cart</a>
+                                                    <a href="{{route('cart')}}">Shopping Cart</a>
                                                     <a class="black-color" href="#">Checkout</a>
                                                 </div>
                                             </li>
