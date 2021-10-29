@@ -43,7 +43,7 @@
                                             <li><a href="shop-details.html">Shop Details</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="adoption.html">Adoption</a></li>
+                                    <li><a href="{{asset('adoption')}}">Service</a></li>
                                     <li class="menu-item-has-children"><a href="breeder.html">Breeder</a>
                                         <ul class="submenu">
                                             <li><a href="breeder.html">Our Breeder</a></li>
