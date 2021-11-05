@@ -4,7 +4,7 @@
 <main>
 
     <!-- breadcrumb-area -->
-    <section class="breadcrumb-area breadcrumb-bg" data-background="img/bg/breadcrumb_bg.jpg">
+    <section class="breadcrumb-area breadcrumb-bg" data-background="{{asset('image/product/1714698648111892.jpg)')}}">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -41,12 +41,9 @@
                             <h4 class="sidebar-title">Category</h4>
                             <div class="shop-cat-list">
                                 <ul>
-                                    <li><a href="shop.html">Squeaky <span>+</span></a></li>
-                                    <li><a href="shop.html">Dog Food <span>+</span></a></li>
-                                    <li><a href="shop.html">Dog-Kit <span>+</span></a></li>
-                                    <li><a href="shop.html">Dog Home <span>+</span></a></li>
-                                    <li><a href="shop.html">Safety-Suits <span>+</span></a></li>
-                                    <li><a href="shop.html">Pet Protect <span>+</span></a></li>
+                                    @foreach($lsCate as $cate)
+                                    <li><a href="shop.html">{{$cate->name}} <span>+</span></a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

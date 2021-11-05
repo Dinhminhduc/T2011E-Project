@@ -51,7 +51,7 @@
                                     <input type="text" name="quantity[]" value="{{$row->qty}}">
                                 </div>
                             </td>
-                            <td><img src="{{asset($row->image)}}" style="height:40px; width: 70px;"></td>
+                            <td><img src="{{asset($row->options->image)}}" style="height:80px; width: 100px;"></td>
                             <td>${{$row->total}}</td>
                         </tr>
                     @endforeach

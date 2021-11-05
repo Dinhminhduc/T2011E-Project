@@ -94,6 +94,9 @@
                                 @if($products->number > 0)
                                 <h5 class="stock-status">- AVAILABLE</h5>
                                 @endif
+                                @if($products->number < 0)
+                                    <h5 class="stock-status">- NOT AVAILABLE</h5>
+                                @endif
                             </div>
                             <p>The domestic dog is a doiated dendant of the wolf. The dog derived from an ancient, extinct wolf, and the modern grey wolf is the dog's nearest living relative.</p>
                             <div class="shop-details-dimension">

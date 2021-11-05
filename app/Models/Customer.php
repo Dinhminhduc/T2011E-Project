@@ -16,4 +16,8 @@ class Customer extends Model
     public function service(){
         return $this->hasOne('App\Models\Service','dichvu_id','id');
     }
+
+    public function ordersProduct(){
+        return $this->hasMany('App\Models\Order_Product');
+    }
 }

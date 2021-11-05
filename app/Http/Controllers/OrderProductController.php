@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Order_Product;
+use App\Models\Customer;
+use App\Models\Product;
 
-class CategoryController extends Controller
+
+class OrderProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $lsCate = Category::all();
-        return view('admin.category.index',compact('lsCate'));
-
+        $lsOrder = Order_Product::paginate(5);
+        return view('admin.order.index',compact('lsOrder'));
     }
 
     /**
@@ -26,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -37,19 +39,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|min:3'
-        ],
-        [
-            'name.required' => 'Please Input Product Name',
-
-        ]);
-
-        $cate = new Category();
-        $cate->name = $request-> input('name');
-        $cate->save();
-        $request->session()->flash("msg","Insert category successfully");
-        return redirect()->back();
+        //
     }
 
     /**
@@ -60,7 +50,15 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order_Product::find($id);
+        return view('admin.order.view',compact('order'));
+    }
+
+    public function changeStatus($status, $id){
+        $order = Order_Product::find($id);
+        $order->status = $status;
+        $order->save();
+        return redirect()->route('order.show', $id);
     }
 
     /**
@@ -71,8 +69,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $cate = Category::find($id);
-        return view("admin.category.edit",compact('cate'));
+        //
     }
 
     /**
@@ -84,20 +81,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required|min:3'
-        ],[
-            'name.required' => 'Please Input Category Name',
-        ]);
-
-//        Category::find($id)->update([
-//            'name' => $request->name
-//        ]);
-        $cate = Category::find($id);
-        $cate->name = $request->input('name');
-        $cate->save();
-        $request->session()->flash('msg','Update category successfully');
-        return redirect(route("category.index"));
+        //
     }
 
     /**
@@ -108,8 +92,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $cate = Category::find($id);
-        $cate->delete();
-        return redirect(route("category.index"));
+        //
     }
 }

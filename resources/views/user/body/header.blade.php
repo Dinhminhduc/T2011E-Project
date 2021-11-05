@@ -67,7 +67,7 @@
                                             @foreach(Cart::content() as $row)
                                             <li class="d-flex align-items-start">
                                                 <div class="cart-img">
-                                                    <a href="#"><img src="{{asset($row->image)}}" alt=""></a>
+                                                    <button><img src="{{asset($row->options->image )}}" alt=""></button>
                                                 </div>
                                                 <div class="cart-content">
                                                     <h4><a>{{$row->name}}</a></h4>
@@ -90,7 +90,7 @@
                                             <li>
                                                 <div class="checkout-link">
                                                     <a href="{{route('cart')}}">Shopping Cart</a>
-                                                    <a class="black-color" href="#">Checkout</a>
+                                                    <a class="black-color" href="{{route('check_out')}}">Checkout</a>
                                                 </div>
                                             </li>
                                         </ul>

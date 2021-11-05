@@ -20,6 +20,16 @@ class Product extends Model
     ];
 
     public function category(){
-        return $this->belongsTo('App\Model\Category');
+        return $this->belongsTo('App\Models\Category');
+    }
+
+    public function orderDetails(){
+        return $this->hasMany('App\Models\OrderDetail_Product','product_id','id');
+    }
+
+
+    public function orderProduct(){
+        return $this->belongsToMany('App\Models\Order_Product','order_detail__products',
+            'order_product_id','product_id');
     }
 }

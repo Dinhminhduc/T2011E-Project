@@ -218,11 +218,67 @@
                     <ul class="treeview-menu">
                         <li><a href="{{route('all.product')}}"><i class="ti-more"></i>All Product</a></li>
                         <li><a href="{{asset('admin/category')}}"><i class="ti-more"></i>All Category</a></li>
-                        <li><a href="gallery.html"><i class="ti-more"></i>Gallery</a></li>
+                        <li><a href="{{asset('admin/order')}}"><i class="ti-more"></i>Order</a></li>
                         <li><a href="faq.html"><i class="ti-more"></i>FAQs</a></li>
                         <li><a href="timeline.html"><i class="ti-more"></i>Timeline</a></li>
                     </ul>
                 </li>
+
+                <li class="treeview">
+                    <a href="{{route('service_type.index')}}">
+                        <i data-feather="credit-card"></i>
+                        <span>Service Type</span>
+                        <span class="pull-right-container">
+                  <i class="fa fa-angle-right pull-right"></i>
+
+                  <ul class="treeview-menu">
+                      <li><a href="{{route('service_type.index')}}">View Type Service</a></li>
+                      <li><a href="{{route('service_type.create')}}">Create Type Service</a></li>
+                  </ul>
+                </li>
+
+                <li class="treeview">
+                    <a href="{{route('service.index')}}">
+                        <i data-feather="credit-card"></i>
+                        <span>Service</span>
+                        <span class="pull-right-container">
+                    <i class="fa fa-angle-right pull-right"></i>
+
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('service.index')}}">View Service</a></li>
+                        <li><a href="{{route('service.create')}}">Create Service</a></li>
+                    </ul>
+                </li>
+
+                <li class="treeview">
+                    <a href="#">
+                        <i data-feather="users"></i>
+                        <span>Staff</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                      </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('staff.index')}}"><i class="ti-more"></i>Profile</a></li>
+                        <li><a href="{{route('staff.create')}}"><i class="ti-more"></i>Create Staff</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="treeview">
+                    <a href="#">
+                        <i data-feather="shopping-bag"></i>
+                        <span>Order Service</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                      </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('order.index')}}"><i class="ti-more"></i>Order</a></li>
+                        {{-- <li><a href="{{route('order.create')}}"><i class="ti-more"></i>Service Recycler</a></li> --}}
+                    </ul>
+                </li>
+
 
                 <li class="header nav-small-cap">User Interface</li>
 
