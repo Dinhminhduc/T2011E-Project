@@ -19,6 +19,7 @@ class CreateStaffTable extends Migration
             $table->integer('stafftype_id');
             // $table->string('mota');
             $table->string('ngaysinh');
+            $table->string('chucvu');
             // $table->string('date_start');
             // $table->string('date_end');
             $table->string('hinhanh');
