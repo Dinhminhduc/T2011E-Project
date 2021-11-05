@@ -9,7 +9,7 @@ use App\Models\Staff;
 use App\Models\Customer;
 use App\Models\Order_service;
 use App\Models\OrderDetail;
-
+use DB;
 
 class HomeController extends Controller
 {
@@ -28,10 +28,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function dashboard()
     {
-        return view('home');
+        $count = DB::table('customers')->get()->count();
+        $countService = DB::table('services')->get()->count();
+        $countSuccessService = DB::table('customers')->where('status', 3)->count();
+
+        // dd();
+        // dd($count);
+        return view('admin.index', compact('count','countService','countSuccessService'));
     }
 
-    
+   
 }

@@ -126,7 +126,7 @@
                
                     <div class="adoption-item">
                         <div class="adopt-thumb" >
-                            <a href="{{asset("adoption_detail/$value->id")}}">
+                            <a href="{{asset("adoption-detail/$value->slug")}}">
                                 <img src="{{asset("img/service-img/{$value->hinhanh}") }}" alt=""></a>
                                 {{-- <span class="status">Ảnhminhhoạ</span> --}}
                         </div>
@@ -135,14 +135,14 @@
                                 @if( $value->servicetype->name == 'Chăm sóc')
                                     {{$value->price}} - {{$value->price_end}}
                                 @elseif ($value->servicetype->name == 'Trông coi')
-                                    {{$value->price}} - {{$value->price_end}} (giờ)
+                                    {{$value->price}} - {{$value->price_end}} (ngày)
                                 @else
                                     {{$value->price}} - {{$value->price_end}} (chưa tính phụ phí)
                                 @endif
                             </div>
-                            <h3 class="title"><a href="{{asset("adoption_detail/$value->id")}}">{{$value->name_service}}</a></h3>
+                            <h3 class="title"><a href="{{asset("adoption_detail/$value->slug")}}">{{$value->name_service}}</a></h3>
                             <p>{!!$value->tomtat!!}</p>
-                            <a href="{{asset("adoption_detail/$value->id")}}" class="read-more">Read More 
+                            <a href="{{asset("adoption-detail/$value->slug")}}" class="read-more">Read More 
                                 <img src=" {{asset('frontend/img/icon/pawprint.png')}}"
                                 alt=""></a>
                         </div>

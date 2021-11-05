@@ -19,7 +19,10 @@
             @method('PUT')
 
             <label>Tên dịch vụ</label>
-            <input type="text" name="name_service" class="form-control" value="{{$service->name_service}}"/>
+            <input type="text" name="name_service" id="slug" onkeyup="ChangeToSlug()" class="form-control" value="{{$service->name_service}}"/>
+
+            <label>Slug dịch vụ</label>
+            <input type="text" name="slug" id="convert_slug" class="form-control" value="{{$service->slug}}"/>
 
             <label for="title1">Title</label>
             <textarea size="50" type="text" id="title1" class="form-control" name="title" rows="15" cols="100">

@@ -44,12 +44,12 @@
                                         </ul>
                                     </li>
                                     <li><a href="{{asset('adoption')}}">Service</a></li>
-                                    <li class="menu-item-has-children"><a href="breeder.html">Breeder</a>
+                                    {{-- <li class="menu-item-has-children"><a href="breeder.html">Breeder</a>
                                         <ul class="submenu">
                                             <li><a href="breeder.html">Our Breeder</a></li>
                                             <li><a href="breeder-details.html">Breeder Details</a></li>
                                         </ul>
-                                    </li>
+                                    </li> --}}
                                     <li class="menu-item-has-children"><a href="blog.html">Blog</a>
                                         <ul class="submenu">
                                             <li><a href="blog.html">Our Blog</a></li>

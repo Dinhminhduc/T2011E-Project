@@ -34,6 +34,7 @@
             <tr>
                 <th>ID</th>
                 <th>NAME</th>       
+                <th>SLUG</th>       
                 <th>DESCRIPTION</th>       
                 <th>TOMTAT</th>       
                 <th>SERVICE</th>
@@ -47,6 +48,7 @@
                 <tr>
                     <th scope="row">{{$key+1}}</th>
                     <td>{{$ser->name_service}}</td>
+                    <td>{{$ser->slug}}</td>
                     <td>{!!$ser->title!!}</td>
                     <td>{!!$ser->tomtat!!}</td>
                  
