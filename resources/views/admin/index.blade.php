@@ -14,7 +14,8 @@
                             </div>
                             <div>
                                 <p class="text-mute mt-20 mb-0 font-size-16">New Customers</p>
-                                <h3 class="text-white mb-0 font-weight-500">3400 <small class="text-success"><i class="fa fa-caret-up"></i> +2.5%</small></h3>
+                                <h3 class="text-white mb-0 font-weight-500">{{$count}}  
+                                    <small class="text-success"><i class="fa fa-user"></i> </small></h3>
                             </div>
                         </div>
                     </div>
@@ -23,11 +24,15 @@
                     <div class="box overflow-hidden pull-up">
                         <div class="box-body">
                             <div class="icon bg-warning-light rounded w-60 h-60">
-                                <i class="text-warning mr-0 font-size-24 mdi mdi-car"></i>
+                                <i class="text-warning mr-0 font-size-24 mdi mdi-approval"></i>
                             </div>
                             <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Sold Cars</p>
-                                <h3 class="text-white mb-0 font-weight-500">3400 <small class="text-success"><i class="fa fa-caret-up"></i> +2.5%</small></h3>
+                                <p class="text-mute mt-20 mb-0 font-size-16">Service</p>
+                                <h3 class="text-white mb-0 font-weight-500">{{$countService}} 
+                                    <i class="fa fa-rocket" aria-hidden="true"></i>
+
+                                    {{-- <small class="text-success"><i class="fa fa-caret-up"></i> +2.5%</small> --}}
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -39,8 +44,9 @@
                                 <i class="text-info mr-0 font-size-24 mdi mdi-sale"></i>
                             </div>
                             <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Sales Lost</p>
-                                <h3 class="text-white mb-0 font-weight-500">$1,250 <small class="text-danger"><i class="fa fa-caret-down"></i> -0.5%</small></h3>
+                                <p class="text-mute mt-20 mb-0 font-size-16">Order Success</p>
+                                <h3 class="text-white mb-0 font-weight-500">{{$countSuccessService}}
+                                    <small class="text-success">{{$countSuccessService / $count *100}}%</small></h3>
                             </div>
                         </div>
                     </div>

@@ -13,7 +13,7 @@ class OrderDetail extends Model
         return $this->belongsTo('App\Models\Order_service');
     }
 
-    public function service(){
-        return $this->belongsTo('App\Models\Service');
-    }
+    // public function service(){
+    //     return $this->belongsTo('App\Models\Service');
+    // }
 }

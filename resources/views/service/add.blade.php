@@ -36,9 +36,15 @@
                         @csrf
                         <div class="form-group">
                           <label for="exampleInputEmail1">Tên dịch vụ</label>
-                          <input type="text" name="name_service"  class="form-control" 
-                          aria-describedby="emailHelp" placeholder="Tên dịch vụ">
+                          <input type="text" name="name_service"  class="form-control" id="slug"
+                          onkeyup="ChangeToSlug()" aria-describedby="emailHelp" placeholder="Tên dịch vụ">
                         </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Slug dịch vụ</label>
+                            <input type="text" name="slug"  class="form-control" id="convert_slug"
+                            aria-describedby="emailHelp" placeholder="Slug dịch vụ">
+                          </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Giá</label>

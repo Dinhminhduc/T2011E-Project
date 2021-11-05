@@ -58,6 +58,7 @@ class SeviceController extends Controller
             'staff_id'=> 'required',
             'title'=> 'required',
             'hinhanh'=> 'required',
+            'slug'=> 'required',
            
         ]
     );
@@ -65,6 +66,7 @@ class SeviceController extends Controller
     $data = $request->all();
     $service = new Service();
     $service->name_service = $data['name_service'];
+    $service->slug = $data['slug'];
     $service->price = $data['price'];
     $service->price_end = $data['price_end'];
     $service->title = $data['title'];
@@ -124,6 +126,7 @@ class SeviceController extends Controller
         $request->validate([
             'name_service' => 'required|min:1|max:255',
             'price' => 'required',
+            'slug' => 'required',
             'servicetype_id'=> 'required',
             'staff_id'=> 'required',
            
@@ -133,6 +136,7 @@ class SeviceController extends Controller
    
     $service = service::find($id);
     $service->name_service = $request->input('name_service');
+    $service->slug = $request->input('slug');
     $service->price = $request->input('price');
     $service->price_end = $request->input('price_end');
     $service->servicetype_id = $request->input('servicetype_id');

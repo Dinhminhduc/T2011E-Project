@@ -19,7 +19,7 @@ class Service extends Model
     Public $timestamps = true;
     
     protected $fillable = [
-        'staff_id', 'servicetype_id', 'name_service', 'price','hinhanh','title','date_start','date_end'
+        'staff_id', 'servicetype_id', 'name_service', 'price','hinhanh','title','date_start','date_end','slug'
     ];
 
     Protected $primaryKey = 'id';
@@ -31,6 +31,10 @@ class Service extends Model
 
     public function servicetype() {
         return $this->belongsTo('App\Models\ServiceType','servicetype_id','id');
+    }
+
+    public function customers(){
+        return $this->hasMany('App\Models\Customer');
     }
 
 
