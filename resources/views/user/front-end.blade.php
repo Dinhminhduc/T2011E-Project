@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('frontend/img/favicon.png')}}">
     <!-- Place favicon.ico in the root directory -->
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- CSS here -->
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/animate.min.css')}}">

@@ -37,6 +37,10 @@ class Service extends Model
         return $this->hasMany('App\Models\Customer');
     }
 
+    public function comments() {
+        return $this->hasMany('App\Models\Comment');
+    }
+
 
     // public function orderdetai(){
     //     return $this->hasMany('App\Models\OrderDetail','dichvu_id','id');

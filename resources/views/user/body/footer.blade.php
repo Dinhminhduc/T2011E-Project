@@ -6,7 +6,7 @@
                 <div class="col-3">
                     <div class="footer-widget">
                         <div class="f-logo">
-                            <a href="index.html"><img src="img/logo/logo.png" alt=""></a>
+                            <a href="index.html"><img src="frontend/img/logo/logo.png" alt=""></a>
                         </div>
                         <div class="footer-text">
                             <p>The best overall dog DNA test Embark Breed & Health Kit (view at Chewy) which provides overall dog you.</p>
@@ -65,20 +65,20 @@
                         <h4 class="fw-title">Instagram</h4>
                         <div class="fw-insta">
                             <ul>
-                                <li><a href="#"><img src="img/insta_img01.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/insta_img02.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/insta_img03.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/insta_img04.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/insta_img05.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/insta_img06.png" alt=""></a></li>
+                                <li><a href="#"><img src="frontend/img/images/insta_img01.png" alt=""></a></li>
+                                <li><a href="#"><img src="frontend/img/images/insta_img02.png" alt=""></a></li>
+                                <li><a href="#"><img src="frontend/img/images/insta_img03.png" alt=""></a></li>
+                                <li><a href="#"><img src="frontend/img/images/insta_img04.png" alt=""></a></li>
+                                <li><a href="#"><img src="frontend/img/images/insta_img05.png" alt=""></a></li>
+                                <li><a href="#"><img src="frontend/img/images/insta_img06.png" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-shape"><img src="img/images/footer_shape01.png" alt=""></div>
-        <div class="footer-shape shape-two"><img src="img/images/footer_shape02.png" alt=""></div>
+        <div class="footer-shape"><img src="img/images/images/footer_shape01.png" alt=""></div>
+        <div class="footer-shape shape-two"><img src="img/images/images/footer_shape02.png" alt=""></div>
     </div>
     <div class="copyright-area">
         <div class="container">
@@ -93,12 +93,12 @@
                         <div class="dropdown">
                             <button class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
-                                <img src="img/icon/united-states.png" alt=""> English
+                                <img src="frontend/img/icon/united-states.png" alt=""> English
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                <a class="dropdown-item" href="index.html"><img src="img/icon/russia.png" alt="">Russia</a>
-                                <a class="dropdown-item" href="index.html"><img src="img/icon//thailand.png" alt="">Thailand</a>
-                                <a class="dropdown-item" href="index.html"><img src="img/icon/india.png" alt="">India</a>
+                                <a class="dropdown-item" href="index.html"><img src="frontend/img/icon/russia.png" alt="">Russia</a>
+                                <a class="dropdown-item" href="index.html"><img src="frontend/img/icon//thailand.png" alt="">Thailand</a>
+                                <a class="dropdown-item" href="index.html"><img src="frontend/img/icon/india.png" alt="">India</a>
                             </div>
                         </div>
                     </div>

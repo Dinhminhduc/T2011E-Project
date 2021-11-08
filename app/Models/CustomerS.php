@@ -17,7 +17,9 @@ class CustomerS extends Model
     ];
 
     Protected $primaryKey = 'id';
+
     Protected $table = 'customerss';
+
 
     // public function orders(){
     //     return $this->hasMany('App\Models\Order_service');
@@ -26,4 +28,8 @@ class CustomerS extends Model
     public function service() {
         return $this->belongsTo('App\Models\Service','dichvu_id','id');
     }
+    public function ordersProduct(){
+        return $this->hasMany('App\Models\Order_Product');
+    }
+
 }

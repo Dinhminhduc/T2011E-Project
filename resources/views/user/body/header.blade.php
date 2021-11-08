@@ -32,7 +32,7 @@
                     <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
                     <div class="menu-wrap">
                         <nav class="menu-nav show">
-                            <div class="logo"><a href="index.html"><img src="{{asset('frontend/img/logo/logo.png')}}" alt=""></a></div>
+                            <div class="logo"><a href=""{{asset('/')}}"><img src="{{asset('frontend/img/logo/logo.png')}}" alt=""></a></div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
                                     <li class="active menu-item-has-children"><a href="{{asset('/')}}">Home</a></li>
@@ -50,12 +50,10 @@
                                             <li><a href="breeder-details.html">Breeder Details</a></li>
                                         </ul>
                                     </li> --}}
-                                    <li class="menu-item-has-children"><a href="blog.html">Blog</a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.html">Our Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
+                                    {{-- <li class="menu-item-has-children">
+                                        <a href="{{Auth::logout()}}">Login</a>
+                                       
+                                    </li> --}}
                                     <li><a href="contact.html">contacts</a></li>
                                 </ul>
                             </div>
