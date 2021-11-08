@@ -215,7 +215,7 @@
                         </div>
                       @if($comment->replies->count() > 0)
                         @foreach ($comment->replies as $reply)
-                        <div class="comment-list left-padding">
+                        <div class="abc comment-list left-padding">
                           <div
                             class="single-comment justify-content-between d-flex"
                           >
@@ -408,10 +408,10 @@
 </script>
  <style>
 
-/* .container-fluid {
-    background-image: linear-gradient(to right, #7B1FA2, #E91E63)
-} */
-
+.abc{
+    widows: 90%;
+    margin-left:10%;
+}
 .sm-text {
     font-size: 10px;
     letter-spacing: 1px
