@@ -9,7 +9,7 @@ class OrderDetail_Product extends Model
 {
     use HasFactory;
     public function orderProduct(){
-        return $this->belongsTo('App\Models\Order');
+        return $this->belongsTo('App\Models\Order_Product');
     }
 
     public function product(){

@@ -154,8 +154,8 @@
         <!-- sidebar-->
         <section class="sidebar">
 
-          
-            
+
+
             <div class="user-profile">
                 <div class="ulogo">
                     <a href="{{route('dashboard')}}">
@@ -190,9 +190,9 @@
                       <li><a href="{{route('service_type.create')}}">Create Type Service</a></li>
                   </ul>
               </li>
-              
+
                 <li class="treeview">
-<<<<<<< Updated upstream
+
                     <a href="#">
                         <i data-feather="mail"></i> <span>Pets List</span>
                         <span class="pull-right-container">
@@ -217,8 +217,8 @@
                     <ul class="treeview-menu">
                         <li><a href="{{route('all.product')}}"><i class="ti-more"></i>All Product</a></li>
                         <li><a href="{{asset('admin/category')}}"><i class="ti-more"></i>All Category</a></li>
+                        <li><a href="{{route('all.brand')}}"><i class="ti-more"></i>All Brands</a></li>
                         <li><a href="{{asset('admin/order')}}"><i class="ti-more"></i>Order</a></li>
-                        <li><a href="faq.html"><i class="ti-more"></i>FAQs</a></li>
                         <li><a href="timeline.html"><i class="ti-more"></i>Timeline</a></li>
                     </ul>
                 </li>
@@ -303,9 +303,9 @@
 
                 <li class="treeview">
                     <a href="#">
-=======
+
                     <a href="{{route('service.index')}}">
->>>>>>> Stashed changes
+
                         <i data-feather="credit-card"></i>
                         <span>Service</span>
                         <span class="pull-right-container">
@@ -328,10 +328,10 @@
                     <ul class="treeview-menu">
                       <li><a href="{{route('staff.index')}}"><i class="ti-more"></i>Profile</a></li>
                       <li><a href="{{route('staff.create')}}"><i class="ti-more"></i>Create Staff</a></li>
-                     
+
                     </ul>
-                </li> 		
-                
+                </li>
+
                 <li class="treeview">
                     <a href="#">
                       <i data-feather="shopping-bag"></i>
@@ -344,13 +344,13 @@
                       <li><a href="{{route('order.index')}}"><i class="ti-more"></i>Order</a></li>
                       {{-- <li><a href="{{route('order.create')}}"><i class="ti-more"></i>Service Recycler</a></li> --}}
                     </ul>
-                </li> 		
-                  
-           
+                </li>
+
+
 
             </ul>
 
-         
+
         </section>
 
         <div class="sidebar-footer">
@@ -368,7 +368,7 @@
         @yield('admin')
     </div>
     <!-- /.content-wrapper -->
-   
+
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar">
@@ -641,10 +641,17 @@
 <script src="{{asset('assets/vendor_components/easypiechart/dist/jquery.easypiechart.js')}}"></script>
 <script src="{{asset('assets/vendor_components/apexcharts-bundle/irregular-data-series.js')}}"></script>
 <script src="{{asset('assets/vendor_components/apexcharts-bundle/dist/apexcharts.js')}}"></script>
+        <script src="{{asset('assets/vendor_components/datatable/datatables.min.js')}}"></script>
+        <script src="{{asset('backend/js/pages/data-table.js')}}"></script>
+
+
 
 <!-- Sunny Admin App -->
 <script src="{{asset('backend/js/template.js')}}"></script>
 <script src="{{asset('backend/js/pages/dashboard.js')}}"></script>
+
+
+
 
 {{--<script src="backend/js/vendors.min.js"></script>--}}
 {{--<script src="../assets/icons/feather-icons/feather.min.js"></script>--}}
@@ -660,7 +667,7 @@
     function ChangeToSlug()
         {
             var slug;
-            //Lấy text từ thẻ input title 
+            //Lấy text từ thẻ input title
             slug = document.getElementById("slug").value;
             slug = slug.toLowerCase();
             //Đổi ký tự có dấu thành không dấu
@@ -688,5 +695,6 @@
             document.getElementById('convert_slug').value = slug;
         }
 </script>
+
 </body>
 </html>

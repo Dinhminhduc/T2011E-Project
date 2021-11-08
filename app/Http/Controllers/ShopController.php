@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\CustomerProduct;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
-use App\Models\Customer;
 use App\Models\Order_Product;
 use App\Models\OrderDetail_Product;
 
@@ -55,10 +55,10 @@ class ShopController extends Controller
         return redirect()->back();
     }
 
-    public function place_order(Request $request){
+    public function place_order_product(Request $request){
 
         //Save Customer
-        $customer = new Customer();
+        $customer = new CustomerProduct();
         $customer->first_name = $request->first_name;
         $customer->last_name = $request->last_name;
         $customer->email = $request->email;
