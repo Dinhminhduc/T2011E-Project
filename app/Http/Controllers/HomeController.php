@@ -30,9 +30,9 @@ class HomeController extends Controller
      */
     public function dashboard()
     {
-        $count = DB::table('customers')->get()->count();
+        $count = DB::table('customerss')->get()->count();
         $countService = DB::table('services')->get()->count();
-        $countSuccessService = DB::table('customers')->where('status', 3)->count();
+        $countSuccessService = DB::table('customerss')->where('status', 3)->count();
 
         // dd();
         // dd($count);
