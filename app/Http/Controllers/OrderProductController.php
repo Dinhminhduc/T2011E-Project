@@ -17,7 +17,7 @@ class OrderProductController extends Controller
      */
     public function index()
     {
-        $lsOrder = Order_Product::paginate(5);
+        $lsOrder = Order_Product::latest()->paginate(5);
         return view('admin.order.index',compact('lsOrder'));
     }
 

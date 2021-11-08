@@ -20,4 +20,5 @@ class Order_Product extends Model
         return $this->belongsToMany('App\Models\Product','order_detail__products',
             'product_id','order_product_id');
     }
+
 }

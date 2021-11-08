@@ -37,12 +37,15 @@
                                 </form>
                             </div>
                         </div>
+
+                        <form method="GET" action="{{asset('product')}}">
+                            @csrf
                         <div class="widget">
                             <h4 class="sidebar-title">Category</h4>
                             <div class="shop-cat-list">
                                 <ul>
                                     @foreach($lsCate as $cate)
-                                    <li><a href="shop.html">{{$cate->name}} <span>+</span></a></li>
+                                    <li><a href="#">{{$cate->name}} <span><input type="checkbox" name="cate" value="{{$cate->id}}"></span></a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -59,17 +62,20 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="widget">
-                            <h4 class="sidebar-title">Filter by Price</h4>
-                            <div class="price_filter">
-                                <div id="slider-range"></div>
-                                <div class="price_slider_amount">
-                                    <span>Price :</span>
-                                    <input type="text" id="amount" name="price" placeholder="Add Your Price" />
-                                    <input type="submit" class="btn" value="Filter">
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="widget">--}}
+{{--                            <h4 class="sidebar-title">Filter by Price</h4>--}}
+{{--                            <div class="price_filter">--}}
+{{--                                <div id="slider-range"></div>--}}
+{{--                                <div class="price_slider_amount">--}}
+{{--                                    <span>Price :</span>--}}
+{{--                                    <input type="text" id="amount" name="price" placeholder="Add Your Price" />--}}
+{{--                                    <input type="submit" class="btn" value="Search">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+                        </form>
+
                         <div class="widget shop-widget-banner">
                             <a href="shop.html"><img src="img/product/shop_add.jpg" alt=""></a>
                         </div>

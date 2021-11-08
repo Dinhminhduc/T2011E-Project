@@ -218,8 +218,8 @@
                     <ul class="treeview-menu">
                         <li><a href="{{route('all.product')}}"><i class="ti-more"></i>All Product</a></li>
                         <li><a href="{{asset('admin/category')}}"><i class="ti-more"></i>All Category</a></li>
+                        <li><a href="{{route('all.brand')}}"><i class="ti-more"></i>All Brands</a></li>
                         <li><a href="{{asset('admin/order')}}"><i class="ti-more"></i>Order</a></li>
-                        <li><a href="faq.html"><i class="ti-more"></i>FAQs</a></li>
                         <li><a href="timeline.html"><i class="ti-more"></i>Timeline</a></li>
                     </ul>
                 </li>
@@ -798,20 +798,14 @@
 <script src="{{asset('assets/vendor_components/easypiechart/dist/jquery.easypiechart.js')}}"></script>
 <script src="{{asset('assets/vendor_components/apexcharts-bundle/irregular-data-series.js')}}"></script>
 <script src="{{asset('assets/vendor_components/apexcharts-bundle/dist/apexcharts.js')}}"></script>
+        <script src="{{asset('assets/vendor_components/datatable/datatables.min.js')}}"></script>
+        <script src="{{asset('backend/js/pages/data-table.js')}}"></script>
+
+
 
 <!-- Sunny Admin App -->
 <script src="{{asset('backend/js/template.js')}}"></script>
 <script src="{{asset('backend/js/pages/dashboard.js')}}"></script>
-
-{{--<script src="backend/js/vendors.min.js"></script>--}}
-{{--<script src="../assets/icons/feather-icons/feather.min.js"></script>--}}
-{{--<script src="../assets/vendor_components/easypiechart/dist/jquery.easypiechart.js"></script>--}}
-{{--<script src="../assets/vendor_components/apexcharts-bundle/irregular-data-series.js"></script>--}}
-{{--<script src="../assets/vendor_components/apexcharts-bundle/dist/apexcharts.js"></script>--}}
-
-{{--<!-- Sunny Admin App -->--}}
-{{--<script src="backend/js/template.js"></script>--}}
-{{--<script src="backend/js/pages/dashboard.js"></script>--}}
 
 
 </body>
