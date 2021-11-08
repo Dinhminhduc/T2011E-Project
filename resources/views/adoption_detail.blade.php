@@ -168,6 +168,161 @@
     </section>
     <!-- breeder-details-area-end -->
 
+    <div class="container" style="margin-top:50px">
+        <h1>Service Reviews</h1>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+         
+                 <!-- Start comment-sec Area -->
+            <section class="comment-sec-area pt-80 pb-80">
+                <div class="container">
+                  <div class="row flex-column">
+                    <h5 class="text-uppercase pb-80">{{$service->comments->count()}} Comments</h5>
+                    <br />
+                  @foreach ($service->comments as $comment)
+                  <div class="comment">
+                        <div class="comment-list">
+                          <div class="single-comment justify-content-between d-flex">
+                            <div class="user justify-content-between d-flex">
+                              {{-- <div class="thumb">
+                                <img src="{{asset('storage/user/'.$comment->user->image)}}" alt="{{$comment->user->image}}" width="50px">
+                              </div> --}}
+                              <div class="desc">
+                                <h5><a href="#">{{$comment->user->name}}</a></h5>
+                                <p class="date">{{$comment->created_at->format('D, d M Y H:i')}}</p>
+                                <p class="comment">
+                                  {{$comment->comment}}
+                                </p>
+                              </div>
+                            </div>
+                            <div class="">
+                              <button class="btn-reply text-uppercase" id="reply-btn"
+                                onclick="showReplyForm('{{$comment->id}}','{{$comment->user->name}}')">reply</button
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      @if($comment->replies->count() > 0)
+                        @foreach ($comment->replies as $reply)
+                        <div class="abc comment-list left-padding">
+                          <div
+                            class="single-comment justify-content-between d-flex"
+                          >
+                            <div class="user justify-content-between d-flex">
+                              {{-- <div class="thumb">
+                                <img src="{{asset('storage/user/'.$reply->user->image)}}" alt="{{$reply->user->image}}" width="50px"/>
+                              </div> --}}
+                              <div class="desc">
+                                <h5><a href="#">{{$reply->user->name}}</a></h5>
+                                <p class="date">{{$reply->created_at->format('D, d M Y H:i')}}</p>
+                                <p class="comment">
+                                  {{$reply->message}}
+                                </p>
+                              </div>
+                            </div>
+                            <div class="">
+                              <button class="btn-reply text-uppercase" id="reply-btn"
+                                onclick="showReplyForm('{{$comment->id}}','{{$reply->user->name}}')">reply</button
+                              >
+                            </div>
+                          </div>
+                        </div>
+  
+                        @endforeach
+                      @else
+                      @endif
+                        {{-- When user login show reply fourm --}}
+                        @guest
+                        {{-- Show none --}}
+                        @else
+                        <div class="comment-list left-padding" id="reply-form-{{$comment->id}}" style="display: none">
+                          <div
+                            class="single-comment justify-content-between d-flex"
+                          >
+                            <div class="user justify-content-between d-flex">
+                              {{-- <div class="thumb">
+                                <img src="{{asset('storage/user/'.Auth::user()->image)}}" alt="{{Auth::user()->image}}" width="50px"/>
+                              </div> --}}
+                              <div class="desc">
+                                <h5><a href="#">{{Auth::user()->name}}</a></h5>
+                                <p class="date">{{date('D, d M Y H:i')}}</p>
+                                <div class="row flex-row d-flex">
+                                <form action="{{route('reply.store',$comment->id)}}" method="POST">
+                                @csrf
+                                  <div class="col-lg-12">
+                                    <textarea
+                                      id="reply-form-{{$comment->id}}-text"
+                                      cols="60"
+                                      rows="2"
+                                      class="form-control mb-10"
+                                      name="message"
+                                      placeholder="Messege"
+                                      onfocus="this.placeholder = ''"
+                                      onblur="this.placeholder = 'Messege'"
+                                      required=""
+                                    ></textarea>
+                                  </div>
+                                  <button type="submit" class="btn-reply text-uppercase ml-3">Reply</button>
+                                </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        @endguest
+                    </div>
+                   @endforeach
+                  </div>
+                </div>
+              </section>
+              <!-- End comment-sec Area -->
+  
+              <!-- Start commentform Area -->
+              <section class="commentform-area pb-120 pt-80 mb-100">
+              @guest
+                  <div class="container">
+                      <h4>Please Sign in to post comments - <a href="{{route('login')}}">Sing in</a> or <a href="{{route('register')}}">Register</a></h4>
+                  </div>
+              @else
+                  <div class="container">
+                    <h5 class="text-uppercas pb-50">Leave a Reply</h5>
+                    <div class="row flex-row d-flex">
+                        <div class="col-lg-12">
+                            <form action="{{route('comment.store', $service->id)}}" method="POST">
+                                @csrf
+                            <textarea
+                              class="form-control mb-10"
+                              name="comment"
+                              placeholder="Messege"
+                              onfocus="this.placeholder = ''"
+                              onblur="this.placeholder = 'Messege'"
+                              required=""
+                            ></textarea>
+                            <button type="submit" class="primary-btn mt-20" href="#">Comment</button>
+                        </form>
+                        </div>
+                    </div>
+                  </div>
+                  @endguest
+              </section>
+              <!-- End commentform Area -->
+           
+            </div>
+            {{-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div> --}}
+          </div>
+    </div>
     <!-- adoption-area -->
     <section class="adoption-area-two pt-110 pb-110">
         <div class="container">
@@ -220,90 +375,13 @@
         </div>
 
 
-        <div class="container" style="margin-top:50px">
-            <h1>Service Reviews</h1>
-            <div id="disqus_thread"></div>
-        </div>
+        
     </section>
     
     <!-- adoption-area-end -->
 
 
-    {{-- <div class="container-fluid px-0 py-5 mx-auto">
-        <div class="row justify-content-center mx-0 mx-md-auto">
-            <div class="col-lg-10 col-md-11 px-1 px-sm-2">
-                <div class="card border-0 px-3">
-                    <!-- top row -->
-                    <h3>Write Your Review</h3>
-                    <div class="d-flex row py-5 px-5 bg-light">
-                      
-                       <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                              </div>
-                              <div class="form-group col-md-6">
-                                <label for="inputPassword4">Password</label>
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="inputAddress"></label>
-                              <textarea></textarea>
-                            </div>
-                        </div>
-                       
-                      </form>
-                        <div class="ml-md-auto p-2 mx-md-2 pt-4 pt-md-3">
-                             <button class="btn btn-red px-4">WRITE A REVIEW</button>
-                        </div>
-                    </div> <!-- middle row -->
-
-                    <div id="disqus_thread"></div>
-
-                   <form>
-                       @csrf
-                       <input type="hidden" name="comment_service_id" class="comment_service_id" value="{{$value->id}}">
-                        <div id="comment_show"></div>
-                    
-                        <div class="review p-5" style="margin-top:-30px">
-                            <div class="row d-flex">
-                                <div class="d-flex flex-column pl-3">
-                                    <h4>Emily</h4>
-                                    <p class="grey-text">30 min ago</p>
-                                </div>
-                            </div>
-                            <div class="row pb-3">
-                                <p>This dive center is incredibly well organized and is at the top of its game.</p>
-                            </div>
-                        
-                        </div>
-                </form>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
-    
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://http-t2001eproject-abc-81.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-
+   
 </main>
 
 <script id="dsq-count-scr" src="//http-t2001eproject-abc-81.disqus.com/count.js" async></script>
@@ -330,10 +408,10 @@
 </script>
  <style>
 
-/* .container-fluid {
-    background-image: linear-gradient(to right, #7B1FA2, #E91E63)
-} */
-
+.abc{
+    widows: 90%;
+    margin-left:10%;
+}
 .sm-text {
     font-size: 10px;
     letter-spacing: 1px

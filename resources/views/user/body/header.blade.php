@@ -32,7 +32,7 @@
                     <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
                     <div class="menu-wrap">
                         <nav class="menu-nav show">
-                            <div class="logo"><a href="index.html"><img src="{{asset('frontend/img/logo/logo.png')}}" alt=""></a></div>
+                            <div class="logo"><a href=""{{asset('/')}}"><img src="{{asset('frontend/img/logo/logo.png')}}" alt=""></a></div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
                                     <li class="active menu-item-has-children"><a href="{{asset('/')}}">Home</a></li>
@@ -50,56 +50,14 @@
                                             <li><a href="breeder-details.html">Breeder Details</a></li>
                                         </ul>
                                     </li> --}}
-                                    <li class="menu-item-has-children"><a href="blog.html">Blog</a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.html">Our Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
+                                    {{-- <li class="menu-item-has-children">
+                                        <a href="{{Auth::logout()}}">Login</a>
+                                       
+                                    </li> --}}
                                     <li><a href="contact.html">contacts</a></li>
                                 </ul>
                             </div>
-                            <div class="header-action d-none d-md-block">
-                                <ul>
-                                    <li class="header-search"><a href="#"><i class="flaticon-search"></i></a></li>
-                                    <li class="header-shop-cart"><a href="#"><i class="flaticon-shopping-bag"></i><span>{{Cart::count()}}</span></a>
-                                        <ul class="minicart">
-                                            @foreach(Cart::content() as $row)
-                                            <li class="d-flex align-items-start">
-                                                <div class="cart-img">
-                                                    <button><img src="{{asset($row->options->image )}}" alt=""></button>
-                                                </div>
-                                                <div class="cart-content">
-                                                    <h4><a>{{$row->name}}</a></h4>
-                                                    <div class="cart-price">
-                                                        <span class="new">${{$row->price}} x {{$row->qty}}</span>
-{{--                                                        <span>Quantity: {{$row->qty}}</span>--}}
-                                                    </div>
-                                                </div>
-                                                <div class="del-icon">
-                                                    <a href="#"><i class="far fa-trash-alt"></i></a>
-                                                </div>
-                                            </li>
-                                            @endforeach
-                                            <li>
-                                                <div class="total-price">
-                                                    <span class="f-left">Total:</span>
-                                                    <span class="f-right">${{Cart::total()}}</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="checkout-link">
-                                                    <a href="{{route('cart')}}">Shopping Cart</a>
-                                                    <a class="black-color" href="{{route('check_out')}}">Checkout</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="header-btn"><a href="adoption.html" class="btn">Adopt Here <img src="{{asset('frontend/img/icon/w_pawprint.png')}}" alt=""></a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
+                   
                     <!-- Mobile Menu  -->
                     <div class="mobile-menu">
                         <nav class="menu-box">

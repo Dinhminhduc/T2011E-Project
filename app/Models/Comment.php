@@ -12,10 +12,23 @@ class Comment extends Model
     Public $timestamps = true;
     
     protected $fillable = [
-        'comment', 'comment_name', 'comment_service_id'
+        'comment', 'user_id', 'service_id'
     ];
 
     Protected $primaryKey = 'id';
     Protected $table = 'comments';
+
+    public function service(){
+        return $this->belongsTo('App\Models\Service');
+    }
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+
+    public function replies(){
+        return $this->hasMany('App\Models\CommentReply');
+    }
+
 
 }

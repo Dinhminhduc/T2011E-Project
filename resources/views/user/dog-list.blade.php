@@ -2,7 +2,7 @@
 @section('content')
     <main>
     <!-- breadcrumb-area -->
-    <section class="breadcrumb-area breadcrumb-bg" data-background="{{asset('img/breadcrumb_bg.jpg')}}">
+    <section class="breadcrumb-area breadcrumb-bg" data-background="{{asset('img/bg/breadcrumb_bg.jpg')}}">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -10,7 +10,7 @@
                         <h2 class="title">Dog List</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{asset('/')}}">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Dog List</li>
                             </ol>
                         </nav>
@@ -74,13 +74,13 @@
     <!-- adoption-shop-area-end -->
 
     <!-- faq-area -->
-    <section class="faq-area-two faq-bg">
+    <section class="faq-area faq-bg">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="faq-img-wrap">
-                        <img src="img/faq_tv.png" class="img-frame" alt="">
-                        <img src="img/faq_img.png" class="main-img" alt="">
+                        <img src="{{asset('img/images/faq_tv.png')}}" class="img-frame" alt="">
+                        <img src="{{asset('img/images/faq_img.png')}}" class="main-img" alt="">
                         <a href="https://www.youtube.com/watch?v=XdFfCPK5ycw" class="popup-video"></a>
                     </div>
                 </div>
@@ -94,54 +94,45 @@
                             <div class="card">
                                 <div class="card-header" id="headingOne">
                                     <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left" type="button"
-                                                data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                                aria-controls="collapseOne">
+                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                             Working for dog adoption
                                         </button>
                                     </h2>
                                 </div>
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                     data-parent="#accordionExample">
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        The best overall dog DNA test is embark breed & health Kit (view atths Chewy), which
-                                        provides you with a breed brwn and ition on provides ancestors most dogs.
+                                        The best overall dog DNA test is embark breed & health Kit (view atths Chewy), which provides you with a breed brwn and ition on provides ancestors most dogs.
                                     </div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-header" id="headingTwo">
                                     <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left collapsed" type="button"
-                                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                                                aria-controls="collapseTwo">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                             Competitions & Awards
                                         </button>
                                     </h2>
                                 </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                     data-parent="#accordionExample">
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        The best overall dog DNA test is embark breed & health Kit (view atths Chewy), which
-                                        provides you with a breed brwn and ition on provides ancestors most dogs.
+                                        The best overall dog DNA test is embark breed & health Kit (view atths Chewy), which provides you with a breed brwn and ition on provides ancestors most dogs.
                                     </div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-header" id="headingThree">
                                     <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left collapsed" type="button"
-                                                data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                                                aria-controls="collapseThree">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                             The puppies are 3 months old
                                         </button>
                                     </h2>
                                 </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                     data-parent="#accordionExample">
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        The best overall dog DNA test is embark breed & health Kit (view atths Chewy), which
-                                        provides you with a breed brwn and ition on provides ancestors most dogs.
+                                        The best overall dog DNA test is embark breed & health Kit (view atths Chewy), which provides you with a breed brwn and ition on provides ancestors most dogs.
                                     </div>
                                 </div>
                             </div>
@@ -160,11 +151,10 @@
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-9">
                     <div class="section-title text-center mb-65">
-                        <div class="section-icon"><img src="img/pawprint.png" alt=""></div>
+                        <div class="section-icon"><img src="img/icon/pawprint.png" alt=""></div>
                         <h5 class="sub-title">Service to Breeds</h5>
                         <h2 class="title">Most Popular Dog Breed</h2>
-                        <p>The best overall dog DNA test is Embark Breed & Health Kit (view at Chewy), which provides you
-                            with a breed brwn and information Most dogs</p>
+                        <p>The best overall dog DNA test is Embark Breed & Health Kit (view at Chewy), which provides you with a breed brwn and information Most dogs</p>
                     </div>
                 </div>
             </div>
@@ -173,7 +163,7 @@
                     <div class="breed-services-active owl-carousel">
                         <div class="breed-services-item">
                             <div class="thumb">
-                                <img src="img/breed_services_img01.jpg" alt="">
+                                <img src="{{asset('img/images/breed_services_img01.jpg')}}" alt="">
                             </div>
                             <div class="content">
                                 <h3 class="title"><a href="breeder-details.html">Golden Retriever</a></h3>
@@ -181,7 +171,7 @@
                         </div>
                         <div class="breed-services-item">
                             <div class="thumb">
-                                <img src="img/breed_services_img02.jpg" alt="">
+                                <img src="{{asset('img/images/breed_services_img02.jpg')}}" alt="">
                             </div>
                             <div class="content">
                                 <h3 class="title"><a href="breeder-details.html">German Sharped</a></h3>
@@ -189,7 +179,7 @@
                         </div>
                         <div class="breed-services-item">
                             <div class="thumb">
-                                <img src="img/breed_services_img03.jpg" alt="">
+                                <img src="{{asset('img/images/breed_services_img03.jpg')}}" alt="">
                             </div>
                             <div class="content">
                                 <h3 class="title"><a href="breeder-details.html">Siberian Husky</a></h3>
@@ -197,7 +187,7 @@
                         </div>
                         <div class="breed-services-item">
                             <div class="thumb">
-                                <img src="img/breed_services_img04.jpg" alt="">
+                                <img src="{{asset('img/images/breed_services_img04.jpg')}}" alt="">
                             </div>
                             <div class="content">
                                 <h3 class="title"><a href="breeder-details.html">Bernes Mountain</a></h3>
@@ -206,11 +196,11 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="breed-services-info" data-background="img/breed_services_bg.jpg">
+                    <div class="breed-services-info" data-background="{{asset('img/bg/breed_services_bg.jpg')}}">
                         <h5 class="sub-title">Dog Breeder</h5>
                         <h3 class="title">Available for Breed</h3>
                         <p>The best overall dog DNA test is Embark Breed & Health Kit (view at Chewy), which provid dogs</p>
-                        <a href="shop.html" class="btn">More Pets <img src="img/w_pawprint.png" alt=""></a>
+                        <a href="dog-list.html" class="btn">More Pets <img src="img/icon/w_pawprint.png" alt=""></a>
                     </div>
                 </div>
             </div>

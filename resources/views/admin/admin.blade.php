@@ -133,12 +133,9 @@
                         </a>
                         <ul class="dropdown-menu animated flipInX">
                             <li class="user-body">
-                                <a class="dropdown-item" href="#"><i class="ti-user text-muted mr-2"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="ti-wallet text-muted mr-2"></i> My Wallet</a>
-{{--                                <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>--}}
-                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Logout</a>
                             </li>
+                            {{-- {{Auth::logout()}} --}}
                         </ul>
                     </li>
 {{--                    <li>--}}
@@ -157,12 +154,14 @@
         <!-- sidebar-->
         <section class="sidebar">
 
+
+
             <div class="user-profile">
                 <div class="ulogo">
-                    <a href="index.html">
+                    <a href="{{route('dashboard')}}">
                         <!-- logo for regular state and mobile devices -->
                         <div class="d-flex align-items-center justify-content-center">
-                            <img src="../images/logo-dark.png" alt="">
+                            <img src="{{ asset('backend/images/logo-dark.png')}}" alt="">
                             <h3><b>Sunny</b> Admin</h3>
                         </div>
                     </a>
@@ -173,27 +172,27 @@
             <ul class="sidebar-menu" data-widget="tree">
 
                 <li>
-                    <a href="index.html">
+                    <a href="{{route('dashboard')}}">
                         <i data-feather="pie-chart"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a href="#">
-                        <i data-feather="message-circle"></i>
-                        <span>Application</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="chat.html"><i class="ti-more"></i>Chat</a></li>
-                        <li><a href="calendar.html"><i class="ti-more"></i>Calendar</a></li>
-                    </ul>
-                </li>
+                  <a href="{{route('service_type.index')}}">
+                      <i data-feather="credit-card"></i>
+                      <span>Service Type</span>
+                      <span class="pull-right-container">
+                  <i class="fa fa-angle-right pull-right"></i>
+
+                  <ul class="treeview-menu">
+                      <li><a href="{{route('service_type.index')}}">View Type Service</a></li>
+                      <li><a href="{{route('service_type.create')}}">Create Type Service</a></li>
+                  </ul>
+              </li>
 
                 <li class="treeview">
+
                     <a href="#">
                         <i data-feather="mail"></i> <span>Pets List</span>
                         <span class="pull-right-container">
@@ -304,198 +303,54 @@
 
                 <li class="treeview">
                     <a href="#">
+
+                    <a href="{{route('service.index')}}">
+
                         <i data-feather="credit-card"></i>
-                        <span>Cards</span>
+                        <span>Service</span>
                         <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
+                    <i class="fa fa-angle-right pull-right"></i>
+
                     <ul class="treeview-menu">
-                        <li><a href="card_advanced.html"><i class="ti-more"></i>Advanced Cards</a></li>
-                        <li><a href="card_basic.html"><i class="ti-more"></i>Basic Cards</a></li>
-                        <li><a href="card_color.html"><i class="ti-more"></i>Cards Color</a></li>
+                        <li><a href="{{route('service.index')}}">View Service</a></li>
+                        <li><a href="{{route('service.create')}}">Create Service</a></li>
                     </ul>
                 </li>
 
                 <li class="treeview">
                     <a href="#">
-                        <i data-feather="hard-drive"></i>
-                        <span>Content</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
+                      <i data-feather="users"></i>
+                      <span>Staff</span>
+                      <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                      </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="content_typography.html"><i class="ti-more"></i>Typography</a></li>
-                        <li><a href="content_media.html"><i class="ti-more"></i>Media</a></li>
-                        <li><a href="content_grid.html"><i class="ti-more"></i>Grid</a></li>
+                      <li><a href="{{route('staff.index')}}"><i class="ti-more"></i>Profile</a></li>
+                      <li><a href="{{route('staff.create')}}"><i class="ti-more"></i>Create Staff</a></li>
+
                     </ul>
                 </li>
 
                 <li class="treeview">
                     <a href="#">
-                        <i data-feather="package"></i>
-                        <span>Utilities</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
+                      <i data-feather="shopping-bag"></i>
+                      <span>Order Service</span>
+                      <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                      </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="utilities_border.html"><i class="ti-more"></i>Border</a></li>
-                        <li><a href="utilities_color.html"><i class="ti-more"></i>Color</a></li>
-                        <li><a href="utilities_ribbons.html"><i class="ti-more"></i>Ribbons</a></li>
-                        <li><a href="utilities_tab.html"><i class="ti-more"></i>Tabs</a></li>
-                        <li><a href="utilities_animations.html"><i class="ti-more"></i>Animation</a></li>
+                      <li><a href="{{route('order.index')}}"><i class="ti-more"></i>Order</a></li>
+                      {{-- <li><a href="{{route('order.create')}}"><i class="ti-more"></i>Service Recycler</a></li> --}}
                     </ul>
                 </li>
 
-                <li class="treeview">
-                    <a href="#">
-                        <i data-feather="edit-2"></i>
-                        <span>Icons</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="icons_fontawesome.html"><i class="ti-more"></i>Font Awesome</a></li>
-                        <li><a href="icons_glyphicons.html"><i class="ti-more"></i>Glyphicons</a></li>
-                        <li><a href="icons_material.html"><i class="ti-more"></i>Material Icons</a></li>
-                        <li><a href="icons_themify.html"><i class="ti-more"></i>Themify Icons</a></li>
-                        <li><a href="icons_simpleline.html"><i class="ti-more"></i>Simple Line Icons</a></li>
-                        <li><a href="icons_cryptocoins.html"><i class="ti-more"></i>Cryptocoins Icons</a></li>
-                        <li><a href="icons_flag.html"><i class="ti-more"></i>Flag Icons</a></li>
-                        <li><a href="icons_weather.html"><i class="ti-more"></i>Weather Icons</a></li>
-                    </ul>
-                </li>
 
-                <li class="treeview">
-                    <a href="#">
-                        <i data-feather="inbox"></i>
-                        <span>Forms</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="forms_advanced.html"><i class="ti-more"></i>Advanced Elements</a></li>
-                        <li><a href="forms_editors.html"><i class="ti-more"></i>Editors</a></li>
-                        <li><a href="forms_code_editor.html"><i class="ti-more"></i>Code Editor</a></li>
-                        <li><a href="forms_validation.html"><i class="ti-more"></i>Form Validation</a></li>
-                        <li><a href="forms_wizard.html"><i class="ti-more"></i>Form Wizard</a></li>
-                        <li><a href="forms_general.html"><i class="ti-more"></i>General Elements</a></li>
-                        <li><a href="forms_dropzone.html"><i class="ti-more"></i>Dropzone</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i data-feather="server"></i>
-                        <span>Tables</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="tables_simple.html"><i class="ti-more"></i>Simple tables</a></li>
-                        <li><a href="tables_data.html"><i class="ti-more"></i>Data tables</a></li>
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="#">
-                        <i data-feather="pie-chart"></i>
-                        <span>Charts</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="charts_chartjs.html"><i class="ti-more"></i>ChartJS</a></li>
-                        <li><a href="charts_flot.html"><i class="ti-more"></i>Flot</a></li>
-                        <li><a href="charts_inline.html"><i class="ti-more"></i>Inline</a></li>
-                        <li><a href="charts_morris.html"><i class="ti-more"></i>Morris</a></li>
-                        <li><a href="charts_peity.html"><i class="ti-more"></i>Peity</a></li>
-                        <li><a href="charts_chartist.html"><i class="ti-more"></i>Chartist</a></li>
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="#">
-                        <i data-feather="map"></i>
-                        <span>Map</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="map_google.html"><i class="ti-more"></i>Google Map</a></li>
-                        <li><a href="map_vector.html"><i class="ti-more"></i>Vector Map</a></li>
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="#">
-                        <i data-feather="alert-triangle"></i>
-                        <span>Authentication</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="auth_login.html"><i class="ti-more"></i>Login</a></li>
-                        <li><a href="auth_register.html"><i class="ti-more"></i>Register</a></li>
-                        <li><a href="auth_lockscreen.html"><i class="ti-more"></i>Lockscreen</a></li>
-                        <li><a href="auth_user_pass.html"><i class="ti-more"></i>Password</a></li>
-                        <li><a href="error_404.html"><i class="ti-more"></i>Error 404</a></li>
-                        <li><a href="error_maintenance.html"><i class="ti-more"></i>Maintenance</a></li>
-                    </ul>
-                </li>
-
-                <li class="header nav-small-cap">EXTRA</li>
-
-                <li class="treeview">
-                    <a href="#">
-                        <i data-feather="layers"></i>
-                        <span>Multilevel</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">Level One</a></li>
-                        <li class="treeview">
-                            <a href="#">Level One
-                                <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="#">Level Two</a></li>
-                                <li class="treeview">
-                                    <a href="#">Level Two
-                                        <span class="pull-right-container">
-					  <i class="fa fa-angle-right pull-right"></i>
-					</span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li><a href="#">Level Three</a></li>
-                                        <li><a href="#">Level Three</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Level One</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="auth_login.html">
-                        <i data-feather="lock"></i>
-                        <span>Log Out</span>
-                    </a>
-                </li>
 
             </ul>
+
+
         </section>
 
         <div class="sidebar-footer">
@@ -513,19 +368,7 @@
         @yield('admin')
     </div>
     <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <div class="pull-right d-none d-sm-inline-block">
-            <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Purchase Now</a>
-                </li>
-            </ul>
-        </div>
-        &copy; 2020 <a href="#">Psd to Html Expert</a>. All Rights Reserved.
-    </footer>
+
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar">
@@ -807,6 +650,51 @@
 <script src="{{asset('backend/js/template.js')}}"></script>
 <script src="{{asset('backend/js/pages/dashboard.js')}}"></script>
 
+
+
+
+{{--<script src="backend/js/vendors.min.js"></script>--}}
+{{--<script src="../assets/icons/feather-icons/feather.min.js"></script>--}}
+{{--<script src="../assets/vendor_components/easypiechart/dist/jquery.easypiechart.js"></script>--}}
+{{--<script src="../assets/vendor_components/apexcharts-bundle/irregular-data-series.js"></script>--}}
+{{--<script src="../assets/vendor_components/apexcharts-bundle/dist/apexcharts.js"></script>--}}
+
+{{--<!-- Sunny Admin App -->--}}
+{{--<script src="backend/js/template.js"></script>--}}
+{{--<script src="backend/js/pages/dashboard.js"></script>--}}
+
+<script type="text/javascript">
+    function ChangeToSlug()
+        {
+            var slug;
+            //Lấy text từ thẻ input title
+            slug = document.getElementById("slug").value;
+            slug = slug.toLowerCase();
+            //Đổi ký tự có dấu thành không dấu
+                slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+                slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+                slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+                slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+                slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+                slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+                slug = slug.replace(/đ/gi, 'd');
+                //Xóa các ký tự đặt biệt
+                slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, '');
+                //Đổi khoảng trắng thành ký tự gạch ngang
+                slug = slug.replace(/ /gi, "-");
+                //Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
+                //Phòng trường hợp người nhập vào quá nhiều ký tự trắng
+                slug = slug.replace(/\-\-\-\-\-/gi, '-');
+                slug = slug.replace(/\-\-\-\-/gi, '-');
+                slug = slug.replace(/\-\-\-/gi, '-');
+                slug = slug.replace(/\-\-/gi, '-');
+                //Xóa các ký tự gạch ngang ở đầu và cuối
+                slug = '@' + slug + '@';
+                slug = slug.replace(/\@\-|\-\@|\@/gi, '');
+                //In slug ra textbox có id “slug”
+            document.getElementById('convert_slug').value = slug;
+        }
+</script>
 
 </body>
 </html>

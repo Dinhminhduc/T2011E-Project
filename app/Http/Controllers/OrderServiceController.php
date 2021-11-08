@@ -8,7 +8,7 @@ use App\Models\Service;
 use App\Models\ServiceType;
 use App\Models\Staff;
 // use App\Models\Comment;
-use App\Models\Customer;
+use App\Models\CustomerS;
 use App\Models\Order_service;
 use App\Models\OrderDetail;
 use Carbon\Carbon;
@@ -25,32 +25,32 @@ class OrderServiceController extends Controller
      * 
      */
 
-     public function load_comment(Request $request) {
-        $service_id = $request->service_id;
-        $comment = Comment::where('comment_service_id', $service_id)->get();
-        $output='';
-        foreach ($comment as $key => $comm) {
-            $output.= ' 
-            <div class="review p-5" style="margin-top:-30px">
+    //  public function load_comment(Request $request) {
+    //     $service_id = $request->service_id;
+    //     $comment = Comment::where('comment_service_id', $service_id)->get();
+    //     $output='';
+    //     foreach ($comment as $key => $comm) {
+    //         $output.= ' 
+    //         <div class="review p-5" style="margin-top:-30px">
                
-                <div class="row d-flex">
-                    <div class="d-flex flex-column pl-3">
-                        <h4>'.$comm->comment_name.'</h4>
-                        <p class="grey-text">30 min ago</p>
-                    </div>
-                </div>
-                <div class="row pb-3">
-                    <p>'.$comm->comment.'</p>
-                </div>
+    //             <div class="row d-flex">
+    //                 <div class="d-flex flex-column pl-3">
+    //                     <h4>'.$comm->comment_name.'</h4>
+    //                     <p class="grey-text">30 min ago</p>
+    //                 </div>
+    //             </div>
+    //             <div class="row pb-3">
+    //                 <p>'.$comm->comment.'</p>
+    //             </div>
               
-            </div>';
-        }
-        echo $output;
-     }
+    //         </div>';
+    //     }
+    //     echo $output;
+    //  }
     public function index(Request $request)
     {
        
-        $lsCustomer = Customer::all();
+        $lsCustomer = CustomerS::all();
         $search_name = $request->search_name;
         $status = $request->status;
         $date = Carbon::now();
@@ -60,17 +60,17 @@ class OrderServiceController extends Controller
         $phone = $request->phone;
      
         if( isset($phone) ){
-            $lsCustomer = Customer::orderBy('date_time','desc')
+            $lsCustomer = CustomerS::orderBy('date_time','desc')
             ->where('phone','like','%'.$phone.'%')
             ->paginate(4);
         }elseif(isset($search_name) ){
-            $lsCustomer = Customer::orderBy('date_time','desc')
+            $lsCustomer = CustomerS::orderBy('date_time','desc')
             ->orWhere('first_name','like','%'.$search_name.'%')
             ->orWhere('last_name','like','%'.$search_name.'%')
             ->paginate(4);
         }elseif(isset($from) || isset($to)) {
             // $lsCustomer = \DB::select("SELECT *FROM customers WHERE created_at BETWEEN '$from' AND '$to' ") ->paginate(8);
-            $lsCustomer = Customer::orderBy('date_time','desc')
+            $lsCustomer = CustomerS::orderBy('date_time','desc')
             ->where('date_time', '>=', $from)
             ->where('date_time', '<=', $to) 
             ->paginate(4);
@@ -80,7 +80,7 @@ class OrderServiceController extends Controller
             // return view('order.sortdelete',compact('lsCustomer'));
         }
         else{
-            $lsCustomer = Customer::paginate(2);
+            $lsCustomer = CustomerS::paginate(2);
         }
 
         return view('order.index', compact('lsCustomer'));
@@ -89,7 +89,7 @@ class OrderServiceController extends Controller
 
     public function show($id)
     {
-        $cus = Customer::find($id);
+        $cus = CustomerS::find($id);
         return view('order.show', compact('cus'));
     }
 
@@ -114,7 +114,7 @@ class OrderServiceController extends Controller
     public function add_adoption(Request $request, $id){
     $service = Service::find($id);
 
-    $cus = new Customer();
+    $cus = new CustomerS();
     $cus->first_name = $request->first_name;
     $cus->last_name = $request->last_name;
     $cus->address = $request->address;
@@ -152,7 +152,7 @@ class OrderServiceController extends Controller
     
 
     public function changeSTT($status,$id){
-        $cus = Customer::find($id);
+        $cus = CustomerS::find($id);
         $cus->status = $status;
         $cus->save();
         return redirect()->route('order.show',$id);
@@ -161,7 +161,7 @@ class OrderServiceController extends Controller
     public function changeStatusJson(Request $request){
         $id = $request->id;
         $status = $request->status;
-        $cus = Customer::find($id);
+        $cus = CustomerS::find($id);
            $cus->status = $status;
            $cus->save();
            return response()->json([

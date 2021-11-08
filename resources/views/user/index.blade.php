@@ -4,7 +4,7 @@
         <!-- slider-area -->
         <section class="slider-area">
             <div class="slider-active">
-                <div class="single-slider slider-bg d-flex align-items-center" data-background="{{asset('img/slider_home.jpg')}}">
+                <div class="single-slider slider-bg d-flex align-items-center" data-background="{{asset('img/slider/slider_bg01.jpg')}}">
                     <div class="container custom-container">
                         <div class="row">
                             <div class="col-xl-5 col-lg-7 col-md-10">
@@ -163,7 +163,7 @@
                         <div class="breed-services-active owl-carousel">
                             <div class="breed-services-item">
                                 <div class="thumb">
-                                    <img src="{{asset('img/breed_services_img01.jpg')}}" alt="">
+                                    <img src="{{asset('img/images/breed_services_img01.jpg')}}" alt="">
                                 </div>
                                 <div class="content">
                                     <h3 class="title"><a href="breeder-details.html">Golden Retriever</a></h3>
@@ -171,7 +171,7 @@
                             </div>
                             <div class="breed-services-item">
                                 <div class="thumb">
-                                    <img src="{{asset('img/breed_services_img02.jpg')}}" alt="">
+                                    <img src="{{asset('img/images/breed_services_img02.jpg')}}" alt="">
                                 </div>
                                 <div class="content">
                                     <h3 class="title"><a href="breeder-details.html">German Sharped</a></h3>
@@ -179,7 +179,7 @@
                             </div>
                             <div class="breed-services-item">
                                 <div class="thumb">
-                                    <img src="{{asset('img/breed_services_img03.jpg')}}" alt="">
+                                    <img src="{{asset('img/images/breed_services_img03.jpg')}}" alt="">
                                 </div>
                                 <div class="content">
                                     <h3 class="title"><a href="breeder-details.html">Siberian Husky</a></h3>
@@ -187,7 +187,7 @@
                             </div>
                             <div class="breed-services-item">
                                 <div class="thumb">
-                                    <img src="{{asset('img/breed_services_img04.jpg')}}" alt="">
+                                    <img src="{{asset('img/images/breed_services_img04.jpg')}}" alt="">
                                 </div>
                                 <div class="content">
                                     <h3 class="title"><a href="breeder-details.html">Bernes Mountain</a></h3>
@@ -196,7 +196,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="breed-services-info" data-background="{{asset('img/breed_services_bg.jpg')}}">
+                        <div class="breed-services-info" data-background="{{asset('img/bg/breed_services_bg.jpg')}}">
                             <h5 class="sub-title">Dog Breeder</h5>
                             <h3 class="title">Available for Breed</h3>
                             <p>The best overall dog DNA test is Embark Breed & Health Kit (view at Chewy), which provid dogs</p>
@@ -216,8 +216,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="faq-img-wrap">
-                            <img src="{{asset('img/faq_tv.png')}}" class="img-frame" alt="">
-                            <img src="{{asset('img/faq_img.png')}}" class="main-img" alt="">
+                            <img src="{{asset('img/images/faq_tv.png')}}" class="img-frame" alt="">
+                            <img src="{{asset('img/images/faq_img.png')}}" class="main-img" alt="">
                             <a href="https://www.youtube.com/watch?v=XdFfCPK5ycw" class="popup-video"></a>
                         </div>
                     </div>
@@ -288,17 +288,17 @@
                 <div class="row brand-active">
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand_item01.png" alt="img">
+                            <img src="img/brand/brand_item01.png" alt="img">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand_item02.png" alt="img">
+                            <img src="img/brand/brand_item02.png" alt="img">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand_item03.png" alt="img">
+                            <img src="img/brand/brand_item03.png" alt="img">
                         </div>
                     </div>
                     <div class="col-12">
@@ -308,17 +308,17 @@
                     </div>
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand_item05.png" alt="img">
+                            <img src="img/brand/brand_item05.png" alt="img">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand_item06.png" alt="img">
+                            <img src="img/brand/brand_item06.png" alt="img">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand_item03.png" alt="img">
+                            <img src="img/brand/brand_item03.png" alt="img">
                         </div>
                     </div>
                 </div>
@@ -397,7 +397,7 @@
                     <div class="col-lg-6">
                         <div class="testimonial-item">
                             <div class="testi-avatar-thumb">
-                                <img src="img/testi_avatar01.png" alt="">
+                                <img src="img/images/testi_avatar01.png" alt="">
                             </div>
                             <div class="testi-content">
                                 <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
@@ -411,7 +411,7 @@
                     <div class="col-lg-6">
                         <div class="testimonial-item">
                             <div class="testi-avatar-thumb">
-                                <img src="img/testi_avatar02.png" alt="">
+                                <img src="img/images/testi_avatar02.png" alt="">
                             </div>
                             <div class="testi-content">
                                 <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
@@ -425,7 +425,7 @@
                     <div class="col-lg-6">
                         <div class="testimonial-item">
                             <div class="testi-avatar-thumb">
-                                <img src="img/testi_avatar01.png" alt="">
+                                <img src="img/images/testi_avatar01.png" alt="">
                             </div>
                             <div class="testi-content">
                                 <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
@@ -439,7 +439,7 @@
                     <div class="col-lg-6">
                         <div class="testimonial-item">
                             <div class="testi-avatar-thumb">
-                                <img src="img/testi_avatar02.png" alt="">
+                                <img src="img/images/testi_avatar02.png" alt="">
                             </div>
                             <div class="testi-content">
                                 <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
@@ -473,7 +473,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-post-item mb-50">
                             <div class="blog-post-thumb">
-                                <a href="blog-details.html"><img src="img/blog_post_thumb01.jpg" alt=""></a>
+                                <a href="blog-details.html"><img src="img/blog/blog_post_thumb01.jpg" alt=""></a>
                                 <div class="blog-post-tag">
                                     <a href="#"><i class="flaticon-bookmark-1"></i>Sharped</a>
                                 </div>
@@ -494,7 +494,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-post-item mb-50">
                             <div class="blog-post-thumb">
-                                <a href="blog-details.html"><img src="img/blog_post_thumb02.jpg" alt=""></a>
+                                <a href="blog-details.html"><img src="img/blog/blog_post_thumb02.jpg" alt=""></a>
                                 <div class="blog-post-tag">
                                     <a href="#"><i class="flaticon-bookmark-1"></i>Creative</a>
                                 </div>
@@ -515,7 +515,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-post-item mb-50">
                             <div class="blog-post-thumb">
-                                <a href="blog-details.html"><img src="img/blog_post_thumb03.jpg" alt=""></a>
+                                <a href="blog-details.html"><img src="img/blog/blog_post_thumb03.jpg" alt=""></a>
                                 <div class="blog-post-tag">
                                     <a href="#"><i class="flaticon-bookmark-1"></i>Business</a>
                                 </div>
