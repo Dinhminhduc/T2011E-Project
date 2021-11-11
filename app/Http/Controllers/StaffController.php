@@ -65,6 +65,8 @@ class StaffController extends Controller
         $staffs = new Staff();
         $staffs->ten = $request->input('ten');
         $staffs->chucvu = $request->input('chucvu');
+        $staffs->title = $request->input('title');
+        $staffs->chitiet = $request->input('chitiet');
         $staffs->ngaysinh = $request->input('ngaysinh');
         // $staffs->date_start = $request->input('date_start');
         // $staffs->date_end = $request->input('date_end');
@@ -139,6 +141,8 @@ class StaffController extends Controller
         $staffs = Staff::find($id);
         $staffs->ten = $request->input('ten');
         $staffs->chucvu = $request->input('chucvu');
+        $staffs->title = $request->input('title');
+        $staffs->chitiet = $request->input('chitiet');
         $staffs->ngaysinh = $request->input('ngaysinh');
         // $staffs->date_start = $request->input('date_start');
         // $staffs->date_end = $request->input('date_end');

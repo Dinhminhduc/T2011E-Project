@@ -24,20 +24,23 @@
             <label>Slug dịch vụ</label>
             <input type="text" name="slug" id="convert_slug" class="form-control" value="{{$service->slug}}"/>
 
+            <label>Từ khoá </label>
+            <input type="text" name="tukhoa" data-role="tagsinput" class="form-control" value="{{$service->tukhoa}}"/><hr/>
+
             <label for="title1">Title</label>
-            <textarea size="50" type="text" id="title1" class="form-control" name="title" rows="15" cols="100">
+            <textarea size="50" type="text" id="ckeditor1" class="form-control" name="title" rows="15" cols="100">
                     {{$service->title}}
             </textarea>
             
             <label for="title2">Tóm tắt</label>
-            <textarea  id="title2"  type="text" size="50" class="form-control" name="tomtat" rows="15" cols="100">
+            <textarea  id="ckeditor2"  type="text" size="50" class="form-control" name="tomtat" rows="15" cols="100">
                 {{$service->tomtat}}
             </textarea>
            
 
             <label>Giá tiền khoảng</label>
-            <input type="text" name="price" class="form-control" value="{{$service->price}}"/>
-            <input type="text" name="price_end" class="form-control" value="{{$service->price_end}}"/>
+            <input type="number" name="price" class="form-control" value="{{$service->price}}"/>
+            <input type="number" name="price_end" class="form-control" value="{{$service->price_end}}"/>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Dịch vụ</label>

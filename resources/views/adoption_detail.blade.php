@@ -34,8 +34,28 @@
                         {{-- <div class="breeder-details-img">
                             <img src="{{asset("img/service-img/{$service->hinhanh}") }}" alt=""></a>
                         </div> --}}
+                        
+                        <div class="blog-details-tags">
+                            <ul>
+                                <li class="title"><i class="fas fa-tags"></i> Tags :</li>
+                                @php
+                                $tukhoa = explode(",",$service->tukhoa);
+                                // print_r($tukhoa);
+                                @endphp
+                                 <div class="tagcloud05">
+                                    <ul>
+                                      @foreach($tukhoa as $key=> $tu)
+                                      <li><a href="{{url('tag_service/'.\Str::slug($tu))}}"><span>{{$tu}}</span></a></li>
+                                      @endforeach
+                                    </ul>
+                                  </div>
+                            </ul>
+                        </div>
+             
                       </div>
                 </div>
+
+                     
                 <div class="col-lg-4">
                     <aside class="breeder-sidebar">
                         <div class="widget breeder-widget">
@@ -80,7 +100,7 @@
                                 </div>
                                 
                             
-                                <button type="submit" name="addtocart" value="5" class="btn cart-submit d-block">Add to cart</button>
+                                <button type="submit" name="addtocart" value="6" class="btn cart-submit d-block">Add to cart</button>
                             </form>
                                 
                                   
@@ -319,8 +339,7 @@
               <!-- End commentform Area -->
            
             </div>
-            {{-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div> --}}
+         
           </div>
     </div>
     <!-- adoption-area -->
@@ -406,6 +425,19 @@
         }
     });
 </script>
+<script type="text/javascript">
+    function showReplyForm(commentId,user) {
+      var x = document.getElementById(`reply-form-${commentId}`);
+      var input = document.getElementById(`reply-form-${commentId}-text`);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        input.innerText=`@${user} `;
+      } else {
+        x.style.display = "none";
+      }
+    }
+</script>
+
  <style>
 
 .abc{

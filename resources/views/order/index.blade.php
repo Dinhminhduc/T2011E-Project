@@ -45,7 +45,7 @@
 
         </tr>
         @foreach($lsCustomer as $key=> $cus)
-           @if($cus->status != 3)
+           @if($cus->status != 3 && $cus->status !=2)
             <tr>
                 <th scope="row">{{$key+1}}</th>
                 <td>{{$cus->first_name}} {{$cus->last_name}}</td>
@@ -63,13 +63,13 @@
                 <td>{{$cus->service->name_service}}</td>    
                 <td>
                     @if($cus->status == 0)
-                    <span style="color:blue"> OPEN</span>
+                    <span style="color:blue"> WAIT</span>
 
                     @elseif($cus->status == 1)
                     <span style="color:green"> CONFIRM</span>
                    
                     @elseif($cus->status == 2)
-                    <span style="color:rgb(173, 62, 146)"> DONE</span>
+                    <span style="color:rgb(173, 62, 146)"> SUCCESS</span>
                    
                     @elseif($cus->status == 3)
                         <span style="color:red"> CANCEL</span>
@@ -80,7 +80,7 @@
 
                     <a data-toggle="modal" data-target="#exampleModal" class="btn btn-primary" data-orderid="{{$cus->id}}"
                          href="#" >Change status</a>
-                    @if($cus->status == 0 ||$cus->status == 1 ||$cus->status == 2)
+                    @if($cus->status == 0 ||$cus->status == 1)
                         <a style="width:132px" class="btn btn-success" href="{{route("order.show",$cus->id)}}" >View order</a>
                     @endif
                 </td>
@@ -103,7 +103,7 @@
 
         </tr>
         @foreach($lsCustomer as $key=> $cus)
-           @if($cus->status == 3)
+           @if($cus->status == 3 || $cus->status == 2)
             <tr>
                 <th scope="row">{{$key+1}}</th>
                 <td>{{$cus->first_name}} {{$cus->last_name}}</td>
@@ -121,13 +121,13 @@
                 <td>{{$cus->service->name_service}}</td>    
                 <td>
                     @if($cus->status == 0)
-                    <span style="color:blue"> OPEN</span>
+                    <span style="color:blue"> WAIT</span>
 
                     @elseif($cus->status == 1)
                     <span style="color:green"> CONFIRM</span>
                    
                     @elseif($cus->status == 2)
-                    <span style="color:rgb(173, 62, 146)"> DONE</span>
+                    <span style="color:rgb(173, 62, 146)">SUCCESS</span>
                    
                     @elseif($cus->status == 3)
                         <span style="color:red"> CANCEL</span>
@@ -163,7 +163,7 @@
                         <input type="hidden" name="selected_orderid" id="selected_orderid">
                         <select class="form-control" name="new_status" id="new-status">
                             <option value="1">Confirm</option>
-                            <option value="2">Done</option>
+                            <option value="2">Success</option>
                             <option value="3">Cancel</option>
                         </select>
                     </div>

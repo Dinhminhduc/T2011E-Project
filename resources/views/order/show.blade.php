@@ -53,7 +53,7 @@
                         CONFIRM
                     @endif
                     @if($cus->status == 2)
-                        DONE
+                        SUCCESS
                     @endif
                     @if($cus->status == 3)
                         CANCEL
@@ -64,7 +64,7 @@
                     <a href="{{asset('changeStatusJson')}}/3/{{$cus->id}}" class="btn btn-primary">Change to CANCEL</a>
                 @endif
                 @if($cus->status == 1)
-                    <a href="{{asset('changeStatusJson')}}/2/{{$cus->id}}" class="btn btn-primary">Change to DONE</a>
+                    <a href="{{asset('changeStatusJson')}}/2/{{$cus->id}}" class="btn btn-primary">Change to SUCCESS</a>
                     <a href="{{asset('changeStatusJson')}}/3/{{$cus->id}}" class="btn btn-primary">Change to CANCEL</a>
                 @endif
                 @if($cus->status == 2)

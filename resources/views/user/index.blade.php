@@ -470,69 +470,32 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
+                    @foreach ($lsStaff as $staff)
+                    @if($staff->kichhoat == 0 )
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-post-item mb-50">
                             <div class="blog-post-thumb">
-                                <a href="blog-details.html"><img src="img/blog/blog_post_thumb01.jpg" alt=""></a>
+                                <a href=""><img src="{{asset("img/staff-img/{$staff->hinhanh}") }}" alt=""></a>
                                 <div class="blog-post-tag">
-                                    <a href="#"><i class="flaticon-bookmark-1"></i>Sharped</a>
+                                    <a href="#"><i class="flaticon-bookmark-1"></i>{{$staff->chucvu}}</a>
                                 </div>
                             </div>
                             <div class="blog-post-content">
                                 <div class="blog-post-meta">
                                     <ul>
-                                        <li><i class="far fa-user"></i><a href="#">Admin</a></li>
-                                        <li><i class="far fa-bell"></i> Mar 10, 2021</li>
+                                        <li><i class="far fa-user"></i><a href="#">{{$staff->ten}}</a></li>
+                                        <li><i class="far fa-bell"></i>{{$staff->ngaysinh}}</li>
                                     </ul>
                                 </div>
-                                <h3 class="title"><a href="blog-details.html">Working For Dog Adoption</a></h3>
-                                <p>The best overall dog test is Embark Breed & Health Kit view at Chewy.</p>
-                                <a href="blog-details.html" class="read-more">Read More <img src="img/icon/pawprint.png" alt=""></a>
+                                <h3 class="title"><a href="">{{$staff->chitiet}}</a></h3>
+                                <p>{{$staff->title}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-post-item mb-50">
-                            <div class="blog-post-thumb">
-                                <a href="blog-details.html"><img src="img/blog/blog_post_thumb02.jpg" alt=""></a>
-                                <div class="blog-post-tag">
-                                    <a href="#"><i class="flaticon-bookmark-1"></i>Creative</a>
-                                </div>
-                            </div>
-                            <div class="blog-post-content">
-                                <div class="blog-post-meta">
-                                    <ul>
-                                        <li><i class="far fa-user"></i><a href="#">Admin</a></li>
-                                        <li><i class="far fa-bell"></i> Mar 12, 2021</li>
-                                    </ul>
-                                </div>
-                                <h3 class="title"><a href="blog-details.html">Dog Derived From an Ancient</a></h3>
-                                <p>The best overall dog test is Embark Breed & Health Kit view at Chewy.</p>
-                                <a href="blog-details.html" class="read-more">Read More <img src="img/icon/pawprint.png" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-post-item mb-50">
-                            <div class="blog-post-thumb">
-                                <a href="blog-details.html"><img src="img/blog/blog_post_thumb03.jpg" alt=""></a>
-                                <div class="blog-post-tag">
-                                    <a href="#"><i class="flaticon-bookmark-1"></i>Business</a>
-                                </div>
-                            </div>
-                            <div class="blog-post-content">
-                                <div class="blog-post-meta">
-                                    <ul>
-                                        <li><i class="far fa-user"></i><a href="#">Admin</a></li>
-                                        <li><i class="far fa-bell"></i> Mar 12, 2021</li>
-                                    </ul>
-                                </div>
-                                <h3 class="title"><a href="blog-details.html">Ten Dog Breeds are Noted</a></h3>
-                                <p>The best overall dog test is Embark Breed & Health Kit view at Chewy.</p>
-                                <a href="blog-details.html" class="read-more">Read More <img src="img/icon/pawprint.png" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endif
+                    @endforeach
+                
+                 
                 </div>
             </div>
         </section>
