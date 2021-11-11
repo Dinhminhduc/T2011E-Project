@@ -46,21 +46,33 @@
                             aria-describedby="emailHelp" placeholder="Slug dịch vụ">
                           </div>
 
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Từ khoá </label>
+                            <input type="text" name="tukhoa" data-role="tagsinput"  class="form-control" 
+                            aria-describedby="emailHelp" placeholder="Slug ">
+                          </div>
+                          
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Giá</label>
+                            <label for="exampleInputEmail1">Giá từ</label>
                             <input type="number" name="price" class="form-control"
                             aria-describedby="emailHelp" placeholder="Giá dịch vụ">
                           </div>
 
                           <div class="form-group">
+                            <label for="exampleInputEmail1">Giá đến</label>
+                            <input type="number" name="price_end" class="form-control"
+                            aria-describedby="emailHelp" placeholder="Giá dịch vụ">
+                          </div>
+
+                          <div class="form-group">
                             <label for="exampleInputEmail1">Title</label>
-                            <textarea type="text"  id="title1" name="title" class="form-control"
+                            <textarea type="text"  id="ckeditor1" name="title" class="form-control"
                             aria-describedby="emailHelp" placeholder="Title"></textarea>
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputEmail1">Tóm tắt</label>
-                            <textarea type="text"  id="title2" name="tomtat" class="form-control"
+                            <textarea type="text"  id="ckeditor2" name="tomtat" class="form-control"
                             aria-describedby="emailHelp" placeholder="Tóm tắt"></textarea>
                           </div>
 

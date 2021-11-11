@@ -114,6 +114,12 @@ class OrderServiceController extends Controller
     public function add_adoption(Request $request, $id){
     $service = Service::find($id);
 
+    $request->validate([
+        'date_time' => 'date_format:H:i|after:created_at|required',
+      
+    ],[
+        'date_time.unique' => 'Thời gian không hợp lệ, xin chọn ngày khác',
+    ]);
     $cus = new CustomerS();
     $cus->first_name = $request->first_name;
     $cus->last_name = $request->last_name;

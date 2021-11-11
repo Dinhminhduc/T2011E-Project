@@ -26,12 +26,14 @@
                     <td>{{$ani->id}}</td>
                     <td>{{$ani->name}}</td>
                     <td>
+                        <form>
                         <a class="btn btn-primary" href="{{route('animal_type.edit',$ani->id)}}">Edit</a>
                         <form method="POST" onsubmit="return confirm('sure ?')" action="{{route("animal_type.destroy",$ani->id)}}">
                             @csrf
                             @method('DELETE')
                             <input class="btn btn-danger" type="submit" value="Delete">
                         </form>
+                    </form>
                     </td>
                 </tr>
             @endforeach

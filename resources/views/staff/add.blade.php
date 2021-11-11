@@ -81,6 +81,14 @@
                             <input type="text" class="form-control" name="chucvu" id="cover">
                         </div>
 
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Chi tiết</label>
+                            <input type="text" class="form-control" name="chitiet" id="cover">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nội dung</label>
+                            <input type="text" class="form-control" name="title" id="cover">
+                        </div>
                         {{-- <div class="form-group checkbox">
                             <label><strong>Lịch làm việc trong tuần :</strong></label><br>
                             <div class="form-check" style="color:white">

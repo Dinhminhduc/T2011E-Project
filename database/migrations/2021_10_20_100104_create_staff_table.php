@@ -20,6 +20,8 @@ class CreateStaffTable extends Migration
             // $table->string('mota');
             $table->string('ngaysinh');
             $table->string('chucvu');
+            $table->string('chitiet');
+            $table->string('title');
             // $table->string('date_start');
             // $table->string('date_end');
             $table->string('hinhanh');

@@ -35,6 +35,8 @@
                 <th>ID</th>
                 <th>NAME</th>
                 <th>CHỨC VỤ </th>
+                <th>CHI TIẾT </th>
+                <th>GIỚI THIỆU </th>
                 <th>DIA CHI</th>
                 <th>HÌNH ẢNH</th>
                 <th>SO DIEN THOAI</th>
@@ -49,6 +51,8 @@
                     <th scope="row">{{$key+1}}</th>
                     <td>{{$ser->ten}}</td>
                     <td>{{$ser->chucvu}}</td>
+                    <td>{{$ser->chitiet}}</td>
+                    <td>{{$ser->title}}</td>
                     {{-- <td>
 
                         @foreach((array) $ser->category as $value)

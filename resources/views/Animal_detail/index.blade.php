@@ -1,6 +1,6 @@
 @extends('admin.admin')
 @section('admin')
-    <div  class="container">
+   
         <p>Animal detail</p>
         @if(@session('msg'))
             <div @class('alert alert-success')>
@@ -40,17 +40,19 @@
                     <td>{{$ani_d->dateOfBirth}}</td>
                     <td>{{$ani_d->animal_id}}</td>
                     <td>
+                    <form>
                         <a class="btn btn-primary" href="{{route("animal_detail.edit",$ani_d->id)}}">Edit</a>
                         <form method="POST" onsubmit="return confirm('sure ?')" action="{{route("animal_detail.destroy",$ani_d->id)}}">
                             @csrf
                             @method('DELETE')
-                            <input class="btn btn-danger" type="submit" value="Delete">
+                            <input class="btn btn-danger" type="submit" value="Delete" >
                         </form>
+                     </form>
                     </td>
                 </tr>
             @endforeach
         </table>
-    </div>
+   
 
 
 @endsection

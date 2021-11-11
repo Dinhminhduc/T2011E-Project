@@ -24,6 +24,12 @@
             <label>Chức vụ</label>
             <input type="text" name="chucvu" class="form-control" value="{{$staffs->chucvu}}"/>
 
+            <label>Chi tiết</label>
+            <input type="text" name="chitiet" class="form-control" value="{{$staffs->chitiet}}"/>
+
+            <label>Nội dung</label>
+            <input type="text" name="title" class="form-control" value="{{$staffs->title}}"/>
+
             {{-- <label>Lịch làm việc</label>
             @foreach($staffs as $staff)
             <input type="checkbox" name="category[]" value="{{ $staff->id }}"
