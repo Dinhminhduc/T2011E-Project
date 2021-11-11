@@ -52,6 +52,20 @@
                 </ul>
             </div>
 
+            <li class="treeview">
+                <a href="#">
+                    <i data-feather="users"></i>
+                    <span>Blog</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                      </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('blog_animal.index')}}"><i class="ti-more"></i>Profile</a></li>
+                    <li><a href="{{route('blog_animal.create')}}"><i class="ti-more"></i>Create Blog</a></li>
+
+                </ul>
+            </li>
             <div class="navbar-custom-menu r-side">
                 <ul class="nav navbar-nav">
                     <!-- full Screen -->
