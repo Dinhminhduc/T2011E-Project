@@ -12,7 +12,7 @@ class Customer extends Model
 
     Public $timestamps = true;
 
-
+//a
     public function ordersProduct(){
         return $this->hasMany('App\Models\Order_Product');
     }

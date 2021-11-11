@@ -16,352 +16,17 @@
     <!-- Style-->
     <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/skin_color.css') }}">
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 </head>
 
 <body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
 
 <div class="wrapper">
 
-    <header class="main-header">
-        <!-- Header Navbar -->
-        <nav class="navbar navbar-static-top pl-30">
-            <!-- Sidebar toggle button-->
-            <div>
-                <ul class="nav">
-                    <li class="btn-group nav-item">
-                        <a href="#" class="waves-effect waves-light nav-link rounded svg-bt-icon" data-toggle="push-menu" role="button">
-                            <i class="nav-link-icon mdi mdi-menu"></i>
-                        </a>
-                    </li>
-                    <li class="btn-group nav-item">
-                        <a href="#" data-provide="fullscreen" class="waves-effect waves-light nav-link rounded svg-bt-icon" title="Full Screen">
-                            <i class="nav-link-icon mdi mdi-crop-free"></i>
-                        </a>
-                    </li>
-                    <li class="btn-group nav-item d-none d-xl-inline-block">
-                        <a href="#" class="waves-effect waves-light nav-link rounded svg-bt-icon" title="">
-                            <i class="ti-check-box"></i>
-                        </a>
-                    </li>
-                    <li class="btn-group nav-item d-none d-xl-inline-block">
-                        <a href="calendar.html" class="waves-effect waves-light nav-link rounded svg-bt-icon" title="">
-                            <i class="ti-calendar"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="navbar-custom-menu r-side">
-                <ul class="nav navbar-nav">
-                    <!-- full Screen -->
-                    <li class="search-bar">
-                        <div class="lookup lookup-circle lookup-right">
-                            <input type="text" name="s">
-                        </div>
-                    </li>
-                    <!-- Notifications -->
-                    <li class="dropdown notifications-menu">
-                        <a href="#" class="waves-effect waves-light rounded dropdown-toggle" data-toggle="dropdown" title="Notifications">
-                            <i class="ti-bell"></i>
-                        </a>
-                        <ul class="dropdown-menu animated bounceIn">
-
-                            <li class="header">
-                                <div class="p-20">
-                                    <div class="flexbox">
-                                        <div>
-                                            <h4 class="mb-0 mt-0">Notifications</h4>
-                                        </div>
-                                        <div>
-                                            <a href="#" class="text-danger">Clear All</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <!-- inner menu: contains the actual data -->
-                                <ul class="menu sm-scrol">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-info"></i> Curabitur id eros quis nunc suscipit blandit.
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-warning text-warning"></i> Duis malesuada justo eu sapien elementum, in semper diam posuere.
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-danger"></i> Donec at nisi sit amet tortor commodo porttitor pretium a erat.
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-shopping-cart text-success"></i> In gravida mauris et nisi
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-user text-danger"></i> Praesent eu lacus in libero dictum fermentum.
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-user text-primary"></i> Nunc fringilla lorem
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-user text-success"></i> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="#">View all</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- User Account-->
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown" title="User">
-                            <img src="../images/avatar/1.jpg" alt="">
-                        </a>
-                        <ul class="dropdown-menu animated flipInX">
-                            <li class="user-body">
-                                <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Logout</a>
-                            </li>
-                            {{-- {{Auth::logout()}} --}}
-                        </ul>
-                    </li>
-{{--                    <li>--}}
-{{--                        <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light">--}}
-{{--                            <i class="ti-settings"></i>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-
-                </ul>
-            </div>
-        </nav>
-    </header>
+@include('admin.body.header')
 
     <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-        <!-- sidebar-->
-        <section class="sidebar">
-
-
-
-            <div class="user-profile">
-                <div class="ulogo">
-                    <a href="{{route('dashboard')}}">
-                        <!-- logo for regular state and mobile devices -->
-                        <div class="d-flex align-items-center justify-content-center">
-                            <img src="{{ asset('backend/images/logo-dark.png')}}" alt="">
-                            <h3><b>Sunny</b> Admin</h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- sidebar menu-->
-            <ul class="sidebar-menu" data-widget="tree">
-
-                <li>
-                    <a href="{{route('dashboard')}}">
-                        <i data-feather="pie-chart"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-
-                <li class="treeview">
-                  <a href="{{route('service_type.index')}}">
-                      <i data-feather="credit-card"></i>
-                      <span>Service Type</span>
-                      <span class="pull-right-container">
-                  <i class="fa fa-angle-right pull-right"></i>
-
-                  <ul class="treeview-menu">
-                      <li><a href="{{route('service_type.index')}}">View Type Service</a></li>
-                      <li><a href="{{route('service_type.create')}}">Create Type Service</a></li>
-                  </ul>
-              </li>
-
-                <li class="treeview">
-
-                    <a href="#">
-                        <i data-feather="mail"></i> <span>Pets List</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{asset('animal_type')}}"><i class="ti-more"></i>Type</a></li>
-                        <li><a href="{{asset('animal_detail')}}"><i class="ti-more"></i>All Pets</a></li>
-                        <li><a href="{{asset('testimonials')}}"><i class="ti-more"></i>Testination</a></li>
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="#">
-                        <i data-feather="file"></i>
-                        <span>Shop</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{route('all.product')}}"><i class="ti-more"></i>All Product</a></li>
-                        <li><a href="{{asset('admin/category')}}"><i class="ti-more"></i>All Category</a></li>
-                        <li><a href="{{route('all.brand')}}"><i class="ti-more"></i>All Brands</a></li>
-                        <li><a href="{{asset('admin/order')}}"><i class="ti-more"></i>Order</a></li>
-                        <li><a href="timeline.html"><i class="ti-more"></i>Timeline</a></li>
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="{{route('service_type.index')}}">
-                        <i data-feather="credit-card"></i>
-                        <span>Service Type</span>
-                        <span class="pull-right-container">
-                  <i class="fa fa-angle-right pull-right"></i>
-
-                  <ul class="treeview-menu">
-                      <li><a href="{{route('service_type.index')}}">View Type Service</a></li>
-                      <li><a href="{{route('service_type.create')}}">Create Type Service</a></li>
-                  </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="{{route('service.index')}}">
-                        <i data-feather="credit-card"></i>
-                        <span>Service</span>
-                        <span class="pull-right-container">
-                    <i class="fa fa-angle-right pull-right"></i>
-
-                    <ul class="treeview-menu">
-                        <li><a href="{{route('service.index')}}">View Service</a></li>
-                        <li><a href="{{route('service.create')}}">Create Service</a></li>
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="#">
-                        <i data-feather="users"></i>
-                        <span>Staff</span>
-                        <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                      </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{route('staff.index')}}"><i class="ti-more"></i>Profile</a></li>
-                        <li><a href="{{route('staff.create')}}"><i class="ti-more"></i>Create Staff</a></li>
-
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="#">
-                        <i data-feather="shopping-bag"></i>
-                        <span>Order Service</span>
-                        <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                      </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{route('order.index')}}"><i class="ti-more"></i>Order</a></li>
-                        {{-- <li><a href="{{route('order.create')}}"><i class="ti-more"></i>Service Recycler</a></li> --}}
-                    </ul>
-                </li>
-
-
-                <li class="header nav-small-cap">User Interface</li>
-
-                <li class="treeview">
-                    <a href="#">
-                        <i data-feather="grid"></i>
-                        <span>Components</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="components_alerts.html"><i class="ti-more"></i>Alerts</a></li>
-                        <li><a href="components_badges.html"><i class="ti-more"></i>Badge</a></li>
-                        <li><a href="components_buttons.html"><i class="ti-more"></i>Buttons</a></li>
-                        <li><a href="components_sliders.html"><i class="ti-more"></i>Sliders</a></li>
-                        <li><a href="components_dropdown.html"><i class="ti-more"></i>Dropdown</a></li>
-                        <li><a href="components_modals.html"><i class="ti-more"></i>Modal</a></li>
-                        <li><a href="components_nestable.html"><i class="ti-more"></i>Nestable</a></li>
-                        <li><a href="components_progress_bars.html"><i class="ti-more"></i>Progress Bars</a></li>
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="#">
-
-                    <a href="{{route('service.index')}}">
-
-                        <i data-feather="credit-card"></i>
-                        <span>Service</span>
-                        <span class="pull-right-container">
-                    <i class="fa fa-angle-right pull-right"></i>
-
-                    <ul class="treeview-menu">
-                        <li><a href="{{route('service.index')}}">View Service</a></li>
-                        <li><a href="{{route('service.create')}}">Create Service</a></li>
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="#">
-                      <i data-feather="users"></i>
-                      <span>Staff</span>
-                      <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                      </span>
-                    </a>
-                    <ul class="treeview-menu">
-                      <li><a href="{{route('staff.index')}}"><i class="ti-more"></i>Profile</a></li>
-                      <li><a href="{{route('staff.create')}}"><i class="ti-more"></i>Create Staff</a></li>
-
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="#">
-                      <i data-feather="shopping-bag"></i>
-                      <span>Order Service</span>
-                      <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                      </span>
-                    </a>
-                    <ul class="treeview-menu">
-                      <li><a href="{{route('order.index')}}"><i class="ti-more"></i>Order</a></li>
-                      {{-- <li><a href="{{route('order.create')}}"><i class="ti-more"></i>Service Recycler</a></li> --}}
-                    </ul>
-                </li>
-
-
-
-            </ul>
-
-
-        </section>
-
-        <div class="sidebar-footer">
-            <!-- item-->
-            <a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Settings" aria-describedby="tooltip92529"><i class="ti-settings"></i></a>
-            <!-- item-->
-            <a href="mailbox_inbox.html" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="ti-email"></i></a>
-            <!-- item-->
-            <a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ti-lock"></i></a>
-        </div>
-    </aside>
+@include('admin.body.sidebar')
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -369,8 +34,10 @@
     </div>
     <!-- /.content-wrapper -->
 
+@include('admin.body.footer')
 
-    <!-- Control Sidebar -->
+
+<!-- Control Sidebar -->
     <aside class="control-sidebar">
 
         <div class="rpanel-title"><span class="pull-right btn btn-circle btn-danger"><i class="ion ion-close text-white" data-toggle="control-sidebar"></i></span> </div>  <!-- Create the tabs -->
@@ -695,6 +362,68 @@
             document.getElementById('convert_slug').value = slug;
         }
 </script>
+
+{{--        CK Editor--}}
+        <script src="{{asset('../assets/icons/feather-icons/feather.min.js')}}"></script>	<script src="../assets/vendor_components/ckeditor/ckeditor.js"></script>
+        <script src="{{asset('../assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js')}}"></script>
+        <script src="{{asset('backend/js/pages/editor.js')}}"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{{--        Sure Delete ?--}}
+        <script type="text/javascript">
+            $(function(){
+                $(document).on('click','#delete',function (e){
+                    e.preventDefault();
+                    var link = $(this).attr('href');
+
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = link
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+                });
+            });
+        </script>
+
+
+        <script>
+            @if(Session::has('message'))
+            var type = "{{ Session::get('alert-type','info') }}"
+            switch(type){
+                case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break;
+            }
+            @endif
+        </script>
+
 
 </body>
 </html>

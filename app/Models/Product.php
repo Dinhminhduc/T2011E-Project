@@ -11,16 +11,23 @@ class Product extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = [
-        'name',
-        'price',
-        'number',
-        'image',
-        'size',
-    ];
+    protected $guarded = [];
+
+//    protected $fillable = [
+//        'name',
+//        'price',
+//        'number',
+//        'image',
+//        'size',
+//    ];
+
 
     public function category(){
         return $this->belongsTo('App\Models\Category');
+    }
+
+    public function brand(){
+        return $this->belongsTo('App\Models\Brand');
     }
 
     public function orderDetails(){

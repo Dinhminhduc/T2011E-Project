@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Customer;
 use App\Models\CustomerProduct;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Cart;
@@ -58,7 +59,7 @@ class ShopController extends Controller
     public function place_order_product(Request $request){
 
         //Save Customer
-        $customer = new CustomerProduct();
+        $customer = new Customer();
         $customer->first_name = $request->first_name;
         $customer->last_name = $request->last_name;
         $customer->email = $request->email;
@@ -90,7 +91,7 @@ class ShopController extends Controller
         }
         \Cart::destroy();
         //Success
-        return view('order_success');
+        return redirect()->back();
     }
 
 

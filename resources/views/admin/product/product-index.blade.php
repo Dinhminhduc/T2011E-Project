@@ -40,7 +40,7 @@
                                     <td>{{$pro->size}}</td>
                                     <td>{{$pro->created_at->diffForHumans()}}</td>
                                     <td><a href="{{url('admin/product/edit/'.$pro->id)}}" class="btn btn-info">Edit</a>
-                                        <a href="{{url('admin/product/delete/'.$pro->id)}}" onclick="return confirm('Are you sure?')" class="btn btn-danger">Delete</a></td>
+                                        <a href="{{url('admin/product/delete/'.$pro->id)}}" id="delete" class="btn btn-danger">Delete</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -52,7 +52,7 @@
                     <div class="card">
                         <div class="card-header"> Add Product </div>
                         <div class="card-body">
-                            <form action="{{route('add.product')}}" method="POST" enctype="multipart/form-data"/>
+                            <form action="{{route('add.product')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                             <div class="form-group">
                                 <div class="mb-3">
@@ -100,8 +100,7 @@
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
                             </div>
-
-                                    <button type="submit" class="btn btn-primary">Add Product</button>
+                                    <input type="submit" class="btn btn-primary" value="Add Product">
                                 </form>
                         </div>
                     </div>
@@ -143,7 +142,7 @@
                                 <td>{{$trash->size}}</td>
                                 <td>{{$trash->created_at->diffForHumans()}}</td>
                                 <td><a href="{{url('admin/product/restore/'.$trash->id)}}" class="btn btn-info">Restore</a>
-                                    <a href="{{url('admin/product/pdelete/'.$trash->id)}}" onclick="return confirm('Are you sure ?')" class="btn btn-danger">Delete</a></td>
+                                    <a href="{{url('admin/product/pdelete/'.$trash->id)}}" id="delete" class="btn btn-danger">Delete</a></td>
                             </tr>
                         @endforeach
                         </tbody>

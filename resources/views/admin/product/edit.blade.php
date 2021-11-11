@@ -14,7 +14,7 @@
                     <div class="card">
                         <div class="card-header"> Edit Product </div>
                         <div class="card-body">
-                            <form action="{{url('admin/product/update/'.$products->id)}}" method="POST" enctype="multipart/form-data"/>
+                            <form action="{{url('admin/product/update/'.$products->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="old_image" value="{{$products->image}}"/>
                             <div class="form-group">
@@ -82,7 +82,7 @@
 
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Update Product</button>
+                            <input type="submit" class="btn btn-primary" value="Update Product">
 
                         </div>
                     </div>

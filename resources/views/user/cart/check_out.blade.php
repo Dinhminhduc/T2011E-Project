@@ -138,7 +138,7 @@
 
                         <div class="col-12">
                             <label for="address2" class="form-label">Phone<span class="text-muted">(Personal)</span></label>
-                            <input type="text" class="form-control" name="phone" id="address2" placeholder="0987654321">
+                            <input type="text" class="form-control" name="phone" id="address2" placeholder="0987654321" required>
                         </div>
                     </div>
 
@@ -210,7 +210,7 @@
 
                     <hr class="my-4">
 
-                    <input class="w-100 btn btn-outline-dark btn-lg" type="submit" value="Place Order"/>
+                    <input class="w-100 btn btn-outline-dark btn-lg" onclick="showAlert()" type="submit" value="Place Order"/>
                 </form>
             </div>
         </div>
@@ -228,6 +228,19 @@
 
 
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+    function showAlert(){
+        Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Order Success, Please Wait Shipping',
+        showConfirmButton: false,
+        timer: 5000
+        })
+    }
+
+</script>
 
 <script src="{{asset('js/form-validation.js')}}"></script>
 </body>

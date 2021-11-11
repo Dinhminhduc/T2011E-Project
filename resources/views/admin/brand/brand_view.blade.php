@@ -25,7 +25,7 @@
             <section class="content">
                 <div class="row">
 
-                    <div class="col-12">
+                    <div class="col-8">
 
                         <div class="box">
                             <div class="box-header with-border">
@@ -48,8 +48,8 @@
                                             <td>{{$item->brand_name}}</td>
                                             <td><img src="{{asset($item->brand_image)}}" style="width: 70px; height: 40px"></td>
                                             <td>
-                                                <a class="btn btn-info" href="">Edit</a>
-                                                <a class="btn btn-danger" href="">Delete</a>
+                                                <a class="btn btn-info" href="{{url('brand/edit/'.$item->id)}}">Edit</a>
+                                                <a class="btn btn-danger" href="{{url('brand/delete/'.$item->id)}}" id="delete">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -60,6 +60,38 @@
                         </div>
                     </div>
                     <!-- /.col -->
+
+{{--Add Brand --}}
+
+                <div class="col-4">
+
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Add Brand</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <form method="POST" action="{{route('brand.store')}}" enctype="multipart/form-data">
+                                    @csrf
+                                <div class="form-group">
+                                    <h5>Brand Name<span class="text-danger">*</span></h5>
+                                    <div class="controls">
+                                        <input type="text" name="name" class="form-control" required=""> <div class="help-block"></div></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <h5>Brand Image<span class="text-danger">*</span></h5>
+                                    <div class="controls">
+                                        <input type="file" name="image"  class="form-control" required=""> <div class="help-block"></div></div>
+                                </div>
+                                <input type="submit" class="btn btn-outline-dark" value="Add Brand">
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+
                 </div>
                 <!-- /.row -->
             </section>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommentRepliesTable extends Migration
+class CreateMultiImgsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateCommentRepliesTable extends Migration
      */
     public function up()
     {
-        Schema::create('comment_replies', function (Blueprint $table) {
+        Schema::create('multi_imgs', function (Blueprint $table) {
             $table->id();
-//            $table->id('comment_id');
-//            $table->id('user_id');
-//            $table->string('message');
+            $table->integer('product_id');
+            $table->string('photo_name');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateCommentRepliesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comment_replies');
+        Schema::dropIfExists('multi_imgs');
     }
 }
