@@ -52,30 +52,12 @@
                             </div>
                         </div>
                         @endforeach
-                     
+                        {{$blogs->links("pagination::bootstrap-4")}}
                     </div>
                     <div class="col-lg-4">
                         <aside class="blog-sidebar">
-                            <div class="widget">
-                                <h4 class="sidebar-title">Search</h4>
-                                <div class="sidebar-search">
-                                    <form action="#">
-                                        <input type="text" placeholder="Search ...">
-                                        <button type="submit"><i class="fa fa-search"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="widget">
-                                <h4 class="sidebar-title">Categories</h4>
-                                <div class="sidebar-cat-list">
-                                    <ul>
-                                        <li><a href="#">Siberian Husky <i class="fas fa-angle-double-right"></i></a></li>
-                                        <li><a href="#">German Sherped <i class="fas fa-angle-double-right"></i></a></li>
-                                        <li><a href="#">French Bulldog <i class="fas fa-angle-double-right"></i></a></li>
-                                        <li><a href="#">Golden Retriever <i class="fas fa-angle-double-right"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                          
+                          
                             <div class="widget">
                                 <h4 class="sidebar-title">Recent Post</h4>
                                 <div class="rc-post-list">
@@ -111,4 +93,4 @@
     
     </main>
 
-@endsection;
+@endsection

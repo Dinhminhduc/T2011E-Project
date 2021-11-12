@@ -44,7 +44,7 @@
                             <label for="exampleInputEmail1">Slug dịch vụ</label>
                             <input type="text" name="slug"  class="form-control" id="convert_slug"
                             aria-describedby="emailHelp" placeholder="Slug dịch vụ">
-                          </div>
+                        </div>
 
                           <div class="form-group">
                             <label for="exampleInputEmail1">Từ khoá </label>

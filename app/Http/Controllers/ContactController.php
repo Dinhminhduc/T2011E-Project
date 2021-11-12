@@ -14,8 +14,10 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contact.index');
+        $contact = Contact::orderBy('name', 'ASC')->get();
+        return view('contact.index',compact('contact'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -46,7 +48,23 @@ class ContactController extends Controller
         $contact->message = $request->input('message');
         $contact->save();
         $request->session()->flash("msg","send message successfully.");
-        return redirect(route('blog.index'));
+        return view('contact_service');
+    }
+
+    public function contact_service(Request $request)
+    {
+        $request->validate([
+            'name'=> 'required|max:255',
+            'email'=> 'required',
+            'message'=>'required'
+        ]);
+        $contact = new Contact();
+        $contact->name = $request->input('name');
+        $contact->email = $request->input('email');
+        $contact->message = $request->input('message');
+        $contact->save();
+        $request->session()->flash("msg","send message successfully.");
+        return view('contact_service');
     }
 
     /**
@@ -57,7 +75,7 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

@@ -64,13 +64,7 @@
                                           </div>
                                     </ul>
                                 </div>
-                                <div class="blog-details-social">
-                                    <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    </ul>
-                                </div>
+                              
                             </div>
                         </div>
                     </div>
@@ -80,12 +74,12 @@
                             <li class="blog-prev">
                                 <a class="{{$blog->id==$min_id->id ?'isDis' :''}}"
                                  href="{{url('blog-detail/'.$next_blog)}}">
-                                    <img src="asset{{'frontend/img/icon/left_arrow.png'}}" alt="img">Previous Post</a>
+                                    <img src="{{asset('frontend/img/icon/left_arrow.png')}}" alt="img">Previous Post</a>
                             </li>
                             <li class="blog-next">
                                 <a class="{{$blog->id==$max_id->id ?'isDis' :''}}"
                                  href="{{url('blog-detail/'.$prev_blog)}}">Next Post
-                                    <img src="asset{{'frontend/img/icon/right_arrow.png'}}" alt="img"></a>
+                                    <img src="{{asset('frontend/img/icon/right_arrow.png')}}" alt="img"></a>
                             </li>
                             <style>
                               .isDis {
@@ -100,26 +94,8 @@
                 </div>
                 <div class="col-lg-4">
                     <aside class="blog-sidebar">
-                        <div class="widget">
-                            <h4 class="sidebar-title">Search</h4>
-                            <div class="sidebar-search">
-                                <form action="#">
-                                    <input type="text" placeholder="Search ...">
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="widget">
-                            <h4 class="sidebar-title">Categories</h4>
-                            <div class="sidebar-cat-list">
-                                <ul>
-                                    <li><a href="#">Siberian Husky <i class="fas fa-angle-double-right"></i></a></li>
-                                    <li><a href="#">German Sherped <i class="fas fa-angle-double-right"></i></a></li>
-                                    <li><a href="#">French Bulldog <i class="fas fa-angle-double-right"></i></a></li>
-                                    <li><a href="#">Golden Retriever <i class="fas fa-angle-double-right"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
+                     
+                        
                         <div class="widget">
                             <h4 class="sidebar-title">Recent Post</h4>
                             <div class="rc-post-list">

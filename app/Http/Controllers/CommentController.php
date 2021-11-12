@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use Auth;
-// use Kamaln7\Toastr\Facades\Toastr;
+ use Kamaln7\Toastr\Facades\Toastr;
 
 class CommentController extends Controller
 {
