@@ -107,89 +107,48 @@ $route = Route::current()->getName();
 
             <li class="header nav-small-cap">Service</li>
 
-            <li class="treeview">
-                <a href="{{route('service_type.index')}}">
-                    <i data-feather="credit-card"></i>
-                    <span>Service Type</span>
-                    <span class="pull-right-container">
+                <li class="treeview">
+                    <a href="{{route('service_type.index')}}">
+                        <i data-feather="credit-card"></i>
+                        <span>Service Type</span>
+                        <span class="pull-right-container">
                   <i class="fa fa-angle-right pull-right"></i>
 
                   <ul class="treeview-menu">
                       <li><a href="{{route('service_type.index')}}">View Type Service</a></li>
                       <li><a href="{{route('service_type.create')}}">Create Type Service</a></li>
                   </ul>
-            </li>
+                </li>
 
-            <li class="treeview">
-                <a href="{{route('service.index')}}">
-                    <i data-feather="credit-card"></i>
-                    <span>Service</span>
-                    <span class="pull-right-container">
-                    <i class="fa fa-angle-right pull-right"></i>
-
-                    <ul class="treeview-menu">
-                        <li><a href="{{route('service.index')}}">View Service</a></li>
-                        <li><a href="{{route('service.create')}}">Create Service</a></li>
-                    </ul>
-            </li>
-
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="users"></i>
-                    <span>Staff</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                      </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{route('staff.index')}}"><i class="ti-more"></i>Profile</a></li>
-                    <li><a href="{{route('staff.create')}}"><i class="ti-more"></i>Create Staff</a></li>
-
-                </ul>
-            </li>
-
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="shopping-bag"></i>
-                    <span>Order Service</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                      </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{route('order.index')}}"><i class="ti-more"></i>Order</a></li>
-                    {{-- <li><a href="{{route('order.create')}}"><i class="ti-more"></i>Service Recycler</a></li> --}}
-                </ul>
-            </li>
-
-
-            <li class="header nav-small-cap">User Interface</li>
-
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="grid"></i>
-                    <span>Components</span>
-                    <span class="pull-right-container">
+                <li class="treeview">
+                    <a href="#">
+                        <i data-feather="mail"></i> <span>Pets List</span>
+                        <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="components_alerts.html"><i class="ti-more"></i>Alerts</a></li>
-                    <li><a href="components_badges.html"><i class="ti-more"></i>Badge</a></li>
-                    <li><a href="components_buttons.html"><i class="ti-more"></i>Buttons</a></li>
-                    <li><a href="components_sliders.html"><i class="ti-more"></i>Sliders</a></li>
-                    <li><a href="components_dropdown.html"><i class="ti-more"></i>Dropdown</a></li>
-                    <li><a href="components_modals.html"><i class="ti-more"></i>Modal</a></li>
-                    <li><a href="components_nestable.html"><i class="ti-more"></i>Nestable</a></li>
-                    <li><a href="components_progress_bars.html"><i class="ti-more"></i>Progress Bars</a></li>
-                </ul>
-            </li>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{asset('animal_type')}}"><i class="ti-more"></i>Type</a></li>
+                        <li><a href="{{asset('animal_detail')}}"><i class="ti-more"></i>All Pets</a></li>
+                        <li><a href="{{asset('testimonials')}}"><i class="ti-more"></i>Testination</a></li>
+                    </ul>
+                </li>
 
-            <li class="treeview">
-                <a href="#">
+                <li class="treeview">
+                    <a href="{{route('service_type.index')}}">
+                        <i data-feather="credit-card"></i>
+                        <span>Service Type</span>
+                        <span class="pull-right-container">
+                  <i class="fa fa-angle-right pull-right"></i>
 
+                  <ul class="treeview-menu">
+                      <li><a href="{{route('service_type.index')}}">View Type Service</a></li>
+                      <li><a href="{{route('service_type.create')}}">Create Type Service</a></li>
+                  </ul>
+                </li>
+
+                <li class="treeview">
                     <a href="{{route('service.index')}}">
-
                         <i data-feather="credit-card"></i>
                         <span>Service</span>
                         <span class="pull-right-container">
@@ -199,40 +158,53 @@ $route = Route::current()->getName();
                         <li><a href="{{route('service.index')}}">View Service</a></li>
                         <li><a href="{{route('service.create')}}">Create Service</a></li>
                     </ul>
-            </li>
+                </li>
 
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="users"></i>
-                    <span>Staff</span>
-                    <span class="pull-right-container">
+                <li class="treeview">
+                    <a href="#">
+                        <i data-feather="users"></i>
+                        <span>Staff</span>
+                        <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                       </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{route('staff.index')}}"><i class="ti-more"></i>Profile</a></li>
-                    <li><a href="{{route('staff.create')}}"><i class="ti-more"></i>Create Staff</a></li>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('staff.index')}}"><i class="ti-more"></i>Profile</a></li>
+                        <li><a href="{{route('staff.create')}}"><i class="ti-more"></i>Create Staff</a></li>
 
-                </ul>
-            </li>
+                    </ul>
+                </li>
 
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="shopping-bag"></i>
-                    <span>Order Service</span>
-                    <span class="pull-right-container">
+                <li class="treeview">
+                    <a href="#">
+                        <i data-feather="users"></i>
+                        <span>Blog</span>
+                        <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                       </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{route('order.index')}}"><i class="ti-more"></i>Order</a></li>
-                    {{-- <li><a href="{{route('order.create')}}"><i class="ti-more"></i>Service Recycler</a></li> --}}
-                </ul>
-            </li>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('blog_animal.index')}}"><i class="ti-more"></i>Profile</a></li>
+                        <li><a href="{{route('blog_animal.create')}}"><i class="ti-more"></i>Create Blog</a></li>
 
-        </ul>
+                    </ul>
+                </li>
 
+                <li class="treeview">
+                    <a href="#">
+                        <i data-feather="shopping-bag"></i>
+                        <span>Order Service</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                      </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('order.index')}}"><i class="ti-more"></i>Order</a></li>
+                        {{-- <li><a href="{{route('order.create')}}"><i class="ti-more"></i>Service Recycler</a></li> --}}
+                    </ul>
+                </li>
 
+            </ul>
     </section>
 
     <div class="sidebar-footer">

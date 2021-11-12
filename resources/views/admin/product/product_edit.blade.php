@@ -21,10 +21,14 @@
                     <div class="row">
                         <div class="col">
 
-                            <form method="post" action="{{ route('store.product') }}" enctype="multipart/form-data" >
+{{--                            <form method="post" action="{{ route('store.product') }}" enctype="multipart/form-data" >--}}
+                                <form method="post" action="{{url('product/data/update/'.$products->id)}}" >
+
                                 @csrf
 
-                                <div class="row">
+                                    <input type="hidden" name="id" value="{{ $products->id }}">
+
+                                    <div class="row">
                                     <div class="col-12">
 
 
@@ -78,7 +82,10 @@
                                                 <div class="form-group">
                                                     <h5>Name Field<span class="text-danger">*</span></h5>
                                                     <div class="controls">
-                                                        <input type="text" name="name" class="form-control" required data-validation-required-message="This field is required"> </div>
+                                                        <input type="text" name="name" class="form-control"
+                                                               required data-validation-required-message="This field is required"
+                                                        value="{{$products->name}}">
+                                                    </div>
                                                 </div>
 
                                             </div> <!-- end col md 4 -->
@@ -93,7 +100,7 @@
                                                 <div class="form-group">
                                                     <h5>Quantity Product<span class="text-danger">*</span></h5>
                                                     <div class="controls">
-                                                        <input type="text" name="number" class="form-control" required data-validation-required-message="This field is required"> </div>
+                                                        <input type="text" name="number"  value="{{$products->number}}" class="form-control" required data-validation-required-message="This field is required"> </div>
                                                 </div>
 
                                             </div>
@@ -105,7 +112,7 @@
                                             <div class="form-group">
                                                 <h5>Size Product<span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <input type="text" name="size" class="form-control" required data-validation-required-message="This field is required"> </div>
+                                                    <input type="text" name="size"  value="{{$products->size}}" class="form-control" required data-validation-required-message="This field is required"> </div>
                                             </div>
                                             </div>
 
@@ -115,7 +122,7 @@
                                                 <div class="form-group">
                                                     <h5>Price Field<span class="text-danger">*</span></h5>
                                                     <div class="controls">
-                                                        <input type="text" name="price" class="form-control" required data-validation-required-message="This field is required"> </div>
+                                                        <input type="text" name="price"  value="{{$products->price}}" class="form-control" required data-validation-required-message="This field is required"> </div>
                                                 </div>
 
                                             </div> <!-- end col md 4 -->
@@ -124,37 +131,38 @@
 
 
 
-                                        <div class="row"> <!-- start 6th row  -->
+{{--                                        <div class="row"> <!-- start 6th row  -->--}}
 
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <h5>Main Image <span class="text-danger">*</span></h5>
-                                                    <div class="controls">
-                                                        <input type="file" name="image" class="form-control" onChange="mainThamUrl(this)" >
-                                                        @error('image')
-                                                        <span class="text-danger">{{ $message }}</span>
-                                                        @enderror
-                                                        <img src="" id="mainThmb">
-                                                    </div>
-                                                </div>
-                                            </div>
+{{--                                            <div class="col-md-6">--}}
+{{--                                                <div class="form-group">--}}
+{{--                                                    <h5>Main Image <span class="text-danger">*</span></h5>--}}
+{{--                                                    <div class="controls">--}}
+{{--                                                        <input type="file" name="image" class="form-control" onChange="mainThamUrl(this)" >--}}
+{{--                                                        @error('image')--}}
+{{--                                                        <span class="text-danger">{{ $message }}</span>--}}
+{{--                                                        @enderror--}}
+{{--                                                        <img src="" id="mainThmb">--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
 
 
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <h5>Multiple Image <span class="text-danger">*</span></h5>
-                                                    <div class="controls">
-                                                        <input type="file" name="multi_img[]" class="form-control" multiple="" id="multiImg" >
-                                                        @error('multi_img')
-                                                        <span class="text-danger">{{ $message }}</span>
-                                                        @enderror
-                                                        <div class="row" id="preview_img"></div>
+{{--                                            <div class="col-md-6">--}}
+{{--                                                <div class="form-group">--}}
+{{--                                                    <h5>Multiple Image <span class="text-danger">*</span></h5>--}}
+{{--                                                    <div class="controls">--}}
+{{--                                                        <input type="file" name="multi_img[]" class="form-control" multiple="" id="multiImg" >--}}
+{{--                                                        @error('multi_img')--}}
+{{--                                                        <span class="text-danger">{{ $message }}</span>--}}
+{{--                                                        @enderror--}}
+{{--                                                        <div class="row" id="preview_img"></div>--}}
 
-                                                    </div>
-                                                </div>
-                                            </div>
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
 
-                                        </div> <!-- end 6th row  -->
+{{--                                        </div> <!-- end 6th row  -->--}}
+
 
                                         <div class="row">
                                             <div class="col-md-12">
@@ -168,7 +176,6 @@
                                             </div>
                                         </div> <!-- end 8th row  -->
 
-
                                         <hr>
 
 
@@ -180,11 +187,13 @@
 
                                                     <div class="controls">
                                                         <fieldset>
-                                                            <input type="checkbox" id="checkbox_2" name="hot_deals" value="1">
+                                                            <input type="checkbox" id="checkbox_2" name="hot_deals" value="1"
+                                                            {{$products->hot_deals == 1 ? 'checked': ''}}>
                                                             <label for="checkbox_2">Hot Deals</label>
                                                         </fieldset>
                                                         <fieldset>
-                                                            <input type="checkbox" id="checkbox_3" name="featured" value="1">
+                                                            <input type="checkbox" id="checkbox_3" name="featured" value="1"
+                                                                {{$products->featured == 1 ? 'checked': ''}}>
                                                             <label for="checkbox_3">Featured</label>
                                                         </fieldset>
                                                     </div>
@@ -198,11 +207,13 @@
 
                                                     <div class="controls">
                                                         <fieldset>
-                                                            <input type="checkbox" id="checkbox_4" name="special_offer" value="1">
+                                                            <input type="checkbox" id="checkbox_4" name="special_offer" value="1"
+                                                                {{$products->special_offer == 1 ? 'checked': ''}}>
                                                             <label for="checkbox_4">Special Offer</label>
                                                         </fieldset>
                                                         <fieldset>
-                                                            <input type="checkbox" id="checkbox_5" name="special_deals" value="1">
+                                                            <input type="checkbox" id="checkbox_5" name="special_deals" value="1"
+                                                                {{$products->special_deals == 1 ? 'checked': ''}}>
                                                             <label for="checkbox_5">Special Deals</label>
                                                         </fieldset>
                                                     </div>
@@ -211,7 +222,7 @@
                                         </div>
 
                                         <div class="text-xs-right">
-                                            <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add Product">
+                                            <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update Product">
                                         </div>
                             </form>
 
@@ -226,6 +237,130 @@
 
         </section>
         <!-- /.content -->
+
+        <!-- ///////////////// Start Multiple Image Update Area ///////// -->
+
+        <section class="content">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="box bt-3 border-info">
+                        <div class="box-header">
+                            <h4 class="box-title">Product Multiple Image <strong>Update</strong></h4>
+                        </div>
+
+
+                        <form method="post" action="{{ route('update.product.image') }}" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row row-sm">
+                                @foreach($multiImgs as $img)
+                                    <div class="col-md-3">
+
+                                        <div class="card">
+                                            <img src="{{ asset($img->photo_name) }}" class="card-img-top" style="height: 130px; width: 280px;">
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    <a href="{{ route('product.multiimg.delete',$img->id) }}" class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i> </a>
+                                                </h5>
+                                                <p class="card-text">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Change Image <span class="tx-danger">*</span></label>
+                                                    <input class="form-control" type="file" name="multi_img[{{ $img->id }}]">
+                                                </div>
+                                                </p>
+
+                                            </div>
+                                        </div>
+
+                                    </div><!--  end col md 3		 -->
+                                @endforeach
+
+                            </div>
+
+                            <div class="text-xs-right">
+                                <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update Image">
+                            </div>
+                            <br><br>
+
+
+
+                        </form>
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+            </div> <!-- // end row  -->
+
+        </section>
+{{--        End Section Multi Image--}}
+
+    <!-- ///////////////// Start Main Image Update Area ///////// -->
+
+        <section class="content">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="box bt-3 border-info">
+                        <div class="box-header">
+                            <h4 class="box-title">Product Main Image <strong>Update</strong></h4>
+                        </div>
+
+
+                        <form method="post" action="{{ route('update.product.mainImage') }}" enctype="multipart/form-data">
+                            @csrf
+
+                            <input type="hidden" name="id" value="{{ $products->id }}">
+                            <input type="hidden" name="old_img" value="{{ $products->image }}">
+
+                            <div class="row row-sm">
+
+                                <div class="col-md-3">
+
+                                    <div class="card">
+                                        <img src="{{ asset($products->image) }}" class="card-img-top" style="height: 130px; width: 280px;">
+                                        <div class="card-body">
+
+                                            <p class="card-text">
+                                            <div class="form-group">
+                                                <label class="form-control-label">Change Image <span class="tx-danger">*</span></label>
+                                                <input type="file" name="mainImage" class="form-control" onChange="mainThamUrl(this)"  >
+                                                <img src="" id="mainThmb">
+                                            </div>
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                </div><!--  end col md 3		 -->
+
+
+                            </div>
+
+                            <div class="text-xs-right">
+                                <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update Image">
+                            </div>
+                            <br><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+    </div> <!-- // end row  -->
+
+    </section>
+    <!-- ///////////////// End Start Main Image Update Area ///////// -->
+
+
+    </div>
+
     </div>
 
     <script type="text/javascript">

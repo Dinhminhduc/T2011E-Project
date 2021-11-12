@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{asset('frontend/css/default.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
+
 </head>
 <body>
 
@@ -98,5 +99,6 @@
 <script src="{{asset('frontend/js/wow.min.js')}}"></script>
 <script src="{{asset('frontend/js/plugins.js')}}"></script>
 <script src="{{asset('frontend/js/main.js')}}"></script>
+
 </body>
 </html>

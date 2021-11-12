@@ -26,7 +26,7 @@
                 @endforeach
             </select>
             <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <input type="submit" class="btn btn-primary" value="Submit">
         </form>
         <?php ?>
     </div>

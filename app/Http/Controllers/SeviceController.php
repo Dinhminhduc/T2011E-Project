@@ -52,14 +52,13 @@ class SeviceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name_service' => 'required|min:1|max:255',
             'price' => 'required',
             'servicetype_id'=> 'required',
             'staff_id'=> 'required',
             'title'=> 'required',
             'hinhanh'=> 'required',
             'slug'=> 'required',
-           
+
         ]
     );
 
@@ -74,7 +73,7 @@ class SeviceController extends Controller
     $service->tomtat = $data['tomtat'];
     $service->servicetype_id = $data['servicetype_id'];
     $service->staff_id = $data['staff_id'];
-  
+
 
     $image = $request->hinhanh;
         $path = public_path('img/service-img/');
@@ -82,9 +81,9 @@ class SeviceController extends Controller
         $name_image = current(explode('.',$get_name_image));
         $new_image = $name_image.rand(0,99).'.'.$image->getClientOriginalExtension();
         $image->move($path, $new_image);
-    
+
         $service->hinhanh = $new_image;
- 
+
     $service->save();
     return redirect()->back()->with('message', ' Thêm danh muc thành công');
     return redirect(route("service.index"));
@@ -130,11 +129,11 @@ class SeviceController extends Controller
             'slug' => 'required',
             'servicetype_id'=> 'required',
             'staff_id'=> 'required',
-           
+
         ]
     );
 
-   
+
     $service = service::find($id);
     $service->name_service = $request->input('name_service');
     $service->slug = $request->input('slug');
@@ -162,8 +161,8 @@ class SeviceController extends Controller
     $service->hinhanh = $new_image;
 }
     //-----
- 
- 
+
+
     $service->update();
     $service->save();
     $request->session()->flash('msg', 'Update successfully');

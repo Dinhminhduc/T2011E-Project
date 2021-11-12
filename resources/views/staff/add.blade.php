@@ -36,37 +36,37 @@
                         @csrf
                         <div class="form-group">
                           <label for="exampleInputEmail1">Họ tên</label>
-                          <input type="text" name="ten"  class="form-control" 
+                          <input type="text" name="ten"  class="form-control"
                           aria-describedby="emailHelp" placeholder="Họ tên">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Ngày sinh</label>
-                            <input type="date" name="ngaysinh"  class="form-control" 
+                            <input type="date" name="ngaysinh"  class="form-control"
                             aria-describedby="emailHelp" placeholder="Ngày sinh">
                         </div>
 
                         {{-- <div class="form-group">
                             <label for="exampleInputEmail1">Giờ làm</label>
-                            <input type="time" name="date_start"  class="form-control" 
+                            <input type="time" name="date_start"  class="form-control"
                             aria-describedby="emailHelp" placeholder="Giờ làm">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Giờ nghỉ</label>
-                            <input type="time" name="date_end"  class="form-control" 
+                            <input type="time" name="date_end"  class="form-control"
                             aria-describedby="emailHelp" placeholder="Giờ nghỉ">
                         </div> --}}
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Địa chỉ</label>
-                            <input type="text" name="diachi"  class="form-control" 
+                            <input type="text" name="diachi"  class="form-control"
                             aria-describedby="emailHelp" placeholder="Địa Chỉ">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Số điện thoại</label>
-                            <input type="number" name="sodienthoai"  class="form-control" 
+                            <input type="number" name="sodienthoai"  class="form-control"
                             aria-describedby="emailHelp" placeholder="Số điện thoại">
                         </div>
 
@@ -75,7 +75,7 @@
                             <input type="file" class="form-control" name="hinhanh" id="cover">
                         </div>
 
-                      
+
                         <div class="form-group">
                             <label for="exampleInputEmail1">Chức vụ</label>
                             <input type="text" class="form-control" name="chucvu" id="cover">
@@ -92,20 +92,20 @@
                         {{-- <div class="form-group checkbox">
                             <label><strong>Lịch làm việc trong tuần :</strong></label><br>
                             <div class="form-check" style="color:white">
-                            
-                            <input type="checkbox" id="vehicle1" class="listcheck"  name="category[]" value="Thứ hai"> 
+
+                            <input type="checkbox" id="vehicle1" class="listcheck"  name="category[]" value="Thứ hai">
                             <label for="vehicle1" >Thứ hai</label><br>
-                            <input type="checkbox" id="vehicle2" class="listcheck"  name="category[]" value="Thứ ba"> 
+                            <input type="checkbox" id="vehicle2" class="listcheck"  name="category[]" value="Thứ ba">
                             <label for="vehicle2" >Thứ ba</label><br>
-                            <input type="checkbox" id="vehicle3" class="listcheck"  name="category[]" value="Thứ tư"> 
+                            <input type="checkbox" id="vehicle3" class="listcheck"  name="category[]" value="Thứ tư">
                             <label for="vehicle3" >Thứ tư</label><br>
-                            <input type="checkbox" id="vehicle4" class="listcheck"  name="category[]" value="Thứ năm"> 
+                            <input type="checkbox" id="vehicle4" class="listcheck"  name="category[]" value="Thứ năm">
                             <label for="vehicle4" >Thứ năm</label><br>
-                            <input type="checkbox" id="vehicle5" class="listcheck"  name="category[]" value="Thứ sáu"> 
+                            <input type="checkbox" id="vehicle5" class="listcheck"  name="category[]" value="Thứ sáu">
                             <label for="vehicle5" >Thứ sáu</label><br>
-                            <input type="checkbox" id="vehicle6" class="listcheck"  name="category[]" value="Thứ bảy"> 
+                            <input type="checkbox" id="vehicle6" class="listcheck"  name="category[]" value="Thứ bảy">
                             <label for="vehicle6" >Thứ bảy</label><br>
-                            <input type="checkbox" id="vehicle7" class="listcheck"  name="category[]" value="Chủ nhật"> 
+                            <input type="checkbox" id="vehicle7" class="listcheck"  name="category[]" value="Chủ nhật">
                             <label for="vehicle7" >Chủ nhật</label><br>
                             </div>
                         </div>   --}}
@@ -127,9 +127,9 @@
                                  @endforeach
                               </select>
                         </div> --}}
-                        
 
-                        <button type="submit" class="btn btn-primary">Thêm</button>
+
+                        <input type="submit" class="btn btn-primary" value="Add">
                       </form>
                 </div>
             </div>

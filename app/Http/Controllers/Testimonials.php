@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class Testimonials extends Controller
 {
     /**
@@ -89,8 +90,11 @@ class Testimonials extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
-        //
+        $test = \App\Models\testimonials::find($id);
+        $test->delete();
+        $request->session()->flash('msg', 'Delete successfully');
+        return redirect(route("testimonials.index"));
     }
 }

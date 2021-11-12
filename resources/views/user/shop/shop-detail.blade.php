@@ -37,6 +37,13 @@
                                         <img src="{{asset($products->image)}}" style="height: 500px; width: 900px" alt="">
                                     </div>
                                 </div>
+{{--                                @foreach($multiImg as $img)--}}
+{{--                                    <div class="tab-pane" id="item-two" role="tabpanel" aria-labelledby="item-two-tab">--}}
+{{--                                        <div class="shop-details-img">--}}
+{{--                                            <img src="{{asset($img->photo_name)}}" alt="">--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
 {{--                                <div class="tab-pane" id="item-two" role="tabpanel" aria-labelledby="item-two-tab">--}}
 {{--                                    <div class="shop-details-img">--}}
 {{--                                        <img src="{{asset($products->image)}}" alt="">--}}
@@ -54,26 +61,28 @@
 {{--                                </div>--}}
                             </div>
                         </div>
-{{--                        <div class="shop-details-nav-wrap">--}}
-{{--                            <ul class="nav nav-tabs" id="myTab" role="tablist">--}}
-{{--                                <li class="nav-item" role="presentation">--}}
-{{--                                    <a class="nav-link active" id="item-one-tab" data-toggle="tab" href="#item-one" role="tab"--}}
-{{--                                       aria-controls="item-one" aria-selected="true"><img src="{{asset($products->image)}}" alt=""></a>--}}
-{{--                                </li>--}}
+                        <div class="shop-details-nav-wrap">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                @foreach($multiImg as $img)
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="item-one-tab" data-toggle="tab" href="#item-one" role="tab"
+                                       aria-controls="item-one" aria-selected="true"><img src="{{asset($img->photo_name)}}" alt=""></a>
+                                </li>
+                                @endforeach
 {{--                                <li class="nav-item" role="presentation">--}}
 {{--                                    <a class="nav-link" id="item-two-tab" data-toggle="tab" href="#item-two" role="tab" aria-controls="item-two"--}}
-{{--                                       aria-selected="false"><img src="img/product/shop_nav_img02.jpg" alt=""></a>--}}
+{{--                                       aria-selected="false"><img src="{{asset($products->image)}}" alt=""></a>--}}
 {{--                                </li>--}}
 {{--                                <li class="nav-item" role="presentation">--}}
 {{--                                    <a class="nav-link" id="item-three-tab" data-toggle="tab" href="#item-three" role="tab"--}}
-{{--                                       aria-controls="item-three" aria-selected="false"><img src="img/product/shop_nav_img03.jpg" alt=""></a>--}}
+{{--                                       aria-controls="item-three" aria-selected="false"><img src="{{asset($products->image)}}" alt=""></a>--}}
 {{--                                </li>--}}
 {{--                                <li class="nav-item" role="presentation">--}}
 {{--                                    <a class="nav-link" id="item-four-tab" data-toggle="tab" href="#item-four" role="tab"--}}
-{{--                                       aria-controls="item-four" aria-selected="false"><img src="img/product/shop_nav_img04.jpg" alt=""></a>--}}
+{{--                                       aria-controls="item-four" aria-selected="false"><img src="{{asset($products->image)}}" alt=""></a>--}}
 {{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-5">
                         <div class="shop-details-content">
@@ -98,13 +107,12 @@
                                     <h5 class="stock-status">- NOT AVAILABLE</h5>
                                 @endif
                             </div>
-                            <p>The domestic dog is a doiated dendant of the wolf. The dog derived from an ancient, extinct wolf, and the modern grey wolf is the dog's nearest living relative.</p>
+                            {{$products->description}}
+                            <br>
                             <div class="shop-details-dimension">
                                 <span>Dimension :</span>
                                 <ul>
                                     <li class="active"><a href="#">{{$products->size}}</a></li>
-{{--                                    <li><a href="#">Medium</a></li>--}}
-{{--                                    <li><a href="#">Small</a></li>--}}
                                 </ul>
                             </div>
 {{--                            <div class="shop-details-color">--}}
@@ -220,86 +228,28 @@
                     </div>
                 </div>
             </div>
-            <div class="related-products-wrap">
-                <h2 class="title">Related Products</h2>
-                <div class="row related-product-active">
-                    <div class="col-lg-3">
-                        <div class="shop-item mb-55">
-                            <div class="shop-thumb">
-                                <a href="shop-details.html"><img src="img/product/shop_item01.jpg" alt=""></a>
-                            </div>
-                            <div class="shop-content">
-                                <span>Dog toy’s</span>
-                                <h4 class="title"><a href="shop-details.html">Pet Knit Knacks</a></h4>
-                                <div class="shop-content-bottom">
-                                    <span class="price">$28.00</span>
-                                    <span class="add-cart"><a href="shop-details.html">ADD +</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="shop-item mb-55">
-                            <div class="shop-thumb">
-                                <a href="shop-details.html"><img src="img/product/shop_item02.jpg" alt=""></a>
-                            </div>
-                            <div class="shop-content">
-                                <span>Dog toy’s</span>
-                                <h4 class="title"><a href="shop-details.html">Squeaky Dog</a></h4>
-                                <div class="shop-content-bottom">
-                                    <span class="price">$19.00</span>
-                                    <span class="add-cart"><a href="shop-details.html">ADD +</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="shop-item mb-55">
-                            <div class="shop-thumb">
-                                <a href="shop-details.html"><img src="img/product/shop_item03.jpg" alt=""></a>
-                            </div>
-                            <div class="shop-content">
-                                <span>Dog toy’s</span>
-                                <h4 class="title"><a href="shop-details.html">Pet Knit Knacks</a></h4>
-                                <div class="shop-content-bottom">
-                                    <span class="price">$29.00</span>
-                                    <span class="add-cart"><a href="shop-details.html">ADD +</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="shop-item mb-55">
-                            <div class="shop-thumb">
-                                <a href="shop-details.html"><img src="img/product/shop_item04.jpg" alt=""></a>
-                            </div>
-                            <div class="shop-content">
-                                <span>Dog toy’s</span>
-                                <h4 class="title"><a href="shop-details.html">Yoda Carriage</a></h4>
-                                <div class="shop-content-bottom">
-                                    <span class="price">$49.00</span>
-                                    <span class="add-cart"><a href="shop-details.html">ADD +</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="shop-item mb-55">
-                            <div class="shop-thumb">
-                                <a href="shop-details.html"><img src="img/product/shop_item05.jpg" alt=""></a>
-                            </div>
-                            <div class="shop-content">
-                                <span>Dog toy’s</span>
-                                <h4 class="title"><a href="shop-details.html">Pet Carriage</a></h4>
-                                <div class="shop-content-bottom">
-                                    <span class="price">$09.00</span>
-                                    <span class="add-cart"><a href="shop-details.html">ADD +</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="related-products-wrap">--}}
+{{--                <h2 class="title">Hot Deals Products</h2>--}}
+{{--                <div class="row related-product-active">--}}
+{{--                    @foreach($hot_deals as $product)--}}
+{{--                    <div class="col-lg-3">--}}
+{{--                        <div class="shop-item mb-55">--}}
+{{--                            <div class="shop-thumb">--}}
+{{--                                <a href="{{route('detail.shop',$product->id)}}"><img src="{{asset($product->image)}}" alt=""></a>--}}
+{{--                            </div>--}}
+{{--                            <div class="shop-content">--}}
+{{--                                <span>{{$product->category}}</span>--}}
+{{--                                <h4 class="title"><a href="{{route('detail.shop',$product->id)}}">{{$product->name}}</a></h4>--}}
+{{--                                <div class="shop-content-bottom">--}}
+{{--                                    <span class="price">${{$product->price}}</span>--}}
+{{--                                    <span class="add-cart"><a href="{{route('detail.shop',$product->id)}}">ADD +</a></span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    @endforeach--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </section>
     <!-- shop-details-area-end -->

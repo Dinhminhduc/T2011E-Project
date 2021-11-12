@@ -11,8 +11,8 @@ class MultiImg extends Model
 
     protected $guarded = [];
 
-//    public function imgProduct(){
-//        $this->belongsTo('App\Models\Product','image','');
-//    }
+    public function product(){
+        $this->belongsTo('App\Models\Product','product_id','id');
+    }
 
 }

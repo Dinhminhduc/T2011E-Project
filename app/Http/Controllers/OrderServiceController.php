@@ -21,8 +21,8 @@ class OrderServiceController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     * 
-     * 
+     *
+     *
      */
 
     //  public function load_comment(Request $request) {
@@ -30,9 +30,9 @@ class OrderServiceController extends Controller
     //     $comment = Comment::where('comment_service_id', $service_id)->get();
     //     $output='';
     //     foreach ($comment as $key => $comm) {
-    //         $output.= ' 
+    //         $output.= '
     //         <div class="review p-5" style="margin-top:-30px">
-               
+
     //             <div class="row d-flex">
     //                 <div class="d-flex flex-column pl-3">
     //                     <h4>'.$comm->comment_name.'</h4>
@@ -42,14 +42,14 @@ class OrderServiceController extends Controller
     //             <div class="row pb-3">
     //                 <p>'.$comm->comment.'</p>
     //             </div>
-              
+
     //         </div>';
     //     }
     //     echo $output;
     //  }
     public function index(Request $request)
     {
-       
+
         $lsCustomer = CustomerS::all();
         $search_name = $request->search_name;
         $status = $request->status;
@@ -58,7 +58,7 @@ class OrderServiceController extends Controller
         $from = $request->from;
         $to = $request->to;
         $phone = $request->phone;
-     
+
         if( isset($phone) ){
             $lsCustomer = CustomerS::orderBy('date_time','desc')
             ->where('phone','like','%'.$phone.'%')
@@ -72,7 +72,7 @@ class OrderServiceController extends Controller
             // $lsCustomer = \DB::select("SELECT *FROM customers WHERE created_at BETWEEN '$from' AND '$to' ") ->paginate(8);
             $lsCustomer = CustomerS::orderBy('date_time','desc')
             ->where('date_time', '>=', $from)
-            ->where('date_time', '<=', $to) 
+            ->where('date_time', '<=', $to)
             ->paginate(4);
         //    dd($from, $to);
         }elseif(isset($date)){
@@ -114,12 +114,6 @@ class OrderServiceController extends Controller
     public function add_adoption(Request $request, $id){
     $service = Service::find($id);
 
-    $request->validate([
-        'date_time' => 'date_format:H:i|after:created_at|required',
-      
-    ],[
-        'date_time.unique' => 'Thời gian không hợp lệ, xin chọn ngày khác',
-    ]);
     $cus = new CustomerS();
     $cus->first_name = $request->first_name;
     $cus->last_name = $request->last_name;
@@ -155,7 +149,7 @@ class OrderServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
 
     public function changeSTT($status,$id){
         $cus = CustomerS::find($id);

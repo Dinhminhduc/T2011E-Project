@@ -36,11 +36,11 @@
                         @csrf
                         <div class="form-group">
                           <label for="exampleInputEmail1">Tên dịch vụ</label>
-                          <input type="text" name="name"  class="form-control" 
+                          <input type="text" name="name"  class="form-control"
                           aria-describedby="emailHelp" placeholder="Tên dịch vụ">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Thêm</button>
+                        <input type="submit" class="btn btn-primary" value="Add">
                       </form>
                 </div>
             </div>

@@ -124,8 +124,7 @@
                                         <div class="form-group">
                                             <h5>Description Area<span class="text-danger">*</span></h5>
                                             <textarea id="editor1" name="description" rows="10" cols="80">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                        sed do eiusmod tempor incididunt ut labore et dolore magna
+
                                             </textarea>
                                         </div>
                                     </div>

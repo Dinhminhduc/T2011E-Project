@@ -394,62 +394,20 @@
                     </div>
                 </div>
                 <div class="row testimonial-active">
-                    <div class="col-lg-6">
-                        <div class="testimonial-item">
-                            <div class="testi-avatar-thumb">
-                                <img src="img/images/testi_avatar01.png" alt="">
-                            </div>
-                            <div class="testi-content">
-                                <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
-                                <div class="testi-avatar-info">
-                                    <h5 class="title">Alessia Cara</h5>
-                                    <span>Googel CEO</span>
+                    @foreach($lsTesti as $testi)
+                        <div class="col-lg-6">
+                            <div class="testimonial-item">
+
+                                <div class="testi-content">
+                                    <p>{{$testi->testi}}</p>
+                                    <div class="testi-avatar-info">
+                                        <h5 class="title">{{$testi->name}}</h5>
+                                        <span>{{$testi->job}}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="testimonial-item">
-                            <div class="testi-avatar-thumb">
-                                <img src="img/images/testi_avatar02.png" alt="">
-                            </div>
-                            <div class="testi-content">
-                                <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
-                                <div class="testi-avatar-info">
-                                    <h5 class="title">Alessia Cara</h5>
-                                    <span>Googel CEO</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="testimonial-item">
-                            <div class="testi-avatar-thumb">
-                                <img src="img/images/testi_avatar01.png" alt="">
-                            </div>
-                            <div class="testi-content">
-                                <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
-                                <div class="testi-avatar-info">
-                                    <h5 class="title">Alessia Cara</h5>
-                                    <span>Googel CEO</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="testimonial-item">
-                            <div class="testi-avatar-thumb">
-                                <img src="img/images/testi_avatar02.png" alt="">
-                            </div>
-                            <div class="testi-content">
-                                <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
-                                <div class="testi-avatar-info">
-                                    <h5 class="title">Alessia Cara</h5>
-                                    <span>Googel CEO</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -494,8 +452,8 @@
                     </div>
                     @endif
                     @endforeach
-                
-                 
+
+
                 </div>
             </div>
         </section>

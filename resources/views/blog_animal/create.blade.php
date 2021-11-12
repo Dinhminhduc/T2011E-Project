@@ -36,7 +36,7 @@
                         @csrf
                         <div class="form-group">
                           <label for="exampleInputEmail1">Tên</label>
-                          <input type="text" name="name"  class="form-control" 
+                          <input type="text" name="name"  class="form-control"
                           aria-describedby="emailHelp" placeholder="Tên dịch vụ">
                         </div>
 
@@ -53,22 +53,22 @@
                             aria-describedby="emailHelp" placeholder="Slug dịch vụ">
                           </div>
 
-                          
+
                           <div class="form-group">
                             <label for="exampleInputEmail1">Từ khoá </label>
-                            <input type="text" name="tukhoa" data-role="tagsinput"  class="form-control" 
+                            <input type="text" name="tukhoa" data-role="tagsinput"  class="form-control"
                             aria-describedby="emailHelp" placeholder="Slug dịch vụ">
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputEmail1">Tóm tắt</label>
-                            <textarea type="text"  id="ckeditor1" name="tomtat"  class="form-control" 
+                            <textarea type="text"  id="ckeditor1" name="tomtat"  class="form-control"
                             aria-describedby="emailHelp" placeholder="Tên dịch vụ"></textarea>
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputEmail1">Chi tiết</label>
-                            <textarea type="text"  id="ckeditor2" name="description"  class="form-control" 
+                            <textarea type="text"  id="ckeditor2" name="description"  class="form-control"
                             aria-describedby="emailHelp" placeholder="Tên dịch vụ"></textarea>
                           </div>
 
@@ -78,9 +78,9 @@
                             aria-describedby="emailHelp" placeholder="Hình ảnh">
                           </div>
 
-                        
 
-                        <button type="submit" class="btn btn-primary">Thêm</button>
+
+                        <input type="submit" class="btn btn-primary" value="Add">
                       </form>
                 </div>
             </div>

@@ -61,7 +61,7 @@ class IndexController extends Controller
 
     public function tag_service(Request $request, $tag){
         $service = Service::orderBy('id','DESC')->get();
-       
+
         $service_tag = Service::where('title', 'LIKE', '%'.$tag.'%')
         ->orWhere('tomtat', 'LIKE', '%'.$tag.'%')
         ->orWhere('slug', 'LIKE', '%'.$tag.'%')
@@ -69,6 +69,9 @@ class IndexController extends Controller
 
         return view('user/tag_service', compact('service','service_tag'))
         ->with('tag',$tag)->with('service_tag',$service_tag);
+    }
+    public function contact_service(Request $request){
+        return view('contact_service');
     }
 
 

@@ -30,8 +30,7 @@
                     <td>{{$testi->job}}</td>
                     <td>{{$testi->testi}}</td>
                     <td>
-                        <a class="btn btn-primary" href="#">Edit</a>
-                        <form method="POST" onsubmit="return confirm('sure ?')" action="#">
+                        <form method="POST" onsubmit="return confirm('sure ?')" action="{{route('testimonials.destroy',$testi->id)}}">
                             @csrf
                             @method('DELETE')
                             <input class="btn btn-danger" type="submit" value="Delete">

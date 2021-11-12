@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Customer;
-use App\Models\CustomerProduct;
+use App\Models\MultiImg;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
@@ -16,13 +16,17 @@ class ShopController extends Controller
     public function allShop(){
         $lsProduct = Product::latest()->take(9)->get();
         $lsCate = Category::all();
+        $hot_deals = Product::where('hot_deals',1)->orderBy('id','DESC')->limit(3)->get();
         return view("user.shop.shop")->with(['lsProduct' => $lsProduct,
-            'lsCate' => $lsCate]);
+            'lsCate' => $lsCate,
+            'hot_deals' => $hot_deals]);
     }
 
     public function detailShop(Request $request, $id){
         $products = Product::find($id);
-        return view('user.shop.shop-detail',compact('products'));
+        $multiImg = MultiImg::where('product_id',$id)->get();
+        return view('user.shop.shop-detail')->with(['products' => $products,
+            'multiImg' => $multiImg]);;
     }
 
     public function detailProduct(Request $request, $pid){

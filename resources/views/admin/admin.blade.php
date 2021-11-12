@@ -52,21 +52,6 @@
                     </li>
                 </ul>
             </div>
-
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="users"></i>
-                    <span>Blog</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                      </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{route('blog_animal.index')}}"><i class="ti-more"></i>Profile</a></li>
-                    <li><a href="{{route('blog_animal.create')}}"><i class="ti-more"></i>Create Blog</a></li>
-
-                </ul>
-            </li>
             <div class="navbar-custom-menu r-side">
                 <ul class="nav navbar-nav">
                     <!-- full Screen -->
@@ -141,23 +126,30 @@
                         </ul>
                     </li>
 
+                    @php
+                    $adminData = DB::table('admins')->first();
+                    @endphp
+
                     <!-- User Account-->
                     <li class="dropdown user user-menu">
                         <a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown" title="User">
-                            <img src="../images/avatar/1.jpg" alt="">
+                            <img src="{{ (!empty($adminData->profile_photo_path))? url('upload/admin_images/'.$adminData->profile_photo_path) : url('upload/no_image.jpg') }}" alt="">
                         </a>
                         <ul class="dropdown-menu animated flipInX">
                             <li class="user-body">
-                                <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Logout</a>
+                                <a class="dropdown-item" href="{{route('admin.profile')}}"><i class="ti-user text-muted mr-2"></i> Profile</a>
+                                <a class="dropdown-item" href="{{route('admin.change.password')}}"><i class="ti-wallet text-muted mr-2"></i>Change Password</a>
+                                <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="ti-lock text-muted mr-2"></i> Logout</a>
                             </li>
-                            {{-- {{Auth::logout()}} --}}
                         </ul>
                     </li>
-{{--                    <li>--}}
-{{--                        <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light">--}}
-{{--                            <i class="ti-settings"></i>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
+                    <li>
+                        <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light">
+                            <i class="ti-settings"></i>
+                        </a>
+                    </li>
 
                 </ul>
             </div>
@@ -503,9 +495,28 @@
 </script>
 
 {{--        CK Editor--}}
-        <script src="{{asset('../assets/icons/feather-icons/feather.min.js')}}"></script>	<script src="../assets/vendor_components/ckeditor/ckeditor.js"></script>
+        <script src="{{asset('../assets/icons/feather-icons/feather.min.js')}}"></script>	<script src="{{asset('../assets/vendor_components/ckeditor/ckeditor.js')}}"></script>
         <script src="{{asset('../assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js')}}"></script>
         <script src="{{asset('backend/js/pages/editor.js')}}"></script>
+
+        <script src="{{asset('backend/js/ckeditor.js')}}"></script>
+        <script src="{{asset('backend/js/bootstrap-tagsinput.js')}}"></script>
+
+        <script type="text/javascript">
+            ClassicEditor
+                .create( document.querySelector( '#ckeditor1' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+
+            ClassicEditor
+                .create( document.querySelector( '#ckeditor2' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+
+
+        </script>
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

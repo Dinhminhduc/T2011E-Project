@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,15 +29,23 @@ Route::group(['prefix'=>'shop'],function (){
 
 });
 
+//Admin Product All Route
+Route::prefix('product')->group(function() {
+    Route::get('/add', [App\Http\Controllers\ProductController::class, 'AddProduct'])->name('add.product');
+    Route::post('/store', [App\Http\Controllers\ProductController::class, 'StoreProduct'])->name('store.product');
+    Route::get('/manage', [App\Http\Controllers\ProductController::class, 'ManageProduct'])->name('manage.product');
+    Route::get('/edit/{id}', [App\Http\Controllers\ProductController::class, 'EditProduct'])->name('product.edit');
+    Route::post('/data/update/{id}', [App\Http\Controllers\ProductController::class, 'ProductDataUpdate'])->name('product.update');
+    Route::post('/image/update', [App\Http\Controllers\ProductController::class, 'MultiImageUpdate'])->name('update.product.image');
+    Route::post('/mainImage/update', [App\Http\Controllers\ProductController::class, 'MainImageUpdate'])->name('update.product.mainImage');
+    Route::get('/multiimg/delete/{id}', [App\Http\Controllers\ProductController::class, 'MultiImageDelete'])->name('product.multiimg.delete');
+    Route::get('/inactive/{id}', [App\Http\Controllers\ProductController::class, 'ProductInactive'])->name('product.inactive');
+    Route::get('/active/{id}', [App\Http\Controllers\ProductController::class, 'ProductActive'])->name('product.active');
+    Route::get('/delete/{id}', [ProductController::class, 'ProductDelete'])->name('product.delete');
+});
+
 //Admin Shop Route
 Route::group(['prefix'=>'admin'],function () {
-    Route::get('/product/all',[App\Http\Controllers\ProductController::class,'AllProduct'])->name('all.product');
-    Route::post('/product/add',[App\Http\Controllers\ProductController::class,'AddProduct'])->name('add.product');
-    Route::get('/product/edit/{id}',[App\Http\Controllers\ProductController::class,'Edit']);
-    Route::post('/product/update/{id}',[App\Http\Controllers\ProductController::class,'Update']);
-    Route::get('/product/delete/{id}',[App\Http\Controllers\ProductController::class,'Delete']);
-    Route::get('/product/restore/{id}',[App\Http\Controllers\ProductController::class,'Restore']);
-    Route::get('/product/pdelete/{id}',[App\Http\Controllers\ProductController::class,'PDelete']);
     Route::resource("/category",App\Http\Controllers\CategoryController::class);
     Route::resource('/order',App\Http\Controllers\OrderProductController::class);
     Route::get('changeStatus/{status}/{order}',[\App\Http\Controllers\OrderProductController::class,'changeStatus']);
@@ -46,6 +55,10 @@ Route::group(['prefix'=>'admin'],function () {
 //Admin Brand All Route
 Route::prefix('brand')->group(function (){
     Route::get('/view',[App\Http\Controllers\BrandController::class,'BrandView'])->name('all.brand');
+    Route::post('/store',[App\Http\Controllers\BrandController::class,'BrandStore'])->name('brand.store');
+    Route::get('/edit/{id}',[App\Http\Controllers\BrandController::class,'BrandEdit']);
+    Route::post('/update/{id}',[App\Http\Controllers\BrandController::class,'BrandUpdate']);
+    Route::get('/delete/{id}',[App\Http\Controllers\BrandController::class,'BrandDelete'])->name('brand.delete');
 
 });
 
@@ -82,6 +95,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 });
 //End Service Route
 
+
 //All Home Route
 
 Route::get('/',[\App\Http\Controllers\IndexController::class,'welcome']);
@@ -97,11 +111,33 @@ Route::resource("testimonials",App\Http\Controllers\Testimonials::class);
 
 //End Home Route
 
+//Admin Profile All Route
+Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
+    Route::get('/login', [\App\Http\Controllers\Admin\AdminController::class, 'loginForm']);
+    Route::post('/login',[\App\Http\Controllers\Admin\AdminController::class, 'store'])->name('admin.login');
+});
+Route::get('/admin/logout',[\App\Http\Controllers\Admin\AdminController::class,'destroy'])->name('admin.logout');
+Route::get('/admin/profile',[\App\Http\Controllers\Admin\AdminProfileController::class,'AdminProfile'])->name('admin.profile');
+Route::get('/admin/profile/edit',[\App\Http\Controllers\Admin\AdminProfileController::class,'AdminProfileEdit'])
+    ->name('admin.profile.edit');
+Route::post('/admin/profile/store',[\App\Http\Controllers\Admin\AdminProfileController::class,'AdminProfileStore'])
+    ->name('admin.profile.store');
+Route::get('/admin/change/password',[\App\Http\Controllers\Admin\AdminProfileController::class,'AdminChangePass'])
+    ->name('admin.change.password');
+Route::post('/update/change/password',[\App\Http\Controllers\Admin\AdminProfileController::class,'UpdateChangePass'])
+    ->name('update.change.password');
+
+//End Admin Profile Route
 
 //Default Route
+Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
+    return view('admin/index');
+})->name('dashboard');
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin/index');
-
+});
 
 Route::get('/', function () {
    return view('index');
@@ -139,4 +175,21 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::resource("staff",App\Http\Controllers\StaffController::class);
     Route::resource("service_type",App\Http\Controllers\ServiceTypeController::class);
     Route::resource("order",App\Http\Controllers\OrderServiceController::class);
+    Route::resource("blog_animal",App\Http\Controllers\BlogController::class);
 });
+
+//Blog Route
+Route::get('/blog', [App\Http\Controllers\IndexController::class, 'blog']);
+Route::get('/blog-detail/{slug}', [App\Http\Controllers\IndexController::class,'blog_detail']);
+
+Route::get('/tag/{tag}',[App\Http\Controllers\IndexController::class,'tag']);
+Route::get('/tag_service/{tag}',[App\Http\Controllers\IndexController::class,'tag_service']);
+
+//Comment Route
+Route::post('/comment/{service}', 'App\Http\Controllers\CommentController@store')->name('comment.store');
+Route::post('/comment-reply/{comment}', 'App\Http\Controllers\CommentReplyController@store')->name('reply.store');
+Route::delete("/comment/{id}",'App\Http\Controllers\CommentController@destroy')->name('comment.destroy');
+
+//Contact
+Route::get('/contact_service', [App\Http\Controllers\IndexController::class,'contact_service'])->name('contact_service');
+Route::post('/contact_save', [App\Http\Controllers\IndexController::class,'contact_save'])->name('contact_save');

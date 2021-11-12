@@ -117,17 +117,28 @@ class Animal_DetailController extends Controller
         ]);
         $ani = Animal_detail::find($id);
         $ani->name = $request->input('name');
-        $imgPath = "";
-        if ($request->hasFile("img")) {
-            $imgPath = $request->img->store('img');
-            $imgPath = 'img/'.$imgPath;
-        }
-        $ani->img = $imgPath;
+//        $imgPath = "";
+//        if ($request->hasFile("img")) {
+//            $imgPath = $request->img->store('image');
+//            $imgPath = 'image/'.$imgPath;
+//        }
+//        $ani->img = $imgPath;
+        $image = $request->file('img');
+
+        $name_gen = hexdec(uniqid());
+        $img_ext = strtolower($image->getClientOriginalExtension());
+        $img_name = $name_gen.'.'.$img_ext;
+        $up_location = 'image/product/';
+        $last_img = $up_location.$img_name;
+        $image->move($up_location,$img_name);
+
+        $ani->img = $last_img;
         $ani->desc = $request->input('desc');
         $ani->price = $request->input('price');
         $ani->dateOfBirth  =$request->input('dob');
         $ani->animal_id = $request->input('animal_type');
         $ani->save();
+
 
         $request->session()->flash("msg", "Update pet successfully");
         return redirect(route("animal_detail.index"));
