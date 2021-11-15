@@ -14,13 +14,41 @@ use App\Models\OrderDetail_Product;
 
 class ShopController extends Controller
 {
-    public function allShop(){
+    public function allShop(Request $request){
+        $category = $request->input('cate');
+
         $lsProduct = Product::latest()->take(9)->get();
         $lsCate = Category::all();
         $lsBrand = Brand::all();
+
         return view("user.shop.shop")->with(['lsProduct' => $lsProduct,
             'lsCate' => $lsCate,
-            'lsBrand' => $lsBrand]);
+            'lsBrand' => $lsBrand,
+            's_cate' => $category
+        ]);
+    }
+
+    public function ShopFilter(Request $request){
+        $lsCate = Category::all();
+        $category = $request->input('cate');
+        $lsBrand = Brand::all();
+
+        if(isset($category) && count($category) > 0){
+            $lsProduct = Product::whereIn('category_id',$category)
+                ->orderBy('created_at','desc')
+                ->paginatge(9);
+        } else {
+            $lsProduct = Product::all();
+        }
+
+//        $lsProduct = Product::orderBy('created_at','desc')->paginate(9);
+        return view("user.shop.shop")->with([
+                'lsProduct' => $lsProduct,
+                's_cate'=> $category,
+                'lsBrand' => $lsBrand,
+                'lsCate' => $lsCate,
+            ]
+        );
     }
 
     public function detailShop(Request $request, $id){
@@ -103,15 +131,16 @@ class ShopController extends Controller
         return redirect()->back();
     }
 
-    public function ProductSearch(Request $request){
+    public function SearchProduct(Request $request){
 
         $request->validate(["search" => "required"]);
 
         $item = $request->search;
         // echo "$item";
         $categories = Category::orderBy('name','ASC')->get();
+        $brands = Brand::all();
         $products = Product::where('name','LIKE',"%$item%")->get();
-        return view('frontend.product.search',compact('products','categories'));
+        return view('user.shop.search',compact('products','categories','brands'));
 
     }
 

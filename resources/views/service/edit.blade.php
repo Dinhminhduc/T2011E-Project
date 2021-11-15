@@ -31,12 +31,12 @@
             <textarea size="50" type="text" id="ckeditor1" class="form-control" name="title" rows="15" cols="100">
                     {{$service->title}}
             </textarea>
-            
+
             <label for="title2">Tóm tắt</label>
             <textarea  id="ckeditor2"  type="text" size="50" class="form-control" name="tomtat" rows="15" cols="100">
                 {{$service->tomtat}}
             </textarea>
-           
+
 
             <label>Giá tiền khoảng</label>
             <input type="number" name="price" class="form-control" value="{{$service->price}}"/>
@@ -46,7 +46,7 @@
                 <label for="exampleInputEmail1">Dịch vụ</label>
                       <select name="servicetype_id" class="custom-select" id="inputGroupSelect02">
                           @foreach($lsServiceType as $Key => $Value)
-                            <option {{$Value->id == $service->servicetype_id ? 'selected' : ''}} 
+                            <option {{$Value->id == $service->servicetype_id ? 'selected' : ''}}
                                 value="{{$Value->id }}"> {{$Value->name}}
                             </option>
                          @endforeach
@@ -59,22 +59,20 @@
                 <label for="exampleInputEmail1">Người khám</label>
                       <select name="staff_id" class="custom-select" id="inputGroupSelect02">
                           @foreach($lsStaff as $Key => $Value)
-                            <option {{$Value->id == $service->staff_id ? 'selected' : ''}}  
+                            <option {{$Value->id == $service->staff_id ? 'selected' : ''}}
                                 value="{{$Value->id }}"> {{$Value->chucvu}}
                             </option>
                          @endforeach
                       </select>
             </div>
-           
+
             <div class="form-group">
                 <label for="exampleInputEmail1">Hình ảnh </label>
                 <input type="file" class="form-control" name="hinhanh" id="cover">
                 <img src="{{asset('public/img/service-img/'.$service->hinhanh)}}" height="200" width="200" alt>
             </div>
 
-            <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
-                Edit Files
-            </button>
+            <input type="submit" name="submit" class="btn btn-primary btn-block mt-4" value="Edit File">
         </form>
     </div>
 

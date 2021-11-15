@@ -20,7 +20,6 @@
                         <th style="min-width: 150px"><span class="text-fade">Order Date</span></th>
                         <th style="min-width: 130px"><span class="text-fade">status</span></th>
                         <th style="min-width: 120px">Total</th>
-                        <th style="min-width: 130px"><span class="text-fade">Change Status</span></th>
                         <th style="min-width: 130px"><span class="text-fade">View</span></th>
                     </tr>
                     </thead>
@@ -65,9 +64,6 @@
                         </td>
                         <td>
                             {{number_format($order->total,2)}}
-                        </td>
-                        <td>
-                            <a href="#" class="waves-effect waves-light btn btn-info btn-circle mx-5" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="mdi mdi-bookmark-plus"></span></a>
                         </td>
                         <td>
                             <a href="{{route('orderProduct.show',$order->id)}}" class="waves-effect waves-light btn btn-info btn-circle mx-5"><span class="mdi mdi-arrow-right"></span></a>

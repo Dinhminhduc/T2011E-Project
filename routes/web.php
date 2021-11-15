@@ -26,6 +26,7 @@ Route::group(['prefix'=>'shop'],function (){
        return view('user.cart.check_out');
     })->name('check_out');
     Route::post('/place_order_product',[App\Http\Controllers\ShopController::class,'place_order_product'])->name('place_order_product');
+    Route::get('/filter', [App\Http\Controllers\ShopController::class, 'ShopFilter'])->name('shop.filter');
 
 });
 
@@ -41,16 +42,20 @@ Route::prefix('product')->group(function() {
     Route::get('/multiimg/delete/{id}', [App\Http\Controllers\ProductController::class, 'MultiImageDelete'])->name('product.multiimg.delete');
     Route::get('/inactive/{id}', [App\Http\Controllers\ProductController::class, 'ProductInactive'])->name('product.inactive');
     Route::get('/active/{id}', [App\Http\Controllers\ProductController::class, 'ProductActive'])->name('product.active');
-    Route::get('/delete/{id}', [ProductController::class, 'ProductDelete'])->name('product.delete');
+    Route::get('/delete/{id}', [App\Http\Controllers\ProductController::class, 'ProductDelete'])->name('product.delete');
 });
 
 //Admin Shop Route
 Route::group(['prefix'=>'admin'],function () {
     Route::resource("/category",App\Http\Controllers\CategoryController::class);
-    Route::resource('/order',App\Http\Controllers\OrderProductController::class);
+    Route::resource('/orderProduct',App\Http\Controllers\OrderProductController::class);
     Route::get('changeStatus/{status}/{order}',[\App\Http\Controllers\OrderProductController::class,'changeStatus']);
 
 });
+
+//Search Route
+Route::post('search', [\App\Http\Controllers\ShopController::class, 'SearchProduct'])->name('product.search');
+
 
 //Admin Brand All Route
 Route::prefix('brand')->group(function (){

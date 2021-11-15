@@ -1,56 +1,61 @@
 @extends('admin.admin')
 @section('admin')
+    @php
+        $money = App\Models\Order_Product::where('status',2)->sum('total');
+        $allProduct = App\Models\Product::where('status',1)->get();
+        $pending = App\Models\Order_Product::where('status',2)->get();
+    @endphp
 
     <div class="container-full">
 
         <!-- Main content -->
-{{--        <section class="content">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-xl-2 col-6">--}}
-{{--                    <div class="box overflow-hidden pull-up">--}}
-{{--                        <div class="box-body">--}}
-{{--                            <div class="icon bg-primary-light rounded w-60 h-60">--}}
-{{--                                <i class="text-primary mr-0 font-size-24 mdi mdi-account-multiple"></i>--}}
-{{--                            </div>--}}
-{{--                            <div>--}}
-{{--                                <p class="text-mute mt-20 mb-0 font-size-16">New Customers</p>--}}
-{{--                                <h3 class="text-white mb-0 font-weight-500">{{$count}}  --}}
-{{--                                    <small class="text-success"><i class="fa fa-user"></i> </small></h3>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-2 col-6">--}}
-{{--                    <div class="box overflow-hidden pull-up">--}}
-{{--                        <div class="box-body">--}}
-{{--                            <div class="icon bg-warning-light rounded w-60 h-60">--}}
-{{--                                <i class="text-warning mr-0 font-size-24 mdi mdi-approval"></i>--}}
-{{--                            </div>--}}
-{{--                            <div>--}}
-{{--                                <p class="text-mute mt-20 mb-0 font-size-16">Service</p>--}}
-{{--                                <h3 class="text-white mb-0 font-weight-500">{{$countService}} --}}
-{{--                                    <i class="fa fa-rocket" aria-hidden="true"></i>--}}
+        <section class="content">
+            <div class="row">
+                <div class="col-xl-2 col-6">
+                    <div class="box overflow-hidden pull-up">
+                        <div class="box-body">
+                            <div class="icon bg-primary-light rounded w-60 h-60">
+                                <i class="text-primary mr-0 font-size-24 mdi mdi-account-multiple"></i>
+                            </div>
+                            <div>
+                                <p class="text-mute mt-20 mb-0 font-size-16">New Customers</p>
+                                <h3 class="text-white mb-0 font-weight-500">{{$count}}
+                                    <small class="text-success"><i class="fa fa-user"></i> </small></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-6">
+                    <div class="box overflow-hidden pull-up">
+                        <div class="box-body">
+                            <div class="icon bg-warning-light rounded w-60 h-60">
+                                <i class="text-warning mr-0 font-size-24 mdi mdi-approval"></i>
+                            </div>
+                            <div>
+                                <p class="text-mute mt-20 mb-0 font-size-16">Service</p>
+                                <h3 class="text-white mb-0 font-weight-500">{{$countService}}
+                                    <i class="fa fa-rocket" aria-hidden="true"></i>
 
-{{--                                    --}}{{-- <small class="text-success"><i class="fa fa-caret-up"></i> +2.5%</small> --}}
-{{--                                </h3>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-2 col-6">--}}
-{{--                    <div class="box overflow-hidden pull-up">--}}
-{{--                        <div class="box-body">--}}
-{{--                            <div class="icon bg-info-light rounded w-60 h-60">--}}
-{{--                                <i class="text-info mr-0 font-size-24 mdi mdi-sale"></i>--}}
-{{--                            </div>--}}
-{{--                            <div>--}}
-{{--                                <p class="text-mute mt-20 mb-0 font-size-16">Order Success</p>--}}
-{{--                                <h3 class="text-white mb-0 font-weight-500">{{$countSuccessService}}--}}
-{{--                                    <small class="text-success">{{$countSuccessService / $count *100}}%</small></h3>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                                     <small class="text-success"><i class="fa fa-caret-up"></i> +2.5%</small>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-6">
+                    <div class="box overflow-hidden pull-up">
+                        <div class="box-body">
+                            <div class="icon bg-info-light rounded w-60 h-60">
+                                <i class="text-info mr-0 font-size-24 mdi mdi-sale"></i>
+                            </div>
+                            <div>
+                                <p class="text-mute mt-20 mb-0 font-size-16">Order Success</p>
+                                <h3 class="text-white mb-0 font-weight-500">{{$countSuccessService}}
+                                    <small class="text-success">{{$countSuccessService / $count *100}}%</small></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-xl-2 col-6">
                     <div class="box overflow-hidden pull-up">
                         <div class="box-body">
@@ -58,8 +63,8 @@
                                 <i class="text-danger mr-0 font-size-24 mdi mdi-phone-incoming"></i>
                             </div>
                             <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Inbound Call</p>
-                                <h3 class="text-white mb-0 font-weight-500">1,460 <small class="text-danger"><i class="fa fa-caret-up"></i> -1.5%</small></h3>
+                                <p class="text-mute mt-20 mb-0 font-size-16">Total Money Product</p>
+                                <h3 class="text-white mb-0 font-weight-500">${{$money}} <small class="text-danger"><i class="fa fa-caret-up"></i>USD</small></h3>
                             </div>
                         </div>
                     </div>
@@ -71,8 +76,8 @@
                                 <i class="text-success mr-0 font-size-24 mdi mdi-phone-outgoing"></i>
                             </div>
                             <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Outbound Call</p>
-                                <h3 class="text-white mb-0 font-weight-500">1,700 <small class="text-success"><i class="fa fa-caret-up"></i> +0.5%</small></h3>
+                                <p class="text-mute mt-20 mb-0 font-size-16">Total Product</p>
+                                <h3 class="text-white mb-0 font-weight-500">{{count($allProduct)}} <small class="text-success"><i class="fa fa-caret-up"></i> +0.5%</small></h3>
                             </div>
                         </div>
                     </div>
@@ -84,8 +89,8 @@
                                 <i class="text-white mr-0 font-size-24 mdi mdi-chart-line"></i>
                             </div>
                             <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Total Revune</p>
-                                <h3 class="text-white mb-0 font-weight-500">$4,500k <small class="text-success"><i class="fa fa-caret-up"></i> +2.5%</small></h3>
+                                <p class="text-mute mt-20 mb-0 font-size-16">Product  Successfully</p>
+                                <h3 class="text-white mb-0 font-weight-500">{{count($pending)}} <small class="text-success"><i class="fa fa-caret-up"></i> +2.5%</small></h3>
                             </div>
                         </div>
                     </div>

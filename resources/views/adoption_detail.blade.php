@@ -34,7 +34,7 @@
                         {{-- <div class="breeder-details-img">
                             <img src="{{asset("img/service-img/{$service->hinhanh}") }}" alt=""></a>
                         </div> --}}
-                        
+
                         <div class="blog-details-tags">
                             <ul>
                                 <li class="title"><i class="fas fa-tags"></i> Tags :</li>
@@ -51,22 +51,22 @@
                                   </div>
                             </ul>
                         </div>
-             
+
                       </div>
                 </div>
 
-                     
+
                 <div class="col-lg-4">
                     <aside class="breeder-sidebar">
                         <div class="widget breeder-widget">
                             <div class="breeder-widget-title mb-20">
                                 <h5 class="title">Service Yourself</h5>
                             </div>
-                            
-                           
+
+
                             <form action="{{route('add_adoption',$service->id)}}}" method="post" class="sidebar-find-pets">
                                 @csrf
-                              
+
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="first_name">First Name <span>*</span></label>
@@ -76,13 +76,13 @@
                                         <label for="last_name">Last Name <span>*</span></label>
                                         <input type="text" class="form-control" id="last_name"  name="last_name" value="" required>
                                     </div>
-        
+
                                     <div class="col-12 mb-3">
                                         <label for="street_address">Address <span>*</span></label>
                                         <input type="text" class="form-control mb-3" id="street_address"  name="address" value="">
-        
+
                                     </div>
-        
+
                                     <div class="col-12 mb-3">
                                         <label for="phone_number">Phone No <span>*</span></label>
                                         <input type="number" class="form-control" id="phone_number"  name="phone" min="0" value="">
@@ -96,21 +96,21 @@
                                         <label for="email_address">Expected Date <span>*</span></label>
                                         <input type="datetime-local" class="form-control" id="date" name="date_time" value="{{date('Y-m-d H:i')}}">
                                     </div>
-                                  
+
                                 </div>
-                                
-                            
+
+
                                 <button type="submit" name="addtocart" value="6" class="btn cart-submit d-block">Add to cart</button>
                             </form>
-                                
-                                  
-                              
-                                    {{-- <a href="{{asset("add_adoption/$service->id")}}" class="btn">Apply Today 
+
+
+
+                                    {{-- <a href="{{asset("add_adoption/$service->id")}}" class="btn">Apply Today
                                         <img src="img/icon/w_pawprint.png" alt=""></a> --}}
-                                
+
                         </div>
                         <div class="widget">
-                            
+
                                 <div class="contact-info-wrap">
                                     <div class="contact-img">
                                         <img src="img/images/contact_img.png" alt="">
@@ -122,7 +122,7 @@
                                                 <div class="col-md-12 ">
                                                     <div class="breeder-info-item">
                                                         <h6>Invoice:</h6>
-                                                        <span>  
+                                                        <span>
                                                         @if( $service->servicetype->name == 'Chăm sóc')
                                                             {{$service->price}} - {{$service->price_end}}
                                                         @elseif ($service->servicetype->name == 'Trông coi')
@@ -138,18 +138,18 @@
                                                         <span>{{$service->staff->chucvu}}</span>
                                                     </div>
                                                 </div> --}}
-                
+
                                                 <div class="col-md-12">
                                                     <div class="breeder-info-item">
                                                         <h6>Service:</h6>
                                                         <span>{!!$service->tomtat!!}</span>
-                                                       
+
                                                     </div>
                                                 </div>
                                             </div>
-                                           
+
                                         </div>
-                                    
+
                                         <ul>
                                             <li>
                                                 <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -171,7 +171,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                 
+
                             </div>
                         </div>
                     </aside>
@@ -187,11 +187,11 @@
             <li class="nav-item">
               <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Comments</a>
             </li>
-          
+
           </ul>
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-         
+
                  <!-- Start comment-sec Area -->
             <section class="comment-sec-area pt-80 pb-80">
                 <div class="container">
@@ -246,7 +246,7 @@
                             </div>
                           </div>
                         </div>
-  
+
                         @endforeach
                       @else
                       @endif
@@ -295,39 +295,9 @@
                 </div>
               </section>
               <!-- End comment-sec Area -->
-  
-              <!-- Start commentform Area -->
-              <section class="commentform-area pb-120 pt-80 mb-100">
-              @guest
-                  <div class="container">
-                      <h4>Please Sign in to post comments - <a href="{{route('login')}}">Sing in</a> or <a href="{{route('register')}}">Register</a></h4>
-                  </div>
-              @else
-                  <div class="container">
-                    <h5 class="text-uppercas pb-50">Leave a Reply</h5>
-                    <div class="row flex-row d-flex">
-                        <div class="col-lg-12">
-                            <form action="{{route('comment.store', $service->id)}}" method="POST">
-                                @csrf
-                            <textarea
-                              class="form-control mb-10"
-                              name="comment"
-                              placeholder="Messege"
-                              onfocus="this.placeholder = ''"
-                              onblur="this.placeholder = 'Messege'"
-                              required=""
-                            ></textarea>
-                            <button type="submit" class="primary-btn mt-20" href="#">Comment</button>
-                        </form>
-                        </div>
-                    </div>
-                  </div>
-                  @endguest
-              </section>
-              <!-- End commentform Area -->
-           
+
             </div>
-         
+
           </div>
     </div>
     <!-- adoption-area -->
@@ -347,7 +317,7 @@
         </div>
         <div class="container custom-container">
             <div class="row adopt-active">
-               
+
                 @foreach($lsService as $key => $value)
                 @if($service->id != $value->id)
                     <div class="col-xl-3">
@@ -369,7 +339,7 @@
                                 </div>
                                 <h3 class="title"><a href="{{asset("adoption_detail/$value->id")}}">{{$value->name_service}}</a></h3>
                                 <p>{!!$value->tomtat!!}</p>
-                                <a href="{{asset("adoption-detail/$value->slug")}}" class="read-more">Read More 
+                                <a href="{{asset("adoption-detail/$value->slug")}}" class="read-more">Read More
                                     <img src=" {{asset('frontend/img/icon/pawprint.png')}}"
                                     alt=""></a>
                             </div>
@@ -382,13 +352,13 @@
         </div>
 
 
-        
+
     </section>
-    
+
     <!-- adoption-area-end -->
 
 
-   
+
 </main>
 
 <script id="dsq-count-scr" src="//http-t2001eproject-abc-81.disqus.com/count.js" async></script>
@@ -406,7 +376,7 @@
                 method: 'POST',
                 data:{service_id:service_id, _token:_token},
                 success:function(data){
-                    
+
                     $('#comment_show').html(data);
                 }
             });

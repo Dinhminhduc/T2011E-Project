@@ -48,10 +48,10 @@
 
                           <div class="form-group">
                             <label for="exampleInputEmail1">Từ khoá </label>
-                            <input type="text" name="tukhoa" data-role="tagsinput"  class="form-control" 
+                            <input type="text" name="tukhoa" data-role="tagsinput"  class="form-control"
                             aria-describedby="emailHelp" placeholder="Slug ">
                           </div>
-                          
+
                         <div class="form-group">
                             <label for="exampleInputEmail1">Giá từ</label>
                             <input type="number" name="price" class="form-control"
@@ -99,8 +99,7 @@
                                          @endforeach
                                       </select>
                                 </div>
-
-                        <button type="submit" class="btn btn-primary">Thêm</button>
+                        <input type="submit" class="btn btn-primary">
                       </form>
                 </div>
             </div>

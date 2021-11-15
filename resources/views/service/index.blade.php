@@ -25,7 +25,7 @@
             <div class="input-group mb-3">
                 <input type="text" class="form-control" name="search_name" placeholder="Search">
                 <div class="input-group-append">
-                    <button class="btn btn-success" type="submit">Search</button>
+                    <input class="btn btn-success" type="submit" value="Search">
                 </div>
             </div>
         </form>
@@ -33,10 +33,10 @@
         <table @class("table")>
             <tr>
                 <th>ID</th>
-                <th>NAME</th>       
-                <th>SLUG</th>       
-                <th>DESCRIPTION</th>       
-                <th>TOMTAT</th>       
+                <th>NAME</th>
+                <th>SLUG</th>
+                <th>DESCRIPTION</th>
+                <th>TOMTAT</th>
                 <th>SERVICE</th>
                 <th>STAFF</th>
                 <th>PRICE</th>
@@ -51,13 +51,13 @@
                     <td>{{$ser->slug}}</td>
                     <td>{!!$ser->title!!}</td>
                     <td>{!!$ser->tomtat!!}</td>
-                 
+
                     <td>{{$ser->servicetype->name}}</td>
                     <td>{{$ser->staff->chucvu}}</td>
                     <td>
                         @if($ser->name_service == 'Nuôi hộ')
                           {{$ser->price}} - {{$ser->price_end}}(/giờ)
-                          @else 
+                          @else
                           {{$ser->price}} - {{$ser->price_end}}
                           @endif
                     </td>

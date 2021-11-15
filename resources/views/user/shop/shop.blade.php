@@ -31,21 +31,31 @@
                     <aside class="shop-sidebar">
                         <div class="widget">
                             <div class="sidebar-search">
-                                <form action="#" name="search">
-                                    <input type="text" placeholder="Search ...">
+                                <form method="POST" action="{{route('product.search')}}" name="search">
+                                    @csrf
+                                    <input type="text" name="search" placeholder="Search ...">
                                     <button type="submit"><i class="fa fa-search"></i></button>
                                 </form>
                             </div>
                         </div>
 
-                        <form method="GET" action="{{asset('product')}}">
+{{--                        <form method="GET" action="{{asset('product')}}">--}}
+                        <form action="{{route('shop.filter')}}" method="GET">
                             @csrf
                         <div class="widget">
                             <h4 class="sidebar-title">Category</h4>
                             <div class="shop-cat-list">
                                 <ul>
                                     @foreach($lsCate as $cate)
-                                    <li><a href="#">{{$cate->name}} <span><input type="checkbox" name="cate" value="{{$cate->id}}"></span></a></li>
+                                    <li>
+                                        <a href="#">{{$cate->name}}
+                                            <span>
+                                                <input type="checkbox" name="category[]" value="{{$cate->id}}"
+                                                    {{($s_cate != null && is_array($s_cate) && count($s_cate) > 0 && in_array($category->id,$category)) ? "checked" : ""}}>
+>
+                                            </span>
+                                        </a>
+                                    </li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -60,6 +70,8 @@
                                 </ul>
                             </div>
                         </div>
+                            <input class="black-color" type="submit" value="Search">
+                        </form>
                             <!-- ============================================== HOT DEALS ============================================== -->
 
                             <!-- ============================================== HOT DEALS: END ============================================== -->
@@ -74,8 +86,6 @@
 {{--                                </div>--}}
 {{--                            </div>--}}
 {{--                        </div>--}}
-
-                        </form>
 
                         <div class="widget shop-widget-banner">
                             <a href="shop.html"><img src="img/product/shop_add.jpg" alt=""></a>

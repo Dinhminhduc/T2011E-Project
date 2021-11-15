@@ -98,41 +98,11 @@ $route = Route::current()->getName();
             </span>
                 </a>
                 <ul class="treeview-menu">
-{{--                    <li><a href="{{route('all.product')}}"><i class="ti-more"></i>All Product</a></li>--}}
-                    <li><a href="{{asset('admin/category')}}"><i class="ti-more"></i>All Category</a></li>
-                    <li><a href="{{route('all.brand')}}"><i class="ti-more"></i>All Brands</a></li>
                     <li><a href="{{asset('admin/orderProduct')}}"><i class="ti-more"></i>Order</a></li>
                 </ul>
             </li>
 
             <li class="header nav-small-cap">Service</li>
-
-                <li class="treeview">
-                    <a href="{{route('service_type.index')}}">
-                        <i data-feather="credit-card"></i>
-                        <span>Service Type</span>
-                        <span class="pull-right-container">
-                  <i class="fa fa-angle-right pull-right"></i>
-
-                  <ul class="treeview-menu">
-                      <li><a href="{{route('service_type.index')}}">View Type Service</a></li>
-                      <li><a href="{{route('service_type.create')}}">Create Type Service</a></li>
-                  </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="#">
-                        <i data-feather="mail"></i> <span>Pets List</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{asset('animal_type')}}"><i class="ti-more"></i>Type</a></li>
-                        <li><a href="{{asset('animal_detail')}}"><i class="ti-more"></i>All Pets</a></li>
-                        <li><a href="{{asset('testimonials')}}"><i class="ti-more"></i>Testination</a></li>
-                    </ul>
-                </li>
 
                 <li class="treeview">
                     <a href="{{route('service_type.index')}}">
