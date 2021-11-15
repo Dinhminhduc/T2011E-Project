@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
 
+
 class ProductController extends Controller
 {
 
@@ -74,7 +75,7 @@ class ProductController extends Controller
     }
 
     public function ManageProduct(){
-        $products = Product::latest()->get();
+        $products = Product::paginate(5);
         return view('admin.product.product_view',compact('products'));
     }
 

@@ -10,10 +10,7 @@ class Customer extends Model
     use HasFactory;
 
 
-    Public $timestamps = true;
-
-//a
-    public function ordersProduct(){
+    public function orderProduct(){
         return $this->hasMany('App\Models\Order_Product');
     }
 

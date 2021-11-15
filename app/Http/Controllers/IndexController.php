@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Animal_detail;
 use App\Models\Staff;
@@ -9,15 +11,37 @@ use App\Models\Service;
 use App\Models\ServiceType;
 use App\Models\Blog;
 use App\Models\testimonials;
+use DB;
 
 
 class IndexController extends Controller
 {
     public function welcome(){
         $lsDetail = Animal_detail::orderBy('created_at','desc')->take(6)->get();
+        $count = DB::table('customerss')->get()->count();
+        $countService = DB::table('services')->get()->count();
+        $countSuccessService = DB::table('customerss')->where('status', 2)->count();
+        $count_Service = DB::table('customerss')->whereNotIn('status', [3])->count();
+        $countNotService = DB::table('customerss')->where('status', 3)->count();
+        $lsHot_deals = Product::where('hot_deals',1)->orderBy('id','DESC')->limit(5)->get();
+        $lsSpecial_deals = Product::where('special_deals',1)->orderBy('id','DESC')->limit(1)->get();
+        $lsBrands = Brand::all();
+
         $lsStaff = Staff::orderBy('ten','asc')->take(3)->get();
         $lsTesti =  \App\Models\testimonials::all();
-        return view('user/index',compact('lsDetail','lsStaff','lsTesti'));
+//        return view('user/index',compact('lsDetail','lsStaff','lsTesti',
+//            'count','countService','countSuccessService','countNotService','count_Service'));
+        return view('user/index')->with(['lsDetail' => $lsDetail,
+            'lsStaff' => $lsStaff,
+            'lsTesti' => $lsTesti,
+            'count' => $count,
+            'countService' => $countService,
+            'countSuccessService' => $countSuccessService,
+            'countNotService' => $countNotService,
+            'count_Service'=> $count_Service,
+            'lsHot_deals' => $lsHot_deals,
+            'lsBrands' => $lsBrands,
+            'lsSpecial_deals' => $lsSpecial_deals]);
     }
     public function doglist(){
         $lsDetail = Animal_detail::orderBy('created_at','desc')->take(6)->get();

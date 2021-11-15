@@ -28,8 +28,6 @@
                     <th scope="col">Product Name</th>
                     <th scope="col">Product Quantity</th>
                     <th scope="col">Product Price</th>
-                    <th scope="col">Total</th>
-                    <th scope="col">Status</th>
 
                 </tr>
                 </thead>
@@ -86,6 +84,6 @@
                 </div>
             </div>
         </div>
-    <a class="btn btn-outline-dark" style="margin-left: 1rem" href="{{route('order.index')}}">Back to Order Management</a>
+    <a class="btn btn-outline-dark" style="margin-left: 1rem" href="{{route('orderProduct.index')}}">Back to Order Management</a>
 
 @endsection

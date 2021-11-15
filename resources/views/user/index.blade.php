@@ -4,7 +4,7 @@
         <!-- slider-area -->
         <section class="slider-area">
             <div class="slider-active">
-                <div class="single-slider slider-bg d-flex align-items-center" data-background="{{asset('img/slider/slider_bg01.jpg')}}">
+                <section class="breadcrumb-area breadcrumb-bg" data-background="{{asset('img/bg/s_slider_bg01.jpg')}}">
                     <div class="container custom-container">
                         <div class="row">
                             <div class="col-xl-5 col-lg-7 col-md-10">
@@ -21,23 +21,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="single-slider slider-bg d-flex align-items-center" data-background="{{asset('img/slider_home.jpg')}}">
-                    <div class="container custom-container">
-                        <div class="row">
-                            <div class="col-xl-5 col-lg-7 col-md-10">
-                                <div class="slider-content">
-                                    <div class="slider-title">
-                                        <h2 class="title" data-animation="fadeInUpBig" data-delay=".2s" data-duration="1.2s">Best Friend <span>with</span> Happy Time</h2>
-                                    </div>
-                                    <div class="slider-desc">
-                                        <p class="desc" data-animation="fadeInUpBig" data-delay=".4s" data-duration="1.2s">Human Shampoo on Dogs After six days of delirat, the jury found Hernandez guilty of first-degree murder</p>
-                                    </div>
-                                    <a href="dog-list.html" class="btn" data-animation="fadeInUpBig" data-delay=".6s" data-duration="1.2s">View More <img src="img/icon/w_pawprint.png" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="slider-shape"><img src="img/slider/slider_shape01.png" alt=""></div>
             <div class="slider-shape shape-two"><img src="img/slider/slider_shape02.png" alt=""></div>
@@ -123,28 +107,6 @@
         </section>
         <!-- counter-area-end -->
 
-        <!-- adoption-area -->
-        <section class="adoption-area">
-            <div class="container">
-                <div class="row align-items-center align-items-xl-end justify-content-center">
-                    <div class="col-xl-7 col-lg-6 col-md-10 order-0 order-lg-2">
-                        <div class="adoption-img">
-                            <img src="{{asset('img/adoption_img.jpg')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-6">
-                        <div class="adoption-content">
-                            <h2 class="title">Working For <br> Dog <span>Adoption</span> Free, Happy Time</h2>
-                            <p>The best overall dog DNA test is Embark Breed & Health Kit (view at Chewy), which provides you with a breed brwn and information.</p>
-                            <a href="adoption.html" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="adoption-shape"><img src="img/images/adoption_shape.png" alt=""></div>
-        </section>
-        <!-- adoption-area-end -->
-
         <!-- breeds-services -->
         <section class="breeds-services pt-110 pb-110">
             <div class="container">
@@ -152,7 +114,7 @@
                     <div class="col-xl-7 col-lg-9">
                         <div class="section-title text-center mb-65">
                             <div class="section-icon"><img src="img/icon/pawprint.png" alt=""></div>
-                            <h5 class="sub-title">Service to Breeds</h5>
+                            <h5 class="sub-title">Product Hot Deals</h5>
                             <h2 class="title">Most Popular Dog Breed</h2>
                             <p>The best overall dog DNA test is Embark Breed & Health Kit (view at Chewy), which provides you with a breed brwn and information Most dogs</p>
                         </div>
@@ -161,38 +123,40 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="breed-services-active owl-carousel">
+                            @foreach($lsHot_deals as $hot)
                             <div class="breed-services-item">
                                 <div class="thumb">
-                                    <img src="{{asset('img/images/breed_services_img01.jpg')}}" alt="">
+                                    <img src="{{$hot->image}}" alt="">
                                 </div>
                                 <div class="content">
-                                    <h3 class="title"><a href="breeder-details.html">Golden Retriever</a></h3>
+                                    <h3 class="title"><a href="{{route('all.shop')}}">{{$hot->name}}</a></h3>
                                 </div>
                             </div>
-                            <div class="breed-services-item">
-                                <div class="thumb">
-                                    <img src="{{asset('img/images/breed_services_img02.jpg')}}" alt="">
-                                </div>
-                                <div class="content">
-                                    <h3 class="title"><a href="breeder-details.html">German Sharped</a></h3>
-                                </div>
-                            </div>
-                            <div class="breed-services-item">
-                                <div class="thumb">
-                                    <img src="{{asset('img/images/breed_services_img03.jpg')}}" alt="">
-                                </div>
-                                <div class="content">
-                                    <h3 class="title"><a href="breeder-details.html">Siberian Husky</a></h3>
-                                </div>
-                            </div>
-                            <div class="breed-services-item">
-                                <div class="thumb">
-                                    <img src="{{asset('img/images/breed_services_img04.jpg')}}" alt="">
-                                </div>
-                                <div class="content">
-                                    <h3 class="title"><a href="breeder-details.html">Bernes Mountain</a></h3>
-                                </div>
-                            </div>
+                            @endforeach
+{{--                            <div class="breed-services-item">--}}
+{{--                                <div class="thumb">--}}
+{{--                                    <img src="{{asset('img/images/breed_services_img02.jpg')}}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h3 class="title"><a href="breeder-details.html">German Sharped</a></h3>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="breed-services-item">--}}
+{{--                                <div class="thumb">--}}
+{{--                                    <img src="{{asset('img/images/breed_services_img03.jpg')}}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h3 class="title"><a href="breeder-details.html">Siberian Husky</a></h3>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="breed-services-item">--}}
+{{--                                <div class="thumb">--}}
+{{--                                    <img src="{{asset('img/images/breed_services_img04.jpg')}}" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h3 class="title"><a href="breeder-details.html">Bernes Mountain</a></h3>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -286,41 +250,13 @@
         <div class="brand-area pt-80 pb-80">
             <div class="container">
                 <div class="row brand-active">
+                    @foreach($lsBrands as $brand)
                     <div class="col-12">
                         <div class="brand-item">
-                            <img src="img/brand/brand_item01.png" alt="img">
+                            <img src="{{$brand->brand_image}}" alt="img">
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="brand-item">
-                            <img src="img/brand/brand_item02.png" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="brand-item">
-                            <img src="img/brand/brand_item03.png" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="brand-item">
-                            <img src="img/brand_item04.png" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="brand-item">
-                            <img src="img/brand/brand_item05.png" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="brand-item">
-                            <img src="img/brand/brand_item06.png" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="brand-item">
-                            <img src="img/brand/brand_item03.png" alt="img">
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

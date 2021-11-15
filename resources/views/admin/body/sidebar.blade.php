@@ -101,7 +101,7 @@ $route = Route::current()->getName();
 {{--                    <li><a href="{{route('all.product')}}"><i class="ti-more"></i>All Product</a></li>--}}
                     <li><a href="{{asset('admin/category')}}"><i class="ti-more"></i>All Category</a></li>
                     <li><a href="{{route('all.brand')}}"><i class="ti-more"></i>All Brands</a></li>
-                    <li><a href="{{asset('admin/order')}}"><i class="ti-more"></i>Order</a></li>
+                    <li><a href="{{asset('admin/orderProduct')}}"><i class="ti-more"></i>Order</a></li>
                 </ul>
             </li>
 

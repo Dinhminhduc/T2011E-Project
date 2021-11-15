@@ -17,7 +17,7 @@ class OrderProductController extends Controller
      */
     public function index()
     {
-        $lsOrder = Order_Product::latest()->paginate(5);
+        $lsOrder = Order_Product::paginate(5);
         return view('admin.order.index',compact('lsOrder'));
     }
 
@@ -58,7 +58,7 @@ class OrderProductController extends Controller
         $order = Order_Product::find($id);
         $order->status = $status;
         $order->save();
-        return redirect()->route('order.show', $id);
+        return redirect()->route('orderProduct.show', $id);
     }
 
     /**
@@ -94,4 +94,16 @@ class OrderProductController extends Controller
     {
         //
     }
+
+//    public function changeStatusJson(Request $request){
+//        $id = $request->id;
+//        $status = $request->status;
+//        $cus = Customer::find($id);
+//        $cus->status = $status;
+//        $cus->save();
+//        return response()->json([
+//            'status' =>'OK',
+//            'desc'=>'Change status success',
+//        ]);
+//    }
 }

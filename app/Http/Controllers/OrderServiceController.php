@@ -12,7 +12,7 @@ use App\Models\CustomerS;
 use App\Models\Order_service;
 use App\Models\OrderDetail;
 use Carbon\Carbon;
-
+use DB;
 
 
 class OrderServiceController extends Controller
@@ -97,7 +97,14 @@ class OrderServiceController extends Controller
         $lsService = Service::orderBy('id','DESC')->get();
         $lsServiceType = ServiceType::orderBy('id','DESC')->get();
 
-        return view('adoption', compact('lsService','lsServiceType'));
+        $count = DB::table('customerss')->get()->count();
+        $countService = DB::table('services')->get()->count();
+        $countSuccessService = DB::table('customerss')->where('status', 2)->count();
+        $count_Service = DB::table('customerss')->whereNotIn('status', [3])->count();
+        $countNotService = DB::table('customerss')->where('status', 3)->count();
+
+        return view('adoption', compact('lsService','lsServiceType'
+            ,'count','countService','countSuccessService','countNotService','count_Service'));
     }
 
     public function adoption_detail($slug){
@@ -109,6 +116,7 @@ class OrderServiceController extends Controller
 
         return view('adoption_detail', compact('service','lsServiceType','lsStaff','lsService'));
     }
+
 
 
     public function add_adoption(Request $request, $id){

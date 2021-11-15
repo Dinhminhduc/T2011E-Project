@@ -4,7 +4,7 @@
 <main>
 
     <!-- breadcrumb-area -->
-    <section class="breadcrumb-area breadcrumb-bg" data-background="{{asset('image/product/1714698648111892.jpg)')}}">
+    <section class="breadcrumb-area breadcrumb-bg" data-background="{{asset('img/bg/breadcrumb_bg.jpg')}}">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -31,7 +31,7 @@
                     <aside class="shop-sidebar">
                         <div class="widget">
                             <div class="sidebar-search">
-                                <form action="#">
+                                <form action="#" name="search">
                                     <input type="text" placeholder="Search ...">
                                     <button type="submit"><i class="fa fa-search"></i></button>
                                 </form>
@@ -54,11 +54,9 @@
                             <h4 class="sidebar-title">Top Brand</h4>
                             <div class="shop-brand-list">
                                 <ul>
-                                    <li><a href="shop.html">Geco</a></li>
-                                    <li><a href="shop.html">Carnation</a></li>
-                                    <li><a href="shop.html">Suppke</a></li>
-                                    <li><a href="shop.html">WeBeyond</a></li>
-                                    <li><a href="shop.html">Edstudy</a></li>
+                                    @foreach($lsBrand as $brands)
+                                    <li><a href="shop.html">{{$brands->brand_name}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -130,7 +128,7 @@
                                         <a href="{{route('detail.shop',$pro->id)}}"><img src="{{asset($pro->image)}}" alt=""></a>
                                     </div>
                                     <div class="shop-content">
-                                        <span>Dog toy’s</span>
+                                        <span>{{$pro->category->name}}</span>
                                         <h4 class="title"><a href="{{route('detail.shop',$pro->id)}}">{{$pro->name}}</a></h4>
                                         <div class="shop-content-bottom">
                                             <span class="price">${{$pro->price}}</span>

@@ -18,25 +18,25 @@
     <form action="{{route('order.index')}}" method="GET">
         @csrf
         <div class="input-group ">
-            <input type="text" class="form-control" name="search_name" placeholder="Search name" style="margin-right:10px"> 
+            <input type="text" class="form-control" name="search_name" placeholder="Search name" style="margin-right:10px">
             <input type="text" class="form-control" name="phone" placeholder="Search phone" style="margin-right:10px">
-            <input type="datetime-local" class="form-control" name="from"  style="margin-right:10px"> 
-            <input type="datetime-local" class="form-control" name="to" style="margin-right:10px"> 
-            
+            <input type="datetime-local" class="form-control" name="from"  style="margin-right:10px">
+            <input type="datetime-local" class="form-control" name="to" style="margin-right:10px">
+
             <div class="input-group-append">
-                <button class="btn btn-success" type="submit">Search</button>
+                <input class="btn btn-success" type="submit" value="Search">
             </div>
         </div>
     </form>
 
-   
+
 
     <table @class("table")>
         <tr>
             <th>ID</th>
-            <th>NAME</th>       
-            <th>PHONE</th>       
-            <th>EMAIL</th>       
+            <th>NAME</th>
+            <th>PHONE</th>
+            <th>EMAIL</th>
             <th>ADRESS</th>
             <th>TIME</th>
             <th>SERVICE</th>
@@ -60,17 +60,17 @@
                         {{$cus->created_at->format('m/d/Y H:i')}}
                     @endif
                 </td>
-                <td>{{$cus->service->name_service}}</td>    
+                <td>{{$cus->service->name_service}}</td>
                 <td>
                     @if($cus->status == 0)
                     <span style="color:blue"> WAIT</span>
 
                     @elseif($cus->status == 1)
                     <span style="color:green"> CONFIRM</span>
-                   
+
                     @elseif($cus->status == 2)
                     <span style="color:rgb(173, 62, 146)"> SUCCESS</span>
-                   
+
                     @elseif($cus->status == 3)
                         <span style="color:red"> CANCEL</span>
                     @endif
@@ -92,9 +92,9 @@
     <table @class("table") >
         <tr>
             <th>ID</th>
-            <th>NAME</th>       
-            <th>PHONE</th>       
-            <th>EMAIL</th>       
+            <th>NAME</th>
+            <th>PHONE</th>
+            <th>EMAIL</th>
             <th>ADRESS</th>
             <th>TIME</th>
             <th>SERVICE</th>
@@ -118,17 +118,17 @@
                         {{$cus->created_at->format('m/d/Y H:i')}}
                     @endif
                 </td>
-                <td>{{$cus->service->name_service}}</td>    
+                <td>{{$cus->service->name_service}}</td>
                 <td>
                     @if($cus->status == 0)
                     <span style="color:blue"> WAIT</span>
 
                     @elseif($cus->status == 1)
                     <span style="color:green"> CONFIRM</span>
-                   
+
                     @elseif($cus->status == 2)
                     <span style="color:rgb(173, 62, 146)">SUCCESS</span>
-                   
+
                     @elseif($cus->status == 3)
                         <span style="color:red"> CANCEL</span>
                     @endif
@@ -146,7 +146,7 @@
         @endforeach
     </table>
 
-  
+
 </div><div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

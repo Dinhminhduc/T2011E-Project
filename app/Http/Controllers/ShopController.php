@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Customer;
 use App\Models\MultiImg;
@@ -16,17 +17,21 @@ class ShopController extends Controller
     public function allShop(){
         $lsProduct = Product::latest()->take(9)->get();
         $lsCate = Category::all();
-        $hot_deals = Product::where('hot_deals',1)->orderBy('id','DESC')->limit(3)->get();
+        $lsBrand = Brand::all();
         return view("user.shop.shop")->with(['lsProduct' => $lsProduct,
             'lsCate' => $lsCate,
-            'hot_deals' => $hot_deals]);
+            'lsBrand' => $lsBrand]);
     }
 
     public function detailShop(Request $request, $id){
         $products = Product::find($id);
         $multiImg = MultiImg::where('product_id',$id)->get();
+        $lsFeatured = Product::where('featured',1)->orderBy('id','DESC')->limit(5)->get();
+        $lsCategory = Category::all();
         return view('user.shop.shop-detail')->with(['products' => $products,
-            'multiImg' => $multiImg]);;
+            'multiImg' => $multiImg,
+            'lsFeatured' => $lsFeatured,
+            'lsCategory' => $lsCategory]);;
     }
 
     public function detailProduct(Request $request, $pid){
@@ -96,6 +101,18 @@ class ShopController extends Controller
         \Cart::destroy();
         //Success
         return redirect()->back();
+    }
+
+    public function ProductSearch(Request $request){
+
+        $request->validate(["search" => "required"]);
+
+        $item = $request->search;
+        // echo "$item";
+        $categories = Category::orderBy('name','ASC')->get();
+        $products = Product::where('name','LIKE',"%$item%")->get();
+        return view('frontend.product.search',compact('products','categories'));
+
     }
 
 
